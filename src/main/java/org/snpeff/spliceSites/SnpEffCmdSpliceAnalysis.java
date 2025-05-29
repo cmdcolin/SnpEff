@@ -19,7 +19,7 @@ import org.snpeff.interval.SpliceSiteBranchU12;
 import org.snpeff.interval.Transcript;
 import org.snpeff.motif.MotifLogo;
 import org.snpeff.motif.Pwm;
-import org.snpeff.probablility.FisherExactTest;
+import org.snpeff.probability.FisherExactTest;
 import org.snpeff.snpEffect.EffectType;
 import org.snpeff.stats.CountByType;
 import org.snpeff.stats.IntStats;
@@ -333,7 +333,7 @@ public class SnpEffCmdSpliceAnalysis extends SnpEff {
 	public boolean run() {
 		loadConfig();
 
-		// Check that fasta file is avaialble
+		// Check that fasta file is available
 		genomeFasta = config.getFileNameGenomeFasta();
 		if (genomeFasta == null) throw new RuntimeException("Cannot find reference genome: " + config.getFileListGenomeFasta());
 

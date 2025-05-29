@@ -26,7 +26,7 @@ public enum EffectType {
 	, EXON_DELETED(EffectImpact.HIGH) //
 	, EXON_DELETED_PARTIAL(EffectImpact.HIGH) //
 	, GENE_FUSION(EffectImpact.HIGH) //
-	, GENE_FUSION_REVERESE(EffectImpact.HIGH) //
+	, GENE_FUSION_REVERSE(EffectImpact.HIGH) //
 	, GENE_FUSION_HALF(EffectImpact.HIGH) //
 	, FRAME_SHIFT(EffectImpact.HIGH) //
 	, STOP_GAINED(EffectImpact.HIGH) //
@@ -220,7 +220,7 @@ public enum EffectType {
 		case GENE_DUPLICATION:
 		case GENE_FUSION:
 		case GENE_FUSION_HALF:
-		case GENE_FUSION_REVERESE:
+		case GENE_FUSION_REVERSE:
 		case GENE_INVERSION:
 		case GENE_REARRANGEMENT:
 			return EffectType.GENE;
@@ -285,7 +285,7 @@ public enum EffectType {
 
 	public boolean isFusion() {
 		return this == GENE_FUSION //
-				|| this == GENE_FUSION_REVERESE //
+				|| this == GENE_FUSION_REVERSE //
 				|| this == GENE_FUSION_HALF //
 				|| this == FEATURE_FUSION //
 		;
@@ -382,7 +382,7 @@ public enum EffectType {
 		case GENE_FUSION_HALF:
 			return "transcript_ablation";
 
-		case GENE_FUSION_REVERESE:
+		case GENE_FUSION_REVERSE:
 			return "bidirectional_gene_fusion";
 
 		case GENE_REARRANGEMENT:

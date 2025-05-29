@@ -280,7 +280,7 @@ public class SamEntry {
 				+ "\t" + seq //
 				+ "\t" + qual);
 
-		// Apend tags
+		// Append tags
 		for (int i = 0; i < tags.length; i++)
 			if (tags[i] != null) sb.append("\t" + tags[i]);
 

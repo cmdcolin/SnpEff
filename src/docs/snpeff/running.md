@@ -44,7 +44,7 @@ $ head examples/test.chr22.ann.vcf
 22	17072674	.	G	A	.	.	ANN=A|missense_variant|MODERATE|CCT8L2|ENSG00000198445|transcript|ENST00000359963|protein_coding|1/1|c.767C>T|p.Pro256Leu|1027/2034|767/1674|256/557||,A|downstream_gene_variant|MODIFIER|FABP5P11|ENSG00000240122|transcript|ENST00000430910|processed_pseudogene||n.*397C>T|||||3305|
 ```
 
-As you can see, SnpEff added functional annotations in the `ANN` info field (eigth column in the VCF output file).
+As you can see, SnpEff added functional annotations in the `ANN` info field (eighth column in the VCF output file).
 
 Details about the 'ANN' field format can be found in the [ANN Field](inputoutput.md#ann-field-vcf-output-files) section and in [VCF annotation about standard 'ANN' field](../adds/VCFannotationformat_v1.0.pdf).
 Note: Older SnpEff version used 'EFF' field (details about the 'EFF' field format can be found in the [EFF Field](inputoutput.md#eff-field-vcf-output-files) section).

@@ -37,13 +37,13 @@ public class TestCasesAnn extends TestCasesBase {
 		String[] args = { "-noLog", "-noStats", genome, vcfFile };
 		SnpEff snpEff = new SnpEff(args);
 		snpEff.setVerbose(verbose);
-		snpEff.setSupressOutput(!verbose);
+		snpEff.setSuppressOutput(!verbose);
 		snpEff.setDebug(debug);
 
 		SnpEffCmdEff seff = (SnpEffCmdEff) snpEff.cmd();
 		List<VcfEntry> vcfEntries = seff.run(true);
 
-		assertFalse(vcfEntries.isEmpty(), "Empty annotataions list!");
+		assertFalse(vcfEntries.isEmpty(), "Empty annotations list!");
 		return vcfEntries;
 	}
 
@@ -151,7 +151,7 @@ public class TestCasesAnn extends TestCasesBase {
 		SnpEff cmd = new SnpEff(args);
 		SnpEffCmdEff cmdEff = (SnpEffCmdEff) cmd.cmd();
 		cmdEff.setVerbose(verbose);
-		cmdEff.setSupressOutput(!verbose);
+		cmdEff.setSuppressOutput(!verbose);
 
 		// Run command
 		List<VcfEntry> list = cmdEff.run(true);

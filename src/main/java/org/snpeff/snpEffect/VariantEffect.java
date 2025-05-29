@@ -87,7 +87,7 @@ public class VariantEffect implements Cloneable, Comparable<VariantEffect> {
         addErrorWarningInfo(infomsg);
     }
 
-    public void addWarningMessge(ErrorWarningType warnmsg) {
+    public void addWarningMessage(ErrorWarningType warnmsg) {
         addErrorWarningInfo(warnmsg);
     }
 
@@ -774,9 +774,9 @@ public class VariantEffect implements Cloneable, Comparable<VariantEffect> {
         // Amino acids surrounding the ones changed
         CodonTable codonTable = marker.codonTable();
         String aasLeft = codonTable.aa(codonsLeft);
-        String aasRigt = codonTable.aa(codonsRight);
-        aasAroundOld = aasLeft.toLowerCase() + aaRef.toUpperCase() + aasRigt.toLowerCase();
-        aasAroundNew = aasLeft.toLowerCase() + aaAlt.toUpperCase() + aasRigt.toLowerCase();
+        String aasRight = codonTable.aa(codonsRight);
+        aasAroundOld = aasLeft.toLowerCase() + aaRef.toUpperCase() + aasRight.toLowerCase();
+        aasAroundNew = aasLeft.toLowerCase() + aaAlt.toUpperCase() + aasRight.toLowerCase();
     }
 
     /**
@@ -842,7 +842,7 @@ public class VariantEffect implements Cloneable, Comparable<VariantEffect> {
             if (isRegulation()) bioType = ((Regulation) marker).getRegulationType();
         }
 
-        // Add seqChage's ID
+        // Add seqChange's ID
         if (!variant.getId().isEmpty()) customId += variant.getId();
 
         // Add custom markers

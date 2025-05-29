@@ -148,7 +148,7 @@ ln -s $HOME/workspace/SnpEff/scripts_build
 Test cases require special "test cases databases and genome", you can find them here:
 
 ```
-# Install test databases in SnpEff's development directory (not the soruce code dir!)
+# Install test databases in SnpEff's development directory (not the source code dir!)
 cd $HOME/snpEff
 
 # Download databases and genome for test cases

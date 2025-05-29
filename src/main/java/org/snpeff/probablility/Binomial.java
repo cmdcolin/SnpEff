@@ -1,4 +1,4 @@
-package org.snpeff.probablility;
+package org.snpeff.probability;
 
 /**
  * 

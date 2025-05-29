@@ -31,7 +31,7 @@ public class SnpEffCmdBuildNextProt extends SnpEff {
 
 			// Argument starts with '-'?
 			if (isOpt(arg)) {
-				usage("Unknonwn option '" + arg + "'");
+				usage("Unknown option '" + arg + "'");
 			} else if ((genomeVer == null) || genomeVer.isEmpty()) genomeVer = args[i];
 			else if ((xmlDirName == null) || xmlDirName.isEmpty()) xmlDirName = args[i];
 		}
@@ -46,7 +46,7 @@ public class SnpEffCmdBuildNextProt extends SnpEff {
 	 */
 	@Override
 	public boolean run() {
-		// Initialzie
+		// Initialize
 		loadConfig(); // Read config file
 		loadDb();
 

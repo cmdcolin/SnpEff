@@ -18,7 +18,7 @@ import org.snpeff.stats.plot.GoogleGenePercentBar;
  * Variants annotation statistics.
  * 
  * These are statistics about each variant annotation / effect. There can be
- * multiple annotaitons per variant (e.g. multiple transcripts in a gene
+ * multiple annotations per variant (e.g. multiple transcripts in a gene
  * produce multiple annotations in a single variant).
  */
 public class VariantEffectStats implements SamplingStats<VariantEffect> {
@@ -95,7 +95,7 @@ public class VariantEffectStats implements SamplingStats<VariantEffect> {
 	}
 
 	/**
-	 * How many changes from oldCodo to newCodon do we have?
+	 * How many changes from oldCode to newCodon do we have?
 	 */
 	public long getCodonChangeCount(String oldCodon, String newCodon) {
 		return countByCodon.get(changeKey(oldCodon, newCodon));

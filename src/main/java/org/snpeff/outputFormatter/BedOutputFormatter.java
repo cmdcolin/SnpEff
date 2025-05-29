@@ -9,7 +9,7 @@ import org.snpeff.snpEffect.VariantEffect;
 /**
  * Formats output as BED file
  *
- * Referneces: http://genome.ucsc.edu/FAQ/FAQformat.html#format1
+ * References: http://genome.ucsc.edu/FAQ/FAQformat.html#format1
  *
  * @author pcingola
  */
@@ -52,8 +52,8 @@ public class BedOutputFormatter extends OutputFormatter {
 		// Show results
 		HashSet<String> chEffs = new HashSet<>();
 		for (VariantEffect varEff : variantEffects) {
-			// If it is not filtered out by changeEffectResutFilter  => Show it
-			if ((variantEffectResutFilter == null) || (!variantEffectResutFilter.filter(varEff))) {
+			// If it is not filtered out by changeEffectResultFilter  => Show it
+			if ((variantEffectResultFilter == null) || (!variantEffectResultFilter.filter(varEff))) {
 
 				StringBuffer sb = new StringBuffer();
 				sb.append(varEff.effect(true, false, false, useSequenceOntology, false));

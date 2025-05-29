@@ -28,7 +28,7 @@ public class VariantRealign {
 	boolean debug = false;
 	boolean alignLeft = true; // By default, align to the left
 	boolean realigned; // Was the variant realigned?
-	boolean needMoreBasesLeft, needMoreBasesRight; // Do we need more bases to the left / right to improve current aligment?
+	boolean needMoreBasesLeft, needMoreBasesRight; // Do we need more bases to the left / right to improve current alignment?
 	char basesRef[], basesAlt[];
 	int basesTrimLeft, basesTrimRight;
 	int basesAddedLeft, basesAddedRight; // Add some bases to add context to variant's sequence
@@ -230,8 +230,8 @@ public class VariantRealign {
 		}
 
 		// Calculate new 'ref' and 'alt'
-		refRealign = trimedSequence(sequenceRef).toUpperCase();
-		altRealign = trimedSequence(sequenceAlt).toUpperCase();
+		refRealign = trimmedSequence(sequenceRef).toUpperCase();
+		altRealign = trimmedSequence(sequenceAlt).toUpperCase();
 	}
 
 	public void setAlignLeft() {
@@ -295,7 +295,7 @@ public class VariantRealign {
 		return bases;
 	}
 
-	String trimedSequence(String seq) {
+	String trimmedSequence(String seq) {
 		int end = seq.length() - basesTrimRight;
 		if (basesTrimLeft <= end) return seq.substring(basesTrimLeft, end);
 		return "";

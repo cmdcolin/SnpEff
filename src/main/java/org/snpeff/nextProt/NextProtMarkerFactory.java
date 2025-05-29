@@ -202,7 +202,7 @@ public class NextProtMarkerFactory {
     public Markers nextProt(Transcript tr, String accession, String name, int aaStart, int aaEnd) {
         int start = -1, end = -1;
 
-        // Find the start and end coordiantes from AA numbers
+        // Find the start and end coordinates from AA numbers
         if (tr.isStrandPlus()) { // Plus strand
             start = tr.codonNumber2Pos(aaStart)[0]; // Start codon's left-most base
             end = tr.codonNumber2Pos(aaEnd)[2]; // End codon's right-most base

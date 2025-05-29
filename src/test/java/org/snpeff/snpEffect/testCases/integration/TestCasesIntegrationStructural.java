@@ -35,7 +35,7 @@ public class TestCasesIntegrationStructural extends TestCasesIntegrationBase {
         String[] args = {"-noLog", "-ud", "0", genome, vcf};
         SnpEff snpEff = new SnpEff(args);
         snpEff.setVerbose(verbose);
-        snpEff.setSupressOutput(!verbose);
+        snpEff.setSuppressOutput(!verbose);
         snpEff.setDebug(debug);
 
         SnpEffCmdEff seff = (SnpEffCmdEff) snpEff.cmd();
@@ -67,7 +67,7 @@ public class TestCasesIntegrationStructural extends TestCasesIntegrationBase {
         String[] args = {"-noLog", "-ud", "0", genome, vcf};
         SnpEff snpEff = new SnpEff(args);
         snpEff.setVerbose(verbose);
-        snpEff.setSupressOutput(!verbose);
+        snpEff.setSuppressOutput(!verbose);
         snpEff.setDebug(debug);
 
         SnpEffCmdEff seff = (SnpEffCmdEff) snpEff.cmd();
@@ -99,7 +99,7 @@ public class TestCasesIntegrationStructural extends TestCasesIntegrationBase {
         String[] args = {"-noLog", "-ud", "0", genome, vcf};
         SnpEff snpEff = new SnpEff(args);
         snpEff.setVerbose(verbose);
-        snpEff.setSupressOutput(!verbose);
+        snpEff.setSuppressOutput(!verbose);
         snpEff.setDebug(debug);
 
         SnpEffCmdEff seff = (SnpEffCmdEff) snpEff.cmd();
@@ -109,7 +109,7 @@ public class TestCasesIntegrationStructural extends TestCasesIntegrationBase {
             if (verbose) Log.info(ve);
             for (VcfEffect veff : ve.getVcfEffects()) {
                 if (verbose) Log.info("\t\t" + veff);
-                if (veff.getEffectType() == EffectType.GENE_FUSION_REVERESE) {
+                if (veff.getEffectType() == EffectType.GENE_FUSION_REVERSE) {
                     assertEquals(EffectImpact.HIGH, veff.getImpact());
                     assertEquals(veff.getGeneId(), "DSCAM&TTC3");
                     checked = true;
@@ -131,7 +131,7 @@ public class TestCasesIntegrationStructural extends TestCasesIntegrationBase {
         String[] args = {"-noLog", "-ud", "0", genome, vcf};
         SnpEff snpEff = new SnpEff(args);
         snpEff.setVerbose(verbose);
-        snpEff.setSupressOutput(!verbose);
+        snpEff.setSuppressOutput(!verbose);
         snpEff.setDebug(debug);
 
         SnpEffCmdEff seff = (SnpEffCmdEff) snpEff.cmd();
@@ -163,7 +163,7 @@ public class TestCasesIntegrationStructural extends TestCasesIntegrationBase {
         String[] args = {"-noLog", "-ud", "0", genome, vcf};
         SnpEff snpEff = new SnpEff(args);
         snpEff.setVerbose(verbose);
-        snpEff.setSupressOutput(!verbose);
+        snpEff.setSuppressOutput(!verbose);
         snpEff.setDebug(debug);
 
         SnpEffCmdEff seff = (SnpEffCmdEff) snpEff.cmd();
@@ -195,7 +195,7 @@ public class TestCasesIntegrationStructural extends TestCasesIntegrationBase {
         String[] args = {"-noLog", "-ud", "0", genome, vcf};
         SnpEff snpEff = new SnpEff(args);
         snpEff.setVerbose(verbose);
-        snpEff.setSupressOutput(!verbose);
+        snpEff.setSuppressOutput(!verbose);
         snpEff.setDebug(debug);
 
         SnpEffCmdEff seff = (SnpEffCmdEff) snpEff.cmd();

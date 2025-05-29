@@ -289,7 +289,7 @@ public class SnpEffCmdProtein extends SnpEff {
 					if (debug || onlyOneError) {
 						Log.infoln("\nERROR: Proteins do not match for transcript " + tr.getId() //
 								+ "\tStrand:" + (tr.isStrandPlus() ? "+" : "-") //
-								+ "\tExons: " + tr.numChilds() //
+								+ "\tExons: " + tr.numChildren() //
 								+ "\n" //
 								+ String.format("\tSnpEff protein     (%6d) : '%s'\n", protein.length(), protein) //
 								+ String.format("\tReference protein  (%6d) : '%s'\n", proteinReference.length(), proteinReference) //

@@ -164,7 +164,7 @@ public class TestCasesVariantRealignment extends TestCasesBase {
         vr.realignSeqs();
         if (verbose) Log.debug(vr);
 
-        // Check resutls
+        // Check results
         assertEquals("GT", vr.getRefRealign());
         assertEquals("", vr.getAltRealign());
     }
@@ -181,7 +181,7 @@ public class TestCasesVariantRealignment extends TestCasesBase {
         vr.realignSeqs();
         if (verbose) Log.debug(vr);
 
-        // Check resutls
+        // Check results
         assertEquals("", vr.getRefRealign());
         assertEquals("GT", vr.getAltRealign());
     }

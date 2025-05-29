@@ -29,7 +29,7 @@ public class TestCasesIntegrationMixedVariants extends TestCasesIntegrationBase 
         CompareToVep comp = new CompareToVep(genome, verbose);
         comp.compareVep(vcf);
         if (verbose) Log.info(comp);
-        assertTrue(comp.checkComapred(), "No comparissons were made!");
+        assertTrue(comp.checkCompared(), "No comparisons were made!");
     }
 
     /**
@@ -115,11 +115,11 @@ public class TestCasesIntegrationMixedVariants extends TestCasesIntegrationBase 
 
         SnpEff cmd = new SnpEff(args);
         SnpEffCmdEff snpeff = (SnpEffCmdEff) cmd.cmd();
-        snpeff.setSupressOutput(!verbose);
+        snpeff.setSuppressOutput(!verbose);
         snpeff.setVerbose(verbose);
 
-        List<VcfEntry> vcfEnties = snpeff.run(true);
-        VcfEntry ve = vcfEnties.get(0);
+        List<VcfEntry> vcfEntries = snpeff.run(true);
+        VcfEntry ve = vcfEntries.get(0);
 
         // Get first effect (there should be only one)
         List<VcfEffect> veffs = ve.getVcfEffects();

@@ -62,7 +62,7 @@ $ java -jar snpEff.jar download -v GRCm38.99
 ```
 
 So, it starts searching at `https://snpeff.blob.core.windows.net/databases/v5_1/snpEff_v5_1_GRCm38.99.zip`
-bu`t it doesn't find it there, so it proceeds with the databse `5.0` path `https://snpeff.blob.core.windows.net/databases/v5_0/snpEff_v5_0_GRCm38.99.zip`, where the blob is found, thus proceeds to download and install it from there.
+but it doesn't find it there, so it proceeds with the database `5.0` path `https://snpeff.blob.core.windows.net/databases/v5_0/snpEff_v5_0_GRCm38.99.zip`, where the blob is found, thus proceeds to download and install it from there.
 
 !!! info
     If you are running SnpEff from a directory different than the one it was installed, you will have to specify where the config file is.
@@ -360,7 +360,7 @@ When building a database, SnpEff will try to check CDS sequences for all transcr
 - building via GenBank file: CDS sequences are available within the GenBank file
 
 !!! info
-You can disable this check unsing command line option `-noCheckCds`
+You can disable this check using command line option `-noCheckCds`
 
 FASTA cds file format:
 
@@ -407,7 +407,7 @@ When building a database, SnpEff will also try to check Protein sequences for al
 - building via GenBank file: protein sequences are available within the GenBank file
 
 !!! info
-You can disable this check unsing command line option `-noCheckProtein`
+You can disable this check using command line option `-noCheckProtein`
 
 FASTA protein file:
 
@@ -459,7 +459,7 @@ If these comparisons fails, further attempts are made:
 
 - Replace "unknown" codon characters: Codons using old `'X'` characters are replaced by newer `'?'` characters
 - If any of the sequences only differ by the first codon, they are considered equal (the start codon is translates as 'Met' even when the codon code translates to another Amino acid)
-- Replace rare amino acids, which often tranlate as stop codons in the middle of the sequence: E.g. replace `'*'` by `'U'`
+- Replace rare amino acids, which often translate as stop codons in the middle of the sequence: E.g. replace `'*'` by `'U'`
 - Try replacing unknown aminco acids (`'?'`) by the ones at the same position in the protein sequence from the FASTA file
 
 If after all these attempts the protein sequence still do not match, they are considered "not equal".

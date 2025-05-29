@@ -1,4 +1,4 @@
-package org.snpeff.probablility;
+package org.snpeff.probability;
 
 import org.apache.commons.math3.special.Gamma;
 
@@ -44,7 +44,7 @@ public class FisherExactTest {
 		 *	defective 		n11			n12				|	N1d
 		 *	nondefective	n21			n22				|	N2d
 		 *					----------------------------+----------
-		 *	total 			Nd1			Nd2				|	Ndd
+		 *	total 			And1			And2				|	Ndd
 		 */
 		double n11 = k;
 		double n12 = D - k;
@@ -52,17 +52,17 @@ public class FisherExactTest {
 		double n22 = N + k - n - D;
 		double N1d = n11 + n12; // 'd' stands for 'dot'
 		double N2d = n21 + n22;
-		double Nd1 = n11 + n21;
-		double Nd2 = n12 + n22;
+		double And1 = n11 + n21;
+		double And2 = n12 + n22;
 		double Ndd = N;
 
-		// Expected frecuencies
-		double E11 = (N1d * Nd1) / Ndd;
-		double E12 = (N1d * Nd2) / Ndd;
-		double E21 = (N2d * Nd1) / Ndd;
-		double E22 = (N2d * Nd2) / Ndd;
+		// Expected frequencies
+		double E11 = (N1d * And1) / Ndd;
+		double E12 = (N1d * And2) / Ndd;
+		double E21 = (N2d * And1) / Ndd;
+		double E22 = (N2d * And2) / Ndd;
 
-		// Is every expected frecuency more than 10?
+		// Is every expected frequency more than 10?
 		if ((E11 < 10) || (E12 < 10) || (E21 < 10) || (E22 < 10)) return false;
 
 		// Ok
@@ -86,7 +86,7 @@ public class FisherExactTest {
 		 *	defective 		n11			n12				|	N1d
 		 *	nondefective	n21			n22				|	N2d
 		 *					----------------------------+----------
-		 *	total 			Nd1			Nd2				|	Ndd
+		 *	total 			And1			And2				|	Ndd
 		 */
 		double n11 = k;
 		double n12 = D - k;
@@ -94,11 +94,11 @@ public class FisherExactTest {
 		double n22 = N + k - n - D;
 		double N1d = n11 + n12; // 'd' stands for 'dot'
 		double N2d = n21 + n22;
-		double Nd1 = n11 + n21;
-		double Nd2 = n12 + n22;
+		double And1 = n11 + n21;
+		double And2 = n12 + n22;
 		double Ndd = N;
-		if ((N1d != D) || (Nd1 != n) || (Nd2 != (N - n)) || (N2d != (N - D))) throw new RuntimeException("ERROR: This should never happen!");
-		double chiSquare = (Ndd * Math.pow((Math.abs(n11 * n22 - n12 * n21)), 2)) / (N1d * N2d * Nd1 * Nd2);
+		if ((N1d != D) || (And1 != n) || (And2 != (N - n)) || (N2d != (N - D))) throw new RuntimeException("ERROR: This should never happen!");
+		double chiSquare = (Ndd * Math.pow((Math.abs(n11 * n22 - n12 * n21)), 2)) / (N1d * N2d * And1 * And2);
 
 		// Estimation is: 1 - chisquare_cdf( ChiSquare, 1)
 		// Degrees of freedom = 1
@@ -167,7 +167,7 @@ public class FisherExactTest {
 	 * @param N : Total marbles
 	 * @param D : White marbles => N-D : Black marbles
 	 * @param n : marbles drawn => N-n : not drawn
-	 * @param theshold  Threshold value
+	 * @param threshold  Threshold value
 	 * @return Cumulative probability or 1.0 (if cumulative is over the threshold)
 	 */
 	public double fisherExactTestDown(int k, int N, int D, int n, double threshold) {
@@ -207,7 +207,7 @@ public class FisherExactTest {
 				hypergeom *= num / den;
 			}
 
-			// Cummulative distribution
+			// Cumulative distribution
 			cumulativeHG += hypergeom;
 
 			// Above threshold? => just return 1.0
@@ -246,7 +246,7 @@ public class FisherExactTest {
 	 * @param N : Total marbles
 	 * @param D : White marbles => N-D : Black marbles
 	 * @param n : marbles drawn => N-n : not drawn
-	 * @param theshold  Threshold value
+	 * @param threshold  Threshold value
 	 * @return Cumulative probability or 1.0 (if cumulative is over the threshold)
 	 */
 	public double fisherExactTestUp(int k, int N, int D, int n, double threshold) {
@@ -278,7 +278,7 @@ public class FisherExactTest {
 				hypergeom *= num / den;
 			}
 
-			// Cummulative distribution
+			// Cumulative distribution
 			cumulativeHG += hypergeom;
 
 			// Above threshold? => just return 1.0
@@ -312,7 +312,7 @@ public class FisherExactTest {
 	 * @param N : Total marbles
 	 * @param D : White marbles => N-D : Black marbles
 	 * @param n : marbles drawn => N-n : not drawn
-	 * @param theshold  Threshold value
+	 * @param threshold  Threshold value
 	 * @return Cumulative probability or 1.0 (if cumulative is over the threshold)
 	 */
 	public double pValueDown(int k, int N, int D, int n, double threshold) {
@@ -333,7 +333,7 @@ public class FisherExactTest {
 	 * @param N : Total marbles
 	 * @param D : White marbles => N-D : Black marbles
 	 * @param n : marbles drawn => N-n : not drawn
-	 * @param theshold  Threshold value
+	 * @param threshold  Threshold value
 	 * @return Cumulative probability or 1.0 (if cumulative is over the threshold)
 	 */
 	public double pValueUp(int k, int N, int D, int n, double threshold) {

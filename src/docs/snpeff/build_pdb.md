@@ -29,7 +29,7 @@ Please check the documentation on how to [cite AlphaFold](https://alphafold.ebi.
 
 - SnpEff will search PDB formatted file in all subdirectories.
 - The file names must end with any of the extensions (case-sensitive): `*.ent`, `*.ent.gz`, `*.pdb`, or `*.pdb.gz` (as usual, files ending in `.gz` are expected to be gzip-compressed)
-- The protein ID must be parsed from the file name. Currently accepted file name formats are "PDB-style" (e.g. `pdb7daa.ent.gz`, where PDBID is `7daa`) or AlphaFold-style (e.g. `AF-Q9Y6V0-F9-model_v2.pdb.gz`, where Uniprot-ID is `Q9Y6V0`)
+- The protein ID must be parsed from the file name. Currently accepted file name formats are "PDB-style" (e.g. `pdb7data.ent.gz`, where PDBID is `7data`) or AlphaFold-style (e.g. `AF-Q9Y6V0-F9-model_v2.pdb.gz`, where Uniprot-ID is `Q9Y6V0`)
 - The PDB file must have a resolution of at least 3 Angstrom. This value can be changed using the `-res` command line option
 
 !!! info
@@ -38,7 +38,7 @@ Please check the documentation on how to [cite AlphaFold](https://alphafold.ebi.
 
 ## Mapping file
 
-Since SnpEff uses trasncript ID information, whereas proteins use PDB IDs (or Uniprot IDs in case of AlphaFold), we need a file to map across these different IDs.
+Since SnpEff uses transcript ID information, whereas proteins use PDB IDs (or Uniprot IDs in case of AlphaFold), we need a file to map across these different IDs.
 You should provide a mapping file that maps `transcriptId` to `proteinId`:
 
 The format is: tab-separated, one line per entry:

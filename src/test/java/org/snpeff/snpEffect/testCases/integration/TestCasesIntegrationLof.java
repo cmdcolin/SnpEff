@@ -245,7 +245,7 @@ public class TestCasesIntegrationLof extends TestCasesIntegrationBase {
 	 */
 	void checkSpliceDonor(Transcript tr, Intron intron) {
 		int step = tr.isStrandPlus() ? 1 : -1;
-		int maxRank = tr.numChilds();
+		int maxRank = tr.numChildren();
 
 		if (intron.getRank() < maxRank) {
 			// Position
@@ -305,7 +305,7 @@ public class TestCasesIntegrationLof extends TestCasesIntegrationBase {
 		String[] args = { "testHg3775Chr22", "-noLog", "-i", "bed", path("test_lof_02.bed") };
 		SnpEff snpeff = new SnpEff(args);
 		snpeff.setVerbose(verbose);
-		snpeff.setSupressOutput(!verbose);
+		snpeff.setSuppressOutput(!verbose);
 		boolean ok = snpeff.run();
 		assertTrue(ok);
 	}

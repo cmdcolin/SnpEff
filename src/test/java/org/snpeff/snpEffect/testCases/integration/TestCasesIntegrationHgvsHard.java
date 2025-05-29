@@ -66,10 +66,10 @@ public class TestCasesIntegrationHgvsHard extends TestCasesIntegrationBase {
      * HGVS (protein) was reporting a wrong deletion length
      */
     @Test
-    public void test_HgvsP_deleteion_length() {
+    public void test_HgvsP_deletion_length() {
         Log.debug("Test");
         String genome = "testHg19Chr1";
-        String vcf = path("hgvs_protein_deleteion_length.vcf");
+        String vcf = path("hgvs_protein_deletion_length.vcf");
         compareHgvs(genome, vcf);
     }
 
@@ -77,10 +77,10 @@ public class TestCasesIntegrationHgvsHard extends TestCasesIntegrationBase {
      * Some difficult HGVS test case
      */
     @Test
-    public void test_HgvsP_deleteion_length_2() {
+    public void test_HgvsP_deletion_length_2() {
         Log.debug("Test");
         String genome = "testHg19Chr2";
-        String vcf = path("hgvs_protein_deleteion_length_2.vcf");
+        String vcf = path("hgvs_protein_deletion_length_2.vcf");
         compareHgvs(genome, vcf);
     }
 }

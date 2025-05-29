@@ -1,7 +1,7 @@
 package org.snpeff.stats.plot;
 
 /**
- * A simple wrapper to goolge charts API (from charts4j)
+ * A simple wrapper to google charts API (from charts4j)
  * Plots integer data
  * 
  * @author pcingola

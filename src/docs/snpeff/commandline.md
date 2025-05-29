@@ -346,11 +346,11 @@ The command line option `-noStats` disables the statistics and may result in a s
 
 SnpEff uses [HGVS notation](http://www.hgvs.org/), which is somewhat popular amongst clinicians.
 
-You can switch to the old (deprecated) annotaions format, using the command line option `-classic`.
+You can switch to the old (deprecated) annotations format, using the command line option `-classic`.
 
 ### Compressed files
 
-SnpEff will automatically open gzip compresssed files, even if you don't specify the '.gz' extension.
+SnpEff will automatically open gzip compressed files, even if you don't specify the '.gz' extension.
 Example
 
 ```
@@ -360,7 +360,7 @@ cp examples/test.chr22.vcf my.vcf
 # Compress it
 gzip my.vcf 
 
-# Annotate the comressed file
+# Annotate the compressed file
 java -Xmx8g -jar snpEff.jar GRCh37.75 my.vcf.gz > my.ann.vcf
 ```
 
@@ -376,7 +376,7 @@ For example, you can easily stream files like this:
 # Using STDIN (pipe), implicit (no input file name)
 cat test.chr22.vcf | java -Xmx8g -jar snpEff.jar hg19 > test.chr22.ann.vcf
 
-# Using STDIN (pipe), exlicit '-' input file name
+# Using STDIN (pipe), explicit '-' input file name
 cat test.chr22.vcf | java -Xmx8g -jar snpEff.jar hg19 - > test.chr22.ann.vcf
 
 # Using explicit file name

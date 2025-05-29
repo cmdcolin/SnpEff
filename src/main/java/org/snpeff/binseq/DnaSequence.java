@@ -152,7 +152,7 @@ public class DnaSequence extends BinarySequence {
 	}
 
 	/**
-	 * Sequence lenth
+	 * Sequence length
 	 * @return
 	 */
 	@Override

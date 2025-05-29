@@ -1,7 +1,7 @@
 package org.snpeff.snpEffect.testCases.unity;
 
 import org.junit.jupiter.api.Test;
-import org.snpeff.probablility.CochranArmitageTest;
+import org.snpeff.probability.CochranArmitageTest;
 import org.snpeff.util.Log;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

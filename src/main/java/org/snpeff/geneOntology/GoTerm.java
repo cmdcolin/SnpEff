@@ -27,7 +27,7 @@ public class GoTerm implements Comparable<GoTerm>, Iterable<String>, Serializabl
 	int maxRank; // Maximum rank in this go term
 	int rankedSymbols; // How many of the symbols are ranked
 	long rankSum; // Rank sum in this GOTerm
-	HashSet<GoTerm> childs; // GO terms' accession that are 'child' (in the directed acyclic graph)
+	HashSet<GoTerm> children; // GO terms' accession that are 'child' (in the directed acyclic graph)
 	HashSet<GoTerm> parents; // GO terms' accession that are 'parent' (in the directed acyclic graph)
 	HashSet<String> symbolIdSet;// Symbol IDs set in this GO term
 	HashSet<String> interestingSymbolIdSet; // Interesting Symbols-Ids in this GO term
@@ -49,7 +49,7 @@ public class GoTerm implements Comparable<GoTerm>, Iterable<String>, Serializabl
 		symbolIdSet = new HashSet<String>();
 
 		// DAG structure
-		childs = new HashSet<GoTerm>();
+		children = new HashSet<GoTerm>();
 		parents = new HashSet<GoTerm>();
 
 		// For each GOTerm in the list: join them
@@ -85,7 +85,7 @@ public class GoTerm implements Comparable<GoTerm>, Iterable<String>, Serializabl
 		symbolIdSet = new HashSet<String>();
 
 		// DAG structure
-		childs = new HashSet<GoTerm>();
+		children = new HashSet<GoTerm>();
 		parents = new HashSet<GoTerm>();
 	}
 
@@ -95,7 +95,7 @@ public class GoTerm implements Comparable<GoTerm>, Iterable<String>, Serializabl
 	 * @param goTermAcc
 	 */
 	public void addChild(GoTerm childGoTerm) {
-		childs.add(childGoTerm);
+		children.add(childGoTerm);
 		childGoTerm.addParent(this);
 	}
 
@@ -126,9 +126,9 @@ public class GoTerm implements Comparable<GoTerm>, Iterable<String>, Serializabl
 	}
 
 	/**
-	 * Add all symbols from childs to goTerm
+	 * Add all symbols from children to goTerm
 	 */
-	public void addSymbolsFromChilds(GoTerm goTerm) {
+	public void addSymbolsFromChildren(GoTerm goTerm) {
 		// Add symbols
 		for( String symbolId : symbolIdSet )
 			goTerm.addSymbolId(symbolId);
@@ -138,8 +138,8 @@ public class GoTerm implements Comparable<GoTerm>, Iterable<String>, Serializabl
 			goTerm.addInterestingSymbolId(symbolId);
 
 		// Recurse
-		for( GoTerm child : childs )
-			child.addSymbolsFromChilds(goTerm);
+		for( GoTerm child : children )
+			child.addSymbolsFromChildren(goTerm);
 	}
 
 	@Override
@@ -151,8 +151,8 @@ public class GoTerm implements Comparable<GoTerm>, Iterable<String>, Serializabl
 		return acc;
 	}
 
-	public HashSet<GoTerm> getChilds() {
-		return childs;
+	public HashSet<GoTerm> getChildren() {
+		return children;
 	}
 
 	public String getDescription() {
@@ -164,7 +164,7 @@ public class GoTerm implements Comparable<GoTerm>, Iterable<String>, Serializabl
 	 * @return First child (or null if there are no children)
 	 */
 	public GoTerm getFirstChild() {
-		return childs.iterator().next();
+		return children.iterator().next();
 	}
 
 	/**
@@ -253,7 +253,7 @@ public class GoTerm implements Comparable<GoTerm>, Iterable<String>, Serializabl
 	 * @return
 	 */
 	public boolean isLeave() {
-		if( (childs == null) || (childs.size() <= 0) ) return true;
+		if( (children == null) || (children.size() <= 0) ) return true;
 		return false;
 	}
 
@@ -285,8 +285,8 @@ public class GoTerm implements Comparable<GoTerm>, Iterable<String>, Serializabl
 		acc = go;
 	}
 
-	public void setChilds(HashSet<GoTerm> childs) {
-		this.childs = childs;
+	public void setChildren(HashSet<GoTerm> children) {
+		this.children = children;
 	}
 
 	public void setGenesSet(HashSet<String> genesSet) {
@@ -367,8 +367,8 @@ public class GoTerm implements Comparable<GoTerm>, Iterable<String>, Serializabl
 		for( String id : ss )
 			if( !interestingSymbolIdSet.contains(id) ) ids.append(id + " ");
 
-		// Sort 'childs'
-		LinkedList<GoTerm> schilds = new LinkedList<GoTerm>(childs);
+		// Sort 'children'
+		LinkedList<GoTerm> schilds = new LinkedList<GoTerm>(children);
 		Collections.sort(schilds);
 
 		// Sort 'parents'

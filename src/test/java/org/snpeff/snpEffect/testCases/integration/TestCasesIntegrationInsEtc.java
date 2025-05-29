@@ -28,11 +28,11 @@ public class TestCasesIntegrationInsEtc extends TestCasesIntegrationBase {
 
         SnpEff cmd = new SnpEff(args);
         SnpEffCmdEff snpeff = (SnpEffCmdEff) cmd.cmd();
-        snpeff.setSupressOutput(!verbose);
+        snpeff.setSuppressOutput(!verbose);
         snpeff.setVerbose(verbose);
 
-        List<VcfEntry> vcfEnties = snpeff.run(true);
-        for (VcfEntry ve : vcfEnties) {
+        List<VcfEntry> vcfEntries = snpeff.run(true);
+        for (VcfEntry ve : vcfEntries) {
 
             // Get first effect (there should be only one)
             List<VcfEffect> veffs = ve.getVcfEffects();

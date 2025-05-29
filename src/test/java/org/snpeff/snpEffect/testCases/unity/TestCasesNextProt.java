@@ -310,7 +310,7 @@ public class TestCasesNextProt {
         nextProt.setHighlyConservedAaSequence(true);
         testGenome.add(nextProt);
         // Create a variant
-        Variant variant = new Variant(testGenome.chr, pos, "C", "A"); // Non-synonimous variant ('P' to 'T')
+        Variant variant = new Variant(testGenome.chr, pos, "C", "A"); // Non-synonymous variant ('P' to 'T')
         // Predict effect and check results
         testGenome.checkEffect(variant, EffectType.NEXT_PROT, VariantEffect.EffectImpact.HIGH, 1);
     }
@@ -328,7 +328,7 @@ public class TestCasesNextProt {
         nextProt.setHighlyConservedAaSequence(true);
         testGenome.add(nextProt);
         // Create a variant
-        Variant variant = new Variant(testGenome.chr, pos, "C", "A"); // synonimous variant ('P' to 'P')
+        Variant variant = new Variant(testGenome.chr, pos, "C", "A"); // synonymous variant ('P' to 'P')
         // Predict effect and check results
         testGenome.checkEffect(variant, EffectType.NEXT_PROT, VariantEffect.EffectImpact.LOW, 1);
     }
@@ -346,7 +346,7 @@ public class TestCasesNextProt {
         nextProt.setHighlyConservedAaSequence(false);
         testGenome.add(nextProt);
         // Create a variant
-        Variant variant = new Variant(testGenome.chr, pos, "C", "A"); // Non-synonimous variant ('P' to 'T')
+        Variant variant = new Variant(testGenome.chr, pos, "C", "A"); // Non-synonymous variant ('P' to 'T')
         // Predict effect and check results
         testGenome.checkEffect(variant, EffectType.NEXT_PROT, VariantEffect.EffectImpact.LOW, 1);
     }
@@ -364,7 +364,7 @@ public class TestCasesNextProt {
         nextProt.setHighlyConservedAaSequence(false);
         testGenome.add(nextProt);
         // Create a variant
-        Variant variant = new Variant(testGenome.chr, pos, "C", "A"); // synonimous variant ('P' to 'P')
+        Variant variant = new Variant(testGenome.chr, pos, "C", "A"); // synonymous variant ('P' to 'P')
         // Predict effect and check results
         testGenome.checkEffect(variant, EffectType.NEXT_PROT, VariantEffect.EffectImpact.MODIFIER, 1);
     }

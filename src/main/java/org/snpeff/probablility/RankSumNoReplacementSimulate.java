@@ -1,4 +1,4 @@
-package org.snpeff.probablility;
+package org.snpeff.probability;
 
 /**
  * 
@@ -93,7 +93,7 @@ public class RankSumNoReplacementSimulate {
 	}
 
 	/**
-	 * Shufle samples (random ranks)
+	 * Shuffle samples (random ranks)
 	 */
 	public void randomizeSamples() {
 		for( int ns = 0; ns < numberOfSamples; ns++ )

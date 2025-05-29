@@ -99,7 +99,7 @@ class DownloadUcsc extends DownloadGenome {
 		return genes
 	}
 
-	# Download geome from UCSC, ony if it has a GTF file
+	# Download geome from UCSC, only if it has a GTF file
 	string downloadGtf() {
 		log("Downloading '$genome' (UCSC): GTF file")
 		for(string genesUrl: genesUrls) {
@@ -243,7 +243,7 @@ class DownloadUcscKg extends DownloadUcsc {
 		return queryUcscKg()
 	}
 
-	# Query MySql's database (KnonwGene)
+	# Query MySql's database (KnownGene)
 	string queryUcscKg() {
 		refSeq := "$downloadDir/genes.kg.gz"
 		if( !refSeq.exists() ) {

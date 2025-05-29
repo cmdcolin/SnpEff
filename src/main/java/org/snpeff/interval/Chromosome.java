@@ -217,7 +217,7 @@ public class Chromosome extends Marker {
 				+ " " //
 				+ type //
 				+ ((id != null) && (id.length() > 0) ? " '" + id + "'" : "") //
-				+ (circular ? " [Cicular]" : "") //
+				+ (circular ? " [Circular]" : "") //
 		;
 	}
 

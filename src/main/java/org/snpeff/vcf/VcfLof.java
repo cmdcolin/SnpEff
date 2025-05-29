@@ -40,7 +40,7 @@ public class VcfLof {
 	public VcfLof(Gene gene, double percentAffected) {
 		geneName = gene.getGeneName();
 		geneId = gene.getId();
-		numTranscripts = gene.numChilds();
+		numTranscripts = gene.numChildren();
 		this.percentAffected = percentAffected;
 	}
 

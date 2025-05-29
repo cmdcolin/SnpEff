@@ -25,7 +25,7 @@ import org.snpeff.util.Timer;
  *
  * @author pcingola
  */
-public class RegulationFileSplitBytType {
+public class RegulationFileSplitByteType {
 
 	static final int BLOCK_SIZE = 1000000; // Read blocks of BLOCK_SIZE lines at a time
 
@@ -35,7 +35,7 @@ public class RegulationFileSplitBytType {
 	Set<String> regFileNames;
 	Map<String, StringBuilder> lineByRegType;
 
-	public RegulationFileSplitBytType() {
+	public RegulationFileSplitByteType() {
 		regTypes = new HashSet<>();
 		regFileNames = new HashSet<>();
 	}

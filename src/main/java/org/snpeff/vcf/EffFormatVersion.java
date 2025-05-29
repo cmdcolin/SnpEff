@@ -22,8 +22,8 @@ public enum EffFormatVersion {
 	public static final String VCF_INFO_ANN_NAME = "ANN";
 	public static final String[] VCF_INFO_ANN_NAMES = { VCF_INFO_ANN_NAME, VCF_INFO_EFF_NAME };
 
-	public static final String EFFECT_TYPE_SEPARATOR = "&"; // Separator between mutiple effectTypes
-	public static final String EFFECT_TYPE_SEPARATOR_OLD = "+"; // Old separator between mutiple effectTypes
+	public static final String EFFECT_TYPE_SEPARATOR = "&"; // Separator between multiple effectTypes
+	public static final String EFFECT_TYPE_SEPARATOR_OLD = "+"; // Old separator between multiple effectTypes
 
 	protected static Set<String> vcfInfoNames;
 

@@ -24,7 +24,7 @@ public class TestCasesSequenceIndexer extends TestCasesBase {
 
     public static final int NMER_SIZE = 15;
 
-    public static int NUMBER_OF_COMPARISSONS = 100000;
+    public static int NUMBER_OF_COMPARISONS = 100000;
 
     SequenceIndexer<DnaAndQualitySequence> seqIndex;
     ArrayList<Long> references;
@@ -70,7 +70,7 @@ public class TestCasesSequenceIndexer extends TestCasesBase {
         readFile(path("indexer_test_01.fastq"));
 
         // Compare random references
-        for (int i = 0; i < NUMBER_OF_COMPARISSONS; i++) {
+        for (int i = 0; i < NUMBER_OF_COMPARISONS; i++) {
             // Pick 2 random references and compare them
             long ref1 = references.get((int) (Math.random() * references.size()));
             long ref2 = references.get((int) (Math.random() * references.size()));

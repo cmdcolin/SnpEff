@@ -143,7 +143,7 @@ public class SnpEff implements CommandLine {
 	protected String dataDir; // Override data_dir in config file
 	protected String genomeVer; // Genome version
 	protected String onlyTranscriptsFile = null; // Only use the transcripts in this file (Format: One transcript ID per line)
-	protected String canonicalFile = null; // Use cannonical transcripts changing the ones that are present in the file.
+	protected String canonicalFile = null; // Use canonical transcripts changing the ones that are present in the file.
 	protected Set<String> tags = new HashSet<>(); // Keep transcripts having these tags
 	protected Set<String> tagsNo = new HashSet<>(); // Remove transcripts having these tags
 	protected TranscriptSupportLevel maxTranscriptSupportLevel = null; // Filter by maximum Transcript Support Level (TSL)
@@ -753,7 +753,7 @@ public class SnpEff implements CommandLine {
 		// Chromosomes, Genomes and other markers (otherwise it could have not been
 		// saved)
 		SnpEffectPredictor snpEffectPredictor = config.getSnpEffectPredictor();
-		int countAddded = 0;
+		int countAdded = 0;
 		for (Marker m : motifsDb)
 			if (m instanceof Motif) {
 				Motif motif = (Motif) m;
@@ -764,11 +764,11 @@ public class SnpEff implements CommandLine {
 					// Set PWM and add to snpEffPredictor
 					motif.setPwm(pwm);
 					snpEffectPredictor.add(motif);
-					countAddded++;
+					countAdded++;
 				} else if (debug) Log.debug("Cannot find PWM for motif '" + motif.getPwmId() + "'");
 			}
 
-		if (verbose) Log.info("\tMotif database: " + countAddded + " markers loaded.");
+		if (verbose) Log.info("\tMotif database: " + countAdded + " markers loaded.");
 	}
 
 	/**
@@ -1044,7 +1044,7 @@ public class SnpEff implements CommandLine {
 
 				case "-onlytr":
 					if ((i + 1) < args.length) onlyTranscriptsFile = args[++i]; // Only use the transcripts in this file
-					else usage("Option '-onltTr' without file argument");
+					else usage("Option '-onlyTr' without file argument");
 					break;
 
 				case "-q":
@@ -1259,7 +1259,7 @@ public class SnpEff implements CommandLine {
 		this.spliceSiteSize = spliceSiteSize;
 	}
 
-	public void setSupressOutput(boolean suppressOutput) {
+	public void setSuppressOutput(boolean suppressOutput) {
 		this.suppressOutput = suppressOutput;
 	}
 
@@ -1304,7 +1304,7 @@ public class SnpEff implements CommandLine {
 		System.err.println("\tpdb                          : Build interaction database (based on PDB data).");
 		System.err.println("\tprotein                      : Compare protein sequences calculated form a SnpEff database to the one in a FASTA file. Used for checking databases correctness.");
 		System.err.println("\tseq                          : Show sequence (from command line) translation.");
-		System.err.println("\tshow                         : Show a text representation of genes or transcripts coordiantes, DNA sequence and protein sequence.");
+		System.err.println("\tshow                         : Show a text representation of genes or transcripts coordinates, DNA sequence and protein sequence.");
 		System.err.println("\ttranslocReport               : Create a translocations report (from VCF file).");
 		// System.err.println("\tspliceAnalysis : Perform an analysis of splice sites.
 		// Experimental feature.");
@@ -1330,7 +1330,7 @@ public class SnpEff implements CommandLine {
 		System.err.println("\t-nextProt                    : Annotate using NextProt (requires NextProt database).");
 		System.err.println("\t-noGenome                    : Do not load any genomic database (e.g. annotate using custom files).");
 		System.err.println("\t-noExpandIUB                 : Disable IUB code expansion in input variants");
-		System.err.println("\t-noInteraction               : Disable inteaction annotations");
+		System.err.println("\t-noInteraction               : Disable interaction annotations");
 		System.err.println("\t-noMotif                     : Disable motif annotations.");
 		System.err.println("\t-noNextProt                  : Disable NextProt annotations.");
 		System.err.println("\t-onlyReg                     : Only use regulation tracks.");

@@ -60,7 +60,7 @@ public class MotifLogo {
 	/**
 	 * Frequency of a given base and position
 	 */
-	double baseFrecuency(char base, int position) {
+	double baseFrequency(char base, int position) {
 		int total = sumCount(position);
 		int count = pwm.getCount(base, position);
 
@@ -80,7 +80,7 @@ public class MotifLogo {
 		// Observed entropy
 		double sObs = 0;
 		for (char base : Pwm.BASES) {
-			double p = baseFrecuency(base, position);
+			double p = baseFrequency(base, position);
 			sObs += -p * log2(p);
 		}
 
@@ -100,7 +100,7 @@ public class MotifLogo {
 	/**
 	 * Return an HTML string that represents the motif.
 	 */
-	public String toStringHtml(int width, int maxHeight, EffectType efectType) {
+	public String toStringHtml(int width, int maxHeight, EffectType effectType) {
 		StringBuffer sb = new StringBuffer();
 		sb.append("<table border=0>\n\t</tr>\n");
 		for (int pos = 0; pos < pwm.size(); pos++) {
@@ -110,7 +110,7 @@ public class MotifLogo {
 			// Calculate all base sizes and sort by size
 			ArrayList<BaseSize> bases = new ArrayList<BaseSize>();
 			for (char base : Pwm.BASES) {
-				double p = baseFrecuency(base, pos);
+				double p = baseFrequency(base, pos);
 				double size = seqConserv * p;
 
 				BaseSize baseSize = new BaseSize(base, size);
@@ -123,8 +123,8 @@ public class MotifLogo {
 			// Color exons as grey
 			int ppos = pos - pwm.size() / 2;
 			String bgcolor = "";
-			if (efectType == EffectType.SPLICE_SITE_DONOR && ppos <= 0) bgcolor = "bgcolor=#cccccc";
-			if (efectType == EffectType.SPLICE_SITE_ACCEPTOR && ppos >= 0) bgcolor = "bgcolor=#cccccc";
+			if (effectType == EffectType.SPLICE_SITE_DONOR && ppos <= 0) bgcolor = "bgcolor=#cccccc";
+			if (effectType == EffectType.SPLICE_SITE_ACCEPTOR && ppos >= 0) bgcolor = "bgcolor=#cccccc";
 
 			// Show
 			sb.append("\t\t<td valign=bottom " + bgcolor + ">\n\t\t\t<center>\n");

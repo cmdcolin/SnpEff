@@ -1,7 +1,7 @@
 package org.snpeff.util;
 
 /**
- * General stuff realted to HTML
+ * General stuff related to HTML
  * @author pcingola
  */
 public class GprHtml {

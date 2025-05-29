@@ -17,15 +17,15 @@ Some examples for the impatient:
 
 * ...or any homozygous variant present in more than 3 samples:
 
-        cat variants.vcf | java -jar SnpSift.jar filter "(countHom() > 3) | (( exists INDEL ) & (QUAL >= 20)) | (QUAL >= 30 )" > filtered.vcf
+        cat variants.vcf | java -jar SnpSift.jar filter "(countHome() > 3) | (( exists INDEL ) & (QUAL >= 20)) | (QUAL >= 30 )" > filtered.vcf
 
 * ...or any heterozygous sample with coverage 25 or more:
 
-        cat variants.vcf | java -jar SnpSift.jar filter "((countHet() > 0) && (DP >= 25)) | (countHom() > 3) | (( exists INDEL ) & (QUAL >= 20)) | (QUAL >= 30 )" > filtered.vcf
+        cat variants.vcf | java -jar SnpSift.jar filter "((countHet() > 0) && (DP >= 25)) | (countHome() > 3) | (( exists INDEL ) & (QUAL >= 20)) | (QUAL >= 30 )" > filtered.vcf
 
 * I want to keep samples where the genotype for the first sample is homozygous variant and the genotype for the second sample is reference:
 
-        cat variants.vcf | java -jar SnpSift.jar filter "isHom( GEN[0] ) & isVariant( GEN[0] ) & isRef( GEN[1] )" > filtered.vcf
+        cat variants.vcf | java -jar SnpSift.jar filter "isHome( GEN[0] ) & isVariant( GEN[0] ) & isRef( GEN[1] )" > filtered.vcf
 
 * I want to keep samples where the ID matches a set defined in a file:
 
@@ -223,8 +223,8 @@ $ java -jar SnpSift.jar filter "ANN[*].EFFECT has 'missense_variant'" examples/t
 $ cat test.chr22.ann.filter_missense_any.vcf
 ...
 22    24891462    .    G    A    .    .    ANN=A|stop_gained|HIGH|UPB1|ENSG00000100024|transcript|ENST00000413389|protein_coding|2/10|c.59G>A|p.Trp20*|1652/3418|59/951|20/316||
-                                              ,A|missense_variant|MODERATE|UPB1|ENSG00000100024|transcript|ENST00000326010|protein_coding|1/10|c.91G>A|p.Gly31Ser|435/2290|91/1155|31/384||
-                                              ,A|missense_variant|MODERATE|UPB1|ENSG00000100024|transcript|ENST00000382760|protein_coding|1/4|c.91G>A|p.Gly31Ser|253/1928|91/561|31/186||
+                                              ,A|missense_variant|MODERATE|UPB1|ENSG00000100024|transcript|ENST00000326010|protein_coding|1/10|c.91G>A|p.Gly31Set|435/2290|91/1155|31/384||
+                                              ,A|missense_variant|MODERATE|UPB1|ENSG00000100024|transcript|ENST00000382760|protein_coding|1/4|c.91G>A|p.Gly31Set|253/1928|91/561|31/186||
 
 22    24896158    .    A    T    .    .    ANN=T|missense_variant|MODERATE|UPB1|ENSG00000100024|transcript|ENST00000326010|protein_coding|2/10|c.188A>T|p.Glu63Val|532/2290|188/1155|63/384||
                                               ,T|missense_variant|MODERATE|UPB1|ENSG00000100024|transcript|ENST00000382760|protein_coding|2/4|c.188A>T|p.Glu63Val|350/1928|188/561|63/186||
@@ -247,7 +247,7 @@ $ cat test.chr22.ann.filter_missense_any_TRMT2A.vcf
                                               ,C|missense_variant|MODERATE|TRMT2A|ENSG00000099899|transcript|ENST00000252136|protein_coding|2/12|c.235A>G|p.Asn79Asp|624/2964|235/1878|79/625||
                                               ,C|missense_variant|MODERATE|TRMT2A|ENSG00000099899|transcript|ENST00000403707|protein_coding|3/13|c.235A>G|p.Asn79Asp|597/2928|235/1878|79/625||
                                               ,C|missense_variant|MODERATE|TRMT2A|ENSG00000099899|transcript|ENST00000404751|protein_coding|2/12|c.235A>G|p.Asn79Asp|574/2498|235/1689|79/562||
-                                              ,C|missense_variant|MODERATE|RANBP1|ENSG00000099901|transcript|ENST00000432879|protein_coding|1/3|c.218T>C|p.Phe73Ser|465/744|218/497|73/164||WARNING_TRANSCRIPT_INCOMPLETE
+                                              ,C|missense_variant|MODERATE|RANBP1|ENSG00000099901|transcript|ENST00000432879|protein_coding|1/3|c.218T>C|p.Phe73Set|465/744|218/497|73/164||WARNING_TRANSCRIPT_INCOMPLETE
                                               ,C|missense_variant|MODERATE|TRMT2A|ENSG00000099899|transcript|ENST00000445045|protein_coding|2/2|c.199A>G|p.Asn67Asp|422/582|199/359|67/118||WARNING_TRANSCRIPT_INCOMPLETE
                                               ,C|splice_region_variant&intron_variant|LOW|RANBP1|ENSG00000099901|transcript|ENST00000430524|protein_coding|1/5|c.-374+7T>C||||||
                                               ,...
@@ -326,14 +326,14 @@ Operand | Description   | Data type            | Example
 
 Function   | Description | Data type | Example
 ---------- | ----------- | --------- | --------
-`countHom()` | Count number of homozygous genotypes   | No arguments | (**countHom()** &gt; 0)
+`countHome()` | Count number of homozygous genotypes   | No arguments | (**countHome()** &gt; 0)
 `countHet()` | Count number of heterozygous genotypes | No arguments | (**countHet()** &gt; 2)
 `countVariant()` | Count number of genotypes that are variants (i.e. not reference 0/0) | No arguments | (**countVariant()** &gt; 5)
 `countRef()`     | Count number of genotypes that are NOT variants (i.e. reference 0/0) | No arguments | (**countRef()** &lt; 1)
 
 Genotype <br> Function | Description | Data type | Example
 ---------------------- | ----------- | --------- | --------
-`isHom`     | Is homozygous genotype?   | Genotype | **isHom( GEN\[0] )**
+`isHome`     | Is homozygous genotype?   | Genotype | **isHome( GEN\[0] )**
 `isHet`     | Is heterozygous genotype? | Genotype | **isHet( GEN\[0] )**
 `isVariant` | Is genotype a variant? (i.e. not reference 0/0) | Genotype | **isVariant( GEN\[0] )**
 `isRef`     | Is genotype a reference? (i.e. 0/0)             | Genotype | **isRef( GEN\[0] )**

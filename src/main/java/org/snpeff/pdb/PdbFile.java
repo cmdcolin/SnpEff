@@ -112,7 +112,7 @@ public class PdbFile {
     }
 
     /**
-     * Check that protein sequences match between a PDB 'chain' and the refrence
+     * Check that protein sequences match between a PDB 'chain' and the reference
      * genome Return a list of maps that are confirmed (i.e. AA sequence matches
      * between transcript and PDB) Note: Only part of the sequence usually matches
      * (PDB chains shorter than the transcript)
@@ -188,12 +188,12 @@ public class PdbFile {
     /**
      * Parse ProteinId from PDB file name
      *
-     * @returns: A string with a proteinId (PdbId or UniprotID) parsed fomr the file's name, or null if it cannot be parsed
+     * @returns: A string with a proteinId (PdbId or UniprotID) parsed from the file's name, or null if it cannot be parsed
      */
     public String fileName2ProteinId() {
         String base = Gpr.baseName(fileName);
 
-        // PDB style file name, e.g. "pdb7daa.ent.gz"
+        // PDB style file name, e.g. "pdb7data.ent.gz"
         // The format is 'pdb' + PdbID + ".ent.gz"
         if (base.startsWith("pdb")) {
             base = base.substring(3);

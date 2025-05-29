@@ -33,7 +33,7 @@ public class TestCasesIntegrationCanonical extends TestCasesIntegrationBase {
         SnpEff cmd = new SnpEff(args);
         SnpEffCmdEff cmdEff = (SnpEffCmdEff) cmd.cmd();
         cmdEff.setVerbose(verbose);
-        cmdEff.setSupressOutput(!verbose);
+        cmdEff.setSuppressOutput(!verbose);
         cmdEff.load();
 
         Gene gene = cmdEff.getConfig().getSnpEffectPredictor().getGene(geneId);
@@ -54,7 +54,7 @@ public class TestCasesIntegrationCanonical extends TestCasesIntegrationBase {
         SnpEff cmd = new SnpEff(args);
         SnpEffCmdEff cmdEff = (SnpEffCmdEff) cmd.cmd();
         cmdEff.setVerbose(verbose);
-        cmdEff.setSupressOutput(!verbose);
+        cmdEff.setSuppressOutput(!verbose);
         cmdEff.load();
 
         Gene gene = cmdEff.getConfig().getSnpEffectPredictor().getGene(geneId);

@@ -74,10 +74,10 @@ public class MarkerTypes {
 
 		if (marker instanceof Exon) {
 			Transcript tr = (Transcript) marker.findParent(Transcript.class);
-			typeRank = "Exon:" + ((Exon) marker).getRank() + ":" + tr.numChilds();
+			typeRank = "Exon:" + ((Exon) marker).getRank() + ":" + tr.numChildren();
 		} else if (marker instanceof Intron) {
 			Transcript tr = (Transcript) marker.findParent(Transcript.class);
-			typeRank = "Intron:" + ((Intron) marker).getRank() + ":" + tr.numChilds();
+			typeRank = "Intron:" + ((Intron) marker).getRank() + ":" + tr.numChildren();
 		} else typeRank = marker.getClass().getSimpleName();
 
 		if (typeRank != null) markerTypesClass.add(typeRank);

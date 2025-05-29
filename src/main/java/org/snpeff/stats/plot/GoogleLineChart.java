@@ -11,7 +11,7 @@ public class GoogleLineChart {
 	String vAxis = "";
 	String hAxis = "";
 	ArrayList<String> columnTitltes;
-	ArrayList<String> xLables;
+	ArrayList<String> xLabels;
 	ArrayList<ArrayList<String>> columns;
 	String id;
 
@@ -50,13 +50,13 @@ public class GoogleLineChart {
 	}
 
 	String getXLabel(int idx) {
-		if (idx >= xLables.size()) return null;
-		return xLables.get(idx);
+		if (idx >= xLabels.size()) return null;
+		return xLabels.get(idx);
 	}
 
 	void init() {
 		columnTitltes = new ArrayList<String>();
-		xLables = new ArrayList<String>();
+		xLabels = new ArrayList<String>();
 		columns = new ArrayList<ArrayList<String>>();
 		id = "chart_" + (Double.toString(Math.random()).substring(2));
 	}
@@ -97,8 +97,8 @@ public class GoogleLineChart {
 		this.width = width;
 	}
 
-	public void setxLables(ArrayList<String> xLables) {
-		this.xLables = xLables;
+	public void setxLabels(ArrayList<String> xLabels) {
+		this.xLabels = xLabels;
 	}
 
 	public String toStringHtmlBody() {

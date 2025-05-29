@@ -4,7 +4,7 @@ import org.apfloat.Apfloat;
 import org.snpeff.geneSets.GeneSet;
 import org.snpeff.geneSets.GeneSetsRanked;
 import org.snpeff.geneSets.Result;
-import org.snpeff.probablility.RankSumNoReplacementPdf;
+import org.snpeff.probability.RankSumNoReplacementPdf;
 
 public class RankSumPValueGreedyAlgorithm extends EnrichmentAlgorithmGreedyVariableSize {
 

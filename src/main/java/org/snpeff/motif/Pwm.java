@@ -5,7 +5,7 @@ import org.snpeff.util.Gpr;
 /**
  * Create a DNA motif count matrix
  *
- * Refrence http://en.wikipedia.org/wiki/Position-specific_scoring_matrix
+ * Reference http://en.wikipedia.org/wiki/Position-specific_scoring_matrix
  *
  * @author pcingola
  */

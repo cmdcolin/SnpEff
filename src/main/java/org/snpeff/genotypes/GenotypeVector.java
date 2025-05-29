@@ -8,7 +8,7 @@ import org.snpeff.vcf.VcfGenotype;
  * A vector of genotypes in a 'compact' structure
  * 
  * Note: Genotypes 0/0, 0/1, 1/0, 1/1 are stored in 2 bits.
- * WARNIGN: Other genotypes are ignored or silently converted to 0/0
+ * WARNING: Other genotypes are ignored or silently converted to 0/0
  *  
  * @author pcingola
  */

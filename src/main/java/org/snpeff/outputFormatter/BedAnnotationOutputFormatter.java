@@ -33,8 +33,8 @@ public class BedAnnotationOutputFormatter extends BedOutputFormatter {
 		// Show results
 		HashSet<String> chEffs = new HashSet<>();
 		for (VariantEffect changeEffect : variantEffects) {
-			// If it is not filtered out by changeEffectResutFilter  => Show it
-			if ((variantEffectResutFilter == null) || (!variantEffectResutFilter.filter(changeEffect))) {
+			// If it is not filtered out by changeEffectResultFilter  => Show it
+			if ((variantEffectResultFilter == null) || (!variantEffectResultFilter.filter(changeEffect))) {
 				String ann = null;
 
 				Marker m = changeEffect.getMarker();

@@ -393,13 +393,13 @@ public class Gene extends IntervalAndSubIntervals<Transcript> {
 			}
 		}
 
-		if (Config.get().isDebug()) Log.debug("Gene '', removing " + countRemoved + " / " + numChilds() + " unchecked transcript.");
+		if (Config.get().isDebug()) Log.debug("Gene '', removing " + countRemoved + " / " + numChildren() + " unchecked transcript.");
 
 		// Remove
 		for (Transcript t : toDelete)
 			remove(t);
 
-		return numChilds() <= 0;
+		return numChildren() <= 0;
 	}
 
 	/**
@@ -567,7 +567,7 @@ public class Gene extends IntervalAndSubIntervals<Transcript> {
 
 		sb.append("\n");
 
-		if (showTr && numChilds() > 0) {
+		if (showTr && numChildren() > 0) {
 			sb.append("Transcipts:\n");
 			for (Transcript tint : sorted())
 				sb.append("\t" + tint + "\n");

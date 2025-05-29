@@ -167,7 +167,7 @@ public class IntervalAndSubIntervals<T extends Marker> extends Marker implements
 		return markers;
 	}
 
-	public int numChilds() {
+	public int numChildren() {
 		return (subIntervals != null ? subIntervals.size() : 0);
 	}
 

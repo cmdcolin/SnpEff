@@ -1177,14 +1177,14 @@ public class VcfEffect {
         rank = -1;
         if (ex != null) {
             rank = ex.getRank();
-            rankMax = tr.numChilds();
+            rankMax = tr.numChildren();
             return;
         }
         // Do we have an intron?
         Intron intron = variantEffect.getIntron();
         if (intron != null) {
             rank = intron.getRank();
-            rankMax = Math.max(0, tr.numChilds() - 1);
+            rankMax = Math.max(0, tr.numChildren() - 1);
             return;
         }
 
@@ -1195,7 +1195,7 @@ public class VcfEffect {
         for (Exon e : tr)
             if (e.intersects(variant)) {
                 rank = e.getRank();
-                rankMax = tr.numChilds();
+                rankMax = tr.numChildren();
                 return;
             }
 

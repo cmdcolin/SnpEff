@@ -126,7 +126,7 @@ public class TestCasesIntegrationBuildPdb extends TestCasesIntegrationBase {
 	}
 
 	public void test_03_ion() {
-		// Test annotation of Ion interation
+		// Test annotation of Ion interaction
 		throw new RuntimeException("UNIMPLEMENTED");
 	}
 
@@ -136,7 +136,7 @@ public class TestCasesIntegrationBuildPdb extends TestCasesIntegrationBase {
 	}
 
 	public void test_05_covalent_bond() {
-		// Test annotation of covalent bond (interation?)
+		// Test annotation of covalent bond (interaction?)
 		throw new RuntimeException("UNIMPLEMENTED");
 	}
 

@@ -87,7 +87,7 @@ public class SnpEffCmdTranslocationsReport extends SnpEff {
 	 */
 	boolean isTranslocation(EffectType effType) {
 		return effType == EffectType.GENE_FUSION //
-				|| effType == EffectType.GENE_FUSION_REVERESE //
+				|| effType == EffectType.GENE_FUSION_REVERSE //
 				|| effType == EffectType.GENE_FUSION_HALF //
 		;
 	}

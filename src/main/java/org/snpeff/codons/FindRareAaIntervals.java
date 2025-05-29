@@ -94,7 +94,7 @@ public class FindRareAaIntervals {
 		// Find transcript
 		Transcript tr = trById.get(id);
 		if (tr == null) {
-			Log.warning(ErrorWarningType.WARNING_RARE_AA_POSSITION_NOT_FOUND, "Cannot find transcript '" + id + "'");
+			Log.warning(ErrorWarningType.WARNING_RARE_AA_POSITION_NOT_FOUND, "Cannot find transcript '" + id + "'");
 			return;
 		}
 		if( verbose ) Log.info("Found rare amino acid transcript ID '" + tr.getId() + "'" + ( tr.hasProteinId() ? ", protein ID '" + tr.getProteinId() + "'" : ""));

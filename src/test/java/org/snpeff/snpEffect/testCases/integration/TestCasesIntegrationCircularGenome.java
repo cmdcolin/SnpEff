@@ -69,7 +69,7 @@ public class TestCasesIntegrationCircularGenome extends TestCasesIntegrationBase
         if (verbose) Log.info("Chromosome:" + chr);
         assertTrue(chr.isCircular(), "Chromosome is not circular");
 
-        // Check protien sequence
+        // Check protein sequence
         String protein = "MDTSLAHENARLRALLQTQQDTIRQMAEYNRLLSQRVAAYASEINRLKALVAKLQRMQFGKSSEKLRAKTERQIQEAQERISALQEEMAETLGEQYDPVLPSALRQSSARKPLPASLPRETRVIRPEEECCPACGGELSSLGCDVSEQLELISSAFKVIETQRPKQACCRCDHIVQAPVPSKPIARSYAGAGLLAHVVTGKYADHLPLYRQSEIYRRQGVELSRATLGRWTGAVAELLEPLYDVLRQYVLMPGKVHADDIPVPVQEPGSGKTRTARLWVYVRDDRNAGSQMPPAVWFAYSPDRKGIHPQNHLAGYSGVLQADAYGGYRALYESGRITEAACMAHARRKIHDVHARAPTYITTEALQRIGELYAIEAEVRGCSAEQRLAARKARAAPLMQSLYDWIQQQMKTLSRHSDTAKAFAYLLKQWDALNVYCSNGWVEIDNNIAENALRGVAVGRKNWMFAGSDSGGEHAAVLYSLIGTCRLNNVEPEKWLRYVIEHIQDWPANRVRDLLPWKVDLSSQ*";
         for (Gene g : sep.getGenome().getGenes()) {
             for (Transcript tr : g) {
@@ -79,7 +79,7 @@ public class TestCasesIntegrationCircularGenome extends TestCasesIntegrationBase
         }
 
         //---
-        // Check variants in zero or negative coordiantes
+        // Check variants in zero or negative coordinates
         //---
         checkAnnotations(sep, "p948", 0, "T", "A", "p.Phe297Ile", "c.889T>A", "missense_variant");
         checkAnnotations(sep, "p948", -3, "T", "A", "p.Trp296Arg", "c.886T>A", "missense_variant");

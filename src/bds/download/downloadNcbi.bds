@@ -51,7 +51,7 @@ class DownloadNcbi extends DownloadGenome {
 		return downloadFile(arUrl, arLocal, "Assembly report", false)
 	}
 
-	# Download 'other' necesary files
+	# Download 'other' necessary files
 	# Returns: A list of all paths
 	string[] downloadOther() {
 		log("Download '$genome': Other")

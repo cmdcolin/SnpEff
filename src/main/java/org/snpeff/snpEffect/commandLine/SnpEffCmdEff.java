@@ -88,13 +88,13 @@ public class SnpEffCmdEff extends SnpEff implements VcfAnnotator {
 	String chrStr = "";
 	String inputFile = ""; // Input file
 	String fastaProt; // Write protein seuqnces to this file
-	ProteinFastaWriter proteinFastaWriter = null; // Writed protein sequences to file
+	ProteinFastaWriter proteinFastaWriter = null; // Wrote protein sequences to file
 	String summaryFileCsv; // HTML Summary file name
 	String summaryFileHtml; // CSV Summary file name
 	String summaryGenesFile; // Gene table file
 	InputFormat inputFormat = InputFormat.VCF; // Format use in input files
 	OutputFormat outputFormat = OutputFormat.VCF; // Output format
-	VariantEffectFilter variantEffectResutFilter; // Filter prediction results
+	VariantEffectFilter variantEffectResultFilter; // Filter prediction results
 	ArrayList<String> filterIntervalFiles;// Files used for filter intervals
 	ArrayList<String> inputFiles;
 	IntervalForest filterIntervals; // Filter only variants that match these intervals
@@ -113,7 +113,7 @@ public class SnpEffCmdEff extends SnpEff implements VcfAnnotator {
 		super();
 		chrStr = ""; // Default: Don't show 'chr' before chromosome
 		inputFile = ""; // variant input file
-		variantEffectResutFilter = new VariantEffectFilter(); // Filter prediction results
+		variantEffectResultFilter = new VariantEffectFilter(); // Filter prediction results
 		filterIntervalFiles = new ArrayList<>(); // Files used for filter intervals
 		summaryFileHtml = DEFAULT_SUMMARY_HTML_FILE;
 		summaryFileCsv = DEFAULT_SUMMARY_CSV_FILE;
@@ -149,7 +149,7 @@ public class SnpEffCmdEff extends SnpEff implements VcfAnnotator {
 		}
 		outputFormatter.close();
 
-		// Finish up taks, e.g. create reports
+		// Finish up tasks, e.g. create reports
 		boolean err = annotateFinish(vcf);
 
 		return !err;
@@ -169,7 +169,7 @@ public class SnpEffCmdEff extends SnpEff implements VcfAnnotator {
 			countVcfEntries++; // Count VCF entries (same as input lines)
 
 			// Find if there is a pedigree and if it has any 'derived' entry
-			if (vcfFile.isHeadeSection()) {
+			if (vcfFile.isHeaderSection()) {
 				if (cancer) {
 					pedigree = readPedigree(vcfFile);
 					anyCancerSample = pedigree.anyDerived();
@@ -348,8 +348,8 @@ public class SnpEffCmdEff extends SnpEff implements VcfAnnotator {
 
 		outputFormatter.setVersion(VERSION_AUTHOR);
 		outputFormatter.setCommandLineStr(commandLineStr(false));
-		outputFormatter.setVariantEffectResutFilter(variantEffectResutFilter);
-		outputFormatter.setSupressOutput(suppressOutput);
+		outputFormatter.setVariantEffectResultFilter(variantEffectResultFilter);
+		outputFormatter.setSuppressOutput(suppressOutput);
 		outputFormatter.setChrStr(chrStr);
 		outputFormatter.setUseSequenceOntology(useSequenceOntology);
 		outputFormatter.setUseOicr(useOicr);
@@ -483,7 +483,7 @@ public class SnpEffCmdEff extends SnpEff implements VcfAnnotator {
 		return vcfFile;
 	}
 
-	public VariantEffectStats getChangeEffectResutStats() {
+	public VariantEffectStats getChangeEffectResultStats() {
 		return variantEffectStats;
 	}
 
@@ -717,26 +717,26 @@ public class SnpEffCmdEff extends SnpEff implements VcfAnnotator {
 					// Filters
 					//---
 					case "-no-downstream":
-						variantEffectResutFilter.add(EffectType.DOWNSTREAM);
+						variantEffectResultFilter.add(EffectType.DOWNSTREAM);
 						break;
 
 					case "-no-upstream":
-						variantEffectResutFilter.add(EffectType.UPSTREAM);
+						variantEffectResultFilter.add(EffectType.UPSTREAM);
 						break;
 
 					case "-no-intergenic":
-						variantEffectResutFilter.add(EffectType.INTERGENIC);
+						variantEffectResultFilter.add(EffectType.INTERGENIC);
 						break;
 
 					case "-no-intron":
-						variantEffectResutFilter.add(EffectType.INTRON);
+						variantEffectResultFilter.add(EffectType.INTRON);
 						break;
 
 					case "-no-utr":
-						variantEffectResutFilter.add(EffectType.UTR_3_PRIME);
-						variantEffectResutFilter.add(EffectType.UTR_3_DELETED);
-						variantEffectResutFilter.add(EffectType.UTR_5_PRIME);
-						variantEffectResutFilter.add(EffectType.UTR_5_DELETED);
+						variantEffectResultFilter.add(EffectType.UTR_3_PRIME);
+						variantEffectResultFilter.add(EffectType.UTR_3_DELETED);
+						variantEffectResultFilter.add(EffectType.UTR_5_PRIME);
+						variantEffectResultFilter.add(EffectType.UTR_5_DELETED);
 						break;
 
 					case "-no":
@@ -746,12 +746,12 @@ public class SnpEffCmdEff extends SnpEff implements VcfAnnotator {
 						String filterOutArray[] = filterOut.split(",");
 						for (String filterStr : filterOutArray) {
 							if (filterStr.equalsIgnoreCase("utr")) {
-								variantEffectResutFilter.add(EffectType.UTR_3_PRIME);
-								variantEffectResutFilter.add(EffectType.UTR_3_DELETED);
-								variantEffectResutFilter.add(EffectType.UTR_5_PRIME);
-								variantEffectResutFilter.add(EffectType.UTR_5_DELETED);
+								variantEffectResultFilter.add(EffectType.UTR_3_PRIME);
+								variantEffectResultFilter.add(EffectType.UTR_3_DELETED);
+								variantEffectResultFilter.add(EffectType.UTR_5_PRIME);
+								variantEffectResultFilter.add(EffectType.UTR_5_DELETED);
 							} else if (filterStr.equalsIgnoreCase("None")); // OK, nothing to do
-							else variantEffectResutFilter.add(EffectType.valueOf(filterStr.toUpperCase()));
+							else variantEffectResultFilter.add(EffectType.valueOf(filterStr.toUpperCase()));
 						}
 						break;
 
@@ -851,7 +851,7 @@ public class SnpEffCmdEff extends SnpEff implements VcfAnnotator {
 		// Prepare to run
 
 		// Nothing to filter out => don't waste time
-		if (!variantEffectResutFilter.anythingSet()) variantEffectResutFilter = null;
+		if (!variantEffectResultFilter.anythingSet()) variantEffectResultFilter = null;
 
 		filterIntervals = null;
 
@@ -986,7 +986,7 @@ public class SnpEffCmdEff extends SnpEff implements VcfAnnotator {
 		root.put("genesFile", Gpr.baseName(summaryGenesFile, ""));
 		root.put("genome", config.getGenome());
 		root.put("genomeVersion", genomeVer);
-		root.put("variantEffectResutFilter", variantEffectResutFilter);
+		root.put("variantEffectResultFilter", variantEffectResultFilter);
 		root.put("variantStats", variantStats);
 		root.put("snpEffectPredictor", config.getSnpEffectPredictor());
 		root.put("vcfStats", vcfStats);
@@ -1033,7 +1033,7 @@ public class SnpEffCmdEff extends SnpEff implements VcfAnnotator {
 		System.err.println("\t-no <effectType>                : Do not show 'EffectType'. This option can be used several times.");
 		System.err.println("\nAnnotations options:");
 		System.err.println("\t-cancer                         : Perform 'cancer' comparisons (Somatic vs Germline). Default: " + cancer);
-		System.err.println("\t-cancerSamples <file>           : Two column TXT file defining 'oringinal \\t derived' samples.");
+		System.err.println("\t-cancerSamples <file>           : Two column TXT file defining 'original \\t derived' samples.");
 		System.err.println("\t-fastaProt <file>               : Create an output file containing the resulting protein sequences.");
 		System.err.println("\t-fastaProtNoRef                 : Do not add reference sequences to the output (only valid when -fastaProt). Default: " + fastaProtNoRef);
 		System.err.println("\t-formatEff                      : Use 'EFF' field compatible with older versions (instead of 'ANN').");
@@ -1045,7 +1045,7 @@ public class SnpEffCmdEff extends SnpEff implements VcfAnnotator {
 		System.err.println("\t-lof                            : Add loss of function (LOF) and Nonsense mediated decay (NMD) tags.");
 		System.err.println("\t-noHgvs                         : Do not add HGVS annotations.");
 		System.err.println("\t-noLof                          : Do not add LOF and NMD annotations.");
-		System.err.println("\t-noOut                          : Do not write the output resuts to STDOUT (maybe used for debugging).");
+		System.err.println("\t-noOut                          : Do not write the output results to STDOUT (maybe used for debugging).");
 		System.err.println("\t-noShiftHgvs                    : Do not shift variants according to HGVS notation (most 3prime end).");
 		System.err.println("\t-oicr                           : Add OICR tag in VCF file. Default: " + useOicr);
 		System.err.println("\t-sequenceOntology               : Use Sequence Ontology terms. Default: " + useSequenceOntology);

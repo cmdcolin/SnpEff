@@ -85,7 +85,7 @@ public class CompareToVep {
 		return true;
 	}
 
-	public boolean checkComapred() {
+	public boolean checkCompared() {
 		if (compareHgvsDna || compareHgvsProt) return (countHgvsDna + countHgvsProt) > 0;
 		return countEff > 0;
 	}
@@ -203,10 +203,10 @@ public class CompareToVep {
 	 */
 	boolean compareEffect(VcfEffect eff, VcfConsequence csq) {
 		String effectTypes[] = eff.getEffectTypesStr().split("\\" + EffFormatVersion.EFFECT_TYPE_SEPARATOR_OLD);
-		String consecuences[] = csq.getConsequence().split("&");
+		String consequences[] = csq.getConsequence().split("&");
 
 		for (String et : effectTypes) {
-			for (String cons : consecuences) {
+			for (String cons : consequences) {
 				if (compare(et, cons)) {
 					countEff++;
 					if (verbose) Log.info("\t\t\tOK :" + eff.getTranscriptId() + "\t" + et + "\t" + cons);
@@ -297,8 +297,8 @@ public class CompareToVep {
 		parseCsqHeader(vcf);
 
 		// Run and compare VCF entries
-		List<VcfEntry> vcfEnties = runSnpEff(args(genomeName, vcf));
-		for (VcfEntry ve : vcfEnties) {
+		List<VcfEntry> vcfEntries = runSnpEff(args(genomeName, vcf));
+		for (VcfEntry ve : vcfEntries) {
 			List<VcfConsequence> csqs = VcfConsequence.parse(vcfCsqHeader, ve);
 			List<VcfEffect> effs = ve.getVcfEffects();
 
@@ -316,9 +316,9 @@ public class CompareToVep {
 				System.out.println("\tCompare:");
 			}
 
-			boolean comparissonOk = compare(effs, csqs);
+			boolean comparisonOk = compare(effs, csqs);
 			if (verbose) System.out.println("Comparisosns: " + this);
-			assertTrue(comparissonOk, "EFF and CSQ do not match");
+			assertTrue(comparisonOk, "EFF and CSQ do not match");
 		}
 	}
 
@@ -335,13 +335,13 @@ public class CompareToVep {
 		SnpEff cmd = new SnpEff(args);
 		cmdEff = (SnpEffCmdEff) cmd.cmd();
 		cmdEff.setVerbose(verbose);
-		cmdEff.setSupressOutput(!verbose);
+		cmdEff.setSuppressOutput(!verbose);
 		cmdEff.setDebug(debug);
 
 		cmdEff.getConfig();
 
-		List<VcfEntry> vcfEnties = cmdEff.run(true);
-		return vcfEnties;
+		List<VcfEntry> vcfEntries = cmdEff.run(true);
+		return vcfEntries;
 	}
 
 	public void setCompareHgvs() {

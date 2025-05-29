@@ -95,7 +95,7 @@ public class TestCasesCircular {
         CircularCorrection cc = new CircularCorrection(tr);
         cc.setDebug(debug);
         cc.correct();
-        assertFalse(cc.isCorrected(), "No correction expexted for this transcript");
+        assertFalse(cc.isCorrected(), "No correction expected for this transcript");
     }
 
     @Test

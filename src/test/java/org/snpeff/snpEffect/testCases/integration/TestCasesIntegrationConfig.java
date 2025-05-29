@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class TestCasesIntegrationConfig extends TestCasesIntegrationBase {
 
     /**
-     * Check that config file can be overriden by command line options
+     * Check that config file can be overridden by command line options
      */
     @Test
     public void test_01_ConfigOverride() {
@@ -30,7 +30,7 @@ public class TestCasesIntegrationConfig extends TestCasesIntegrationBase {
 
         // Create command and run
         SnpEff cmd = new SnpEff(args);
-        cmd.setSupressOutput(!verbose);
+        cmd.setSuppressOutput(!verbose);
         cmd.setVerbose(verbose);
         cmd.setDebug(debug);
         cmd.run();

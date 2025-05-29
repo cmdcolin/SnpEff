@@ -246,7 +246,7 @@ public class GffMarker extends Custom {
 		return keyValues.containsKey(key) && (keyValues.get(key) != null);
 	}
 
-	/** Does the key have mutiple values */
+	/** Does the key have multiple values */
 	public boolean isMultipleValues(String key) {
 		return false;
 	}

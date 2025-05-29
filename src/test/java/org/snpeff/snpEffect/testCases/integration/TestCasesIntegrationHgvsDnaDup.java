@@ -44,7 +44,7 @@ public class TestCasesIntegrationHgvsDnaDup extends TestCasesIntegrationBase {
 		snpeff.parseArgs(args);
 		snpeff.setDebug(debug);
 		snpeff.setVerbose(verbose);
-		snpeff.setSupressOutput(!verbose);
+		snpeff.setSuppressOutput(!verbose);
 		snpeff.setFormatVersion(EffFormatVersion.FORMAT_EFF_4);
 
 		// The problem appears when splice site is large (in this example)

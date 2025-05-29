@@ -22,7 +22,7 @@ import org.snpeff.snpEffect.VariantEffect;
  */
 public abstract class OutputFormatter {
 
-	boolean supressOutput = false; // Do not print anything (used for testCases)
+	boolean suppressOutput = false; // Do not print anything (used for testCases)
 	boolean showHeader = true; // Show header information
 	boolean useHgvs; // Use HGVS notation
 	boolean useGeneId; // Use Gene ID instead of gene name
@@ -36,7 +36,7 @@ public abstract class OutputFormatter {
 	String outputFile = null;
 	BufferedWriter out;
 	Marker section;
-	VariantEffectFilter variantEffectResutFilter = null; // Filter prediction results
+	VariantEffectFilter variantEffectResultFilter = null; // Filter prediction results
 	List<VariantEffect> variantEffects;
 	Config config;
 
@@ -49,7 +49,7 @@ public abstract class OutputFormatter {
 	 */
 	public void add(VariantEffect variantEffect) {
 		// Passes the filter? => Add
-		if ((variantEffectResutFilter == null) || (!variantEffectResutFilter.filter(variantEffect))) variantEffects.add(variantEffect);
+		if ((variantEffectResultFilter == null) || (!variantEffectResultFilter.filter(variantEffect))) variantEffects.add(variantEffect);
 	}
 
 	@Override
@@ -58,7 +58,7 @@ public abstract class OutputFormatter {
 		try {
 			// Create a new formatter. We cannot use the same output formatter for all workers
 			newOutputFormatter = this.getClass().getConstructor().newInstance();
-			newOutputFormatter.supressOutput = supressOutput;
+			newOutputFormatter.suppressOutput = suppressOutput;
 			newOutputFormatter.showHeader = showHeader;
 			newOutputFormatter.useHgvs = useHgvs;
 			newOutputFormatter.useGeneId = useGeneId;
@@ -70,7 +70,7 @@ public abstract class OutputFormatter {
 			newOutputFormatter.version = version;
 			newOutputFormatter.chrStr = chrStr;
 			newOutputFormatter.section = section;
-			newOutputFormatter.variantEffectResutFilter = variantEffectResutFilter;
+			newOutputFormatter.variantEffectResultFilter = variantEffectResultFilter;
 			newOutputFormatter.config = config;
 
 		} catch (Exception e) {
@@ -114,7 +114,7 @@ public abstract class OutputFormatter {
 		sectionNum++;
 		variantEffects.clear();
 
-		return supressOutput ? null : sb.toString();
+		return suppressOutput ? null : sb.toString();
 	}
 
 	/**
@@ -131,7 +131,7 @@ public abstract class OutputFormatter {
 				if (out != null) {
 					out.write(outStr);
 					out.write("\n");
-				} else if (!supressOutput) System.out.println(outStr); // Show on STDOUT
+				} else if (!suppressOutput) System.out.println(outStr); // Show on STDOUT
 			}
 		} catch (IOException e) {
 			throw new RuntimeException(e);
@@ -169,8 +169,8 @@ public abstract class OutputFormatter {
 		this.showHeader = showHeader;
 	}
 
-	public void setSupressOutput(boolean supressOutput) {
-		this.supressOutput = supressOutput;
+	public void setSuppressOutput(boolean suppressOutput) {
+		this.suppressOutput = suppressOutput;
 	}
 
 	public void setUseGeneId(boolean useGeneId) {
@@ -189,8 +189,8 @@ public abstract class OutputFormatter {
 		this.useSequenceOntology = useSequenceOntology;
 	}
 
-	public void setVariantEffectResutFilter(VariantEffectFilter changeEffectResutFilter) {
-		variantEffectResutFilter = changeEffectResutFilter;
+	public void setVariantEffectResultFilter(VariantEffectFilter changeEffectResultFilter) {
+		variantEffectResultFilter = changeEffectResultFilter;
 	}
 
 	public void setVersion(String version) {

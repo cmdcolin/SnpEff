@@ -63,7 +63,7 @@ public class VcfFileIterator extends MarkerFileIterator<VcfEntry> implements Par
 	private static final String EMPTY = "";
 
 	boolean parseNow = true;
-	boolean headeSection = false;
+	boolean headerSection = false;
 	boolean errorIfUnsorted = false;
 	boolean expandIub;
 	VcfHeader header = new VcfHeader();
@@ -72,7 +72,7 @@ public class VcfFileIterator extends MarkerFileIterator<VcfEntry> implements Par
 
 
 	/**
-     * Create a VcfFileIterator from a string containig VCF lines
+     * Create a VcfFileIterator from a string containing VCF lines
      */
     public static VcfFileIterator fromString(String vcfLines) {
         try (var bais = new ByteArrayInputStream(vcfLines.getBytes("UTF-8"))) {
@@ -126,8 +126,8 @@ public class VcfFileIterator extends MarkerFileIterator<VcfEntry> implements Par
 		return expandIub;
 	}
 
-	public boolean isHeadeSection() {
-		return headeSection;
+	public boolean isHeaderSection() {
+		return headerSection;
 	}
 
 	@Override
@@ -195,7 +195,7 @@ public class VcfFileIterator extends MarkerFileIterator<VcfEntry> implements Par
 	protected VcfEntry readNext() {
 		// Read another line from the file
 		try {
-			headeSection = (lineNum == 0); // First line is header (even if missing)
+			headerSection = (lineNum == 0); // First line is header (even if missing)
 			while (ready()) {
 				line = readLine();
 				if (line == null) return null; // End of file?
@@ -229,7 +229,7 @@ public class VcfFileIterator extends MarkerFileIterator<VcfEntry> implements Par
 
 					// Return new entry
 					return vcfEntry;
-				} else headeSection = true;
+				} else headerSection = true;
 			}
 		} catch (IOException e) {
 			throw new RuntimeException("Error reading file '" + fileName + "'. Line ignored:\n\tLine (" + lineNum + "):\t'" + line + "'");

@@ -43,7 +43,7 @@ public class TestCasesIntegrationExonFrame extends TestCasesIntegrationBase {
         SnpEff snpEff = new SnpEff(args);
         snpEff.setVerbose(verbose);
         snpEff.setDebug(debug);
-        snpEff.setSupressOutput(!verbose);
+        snpEff.setSuppressOutput(!verbose);
         boolean ok = snpEff.run();
         assertTrue(ok);
 
@@ -61,7 +61,7 @@ public class TestCasesIntegrationExonFrame extends TestCasesIntegrationBase {
             for (Transcript tr : gene)
                 transcript = tr;
 
-        if (verbose) Log.debug("Trasncript:" + transcript);
+        if (verbose) Log.debug("Transcript:" + transcript);
 
         // Check parameters
         assertEquals(454127, transcript.getCdsStart());
@@ -77,7 +77,7 @@ public class TestCasesIntegrationExonFrame extends TestCasesIntegrationBase {
         SnpEff cmd = new SnpEff(argsEff);
         SnpEffCmdEff cmdEff = (SnpEffCmdEff) cmd.cmd();
         cmdEff.setVerbose(verbose);
-        cmdEff.setSupressOutput(!verbose);
+        cmdEff.setSuppressOutput(!verbose);
         List<VcfEntry> vcfEntries = cmdEff.run(true);
         assertTrue(cmdEff.getTotalErrs() <= 0, "Errors while executing SnpEff");
 
@@ -128,7 +128,7 @@ public class TestCasesIntegrationExonFrame extends TestCasesIntegrationBase {
 
         SnpEff snpEff = new SnpEff(args);
         snpEff.setVerbose(verbose);
-        snpEff.setSupressOutput(!verbose);
+        snpEff.setSuppressOutput(!verbose);
         boolean ok = snpEff.run();
         assertTrue(ok);
     }

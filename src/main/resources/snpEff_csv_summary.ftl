@@ -103,7 +103,7 @@ ${vcfStats.tsTvStatsKnown}
 
 # Hom/Het table
 
-${vcfStats.genotypeStats.homHetTable}
+${vcfStats.genotypeStats.homeHetTable}
 
 # Codon change table
 	

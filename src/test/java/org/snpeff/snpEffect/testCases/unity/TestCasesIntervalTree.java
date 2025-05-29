@@ -152,7 +152,7 @@ public class TestCasesIntervalTree {
             Gpr.showMark(i++, 100);
         }
 
-        assertTrue(totalResults > 0, "Not a signle result found in all queries!");
+        assertTrue(totalResults > 0, "Not a single result found in all queries!");
         System.err.println("");
     }
 
@@ -174,7 +174,7 @@ public class TestCasesIntervalTree {
             Gpr.showMark(i++, 10);
         }
 
-        assertTrue(totalResults > 0, "Not a signle result found in all queries!");
+        assertTrue(totalResults > 0, "Not a single result found in all queries!");
         System.err.println("");
 
     }

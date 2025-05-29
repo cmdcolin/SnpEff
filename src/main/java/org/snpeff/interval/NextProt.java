@@ -94,7 +94,7 @@ public class NextProt extends Marker {
             Log.warning(ErrorWarningType.WARNING_TRANSCRIPT_NOT_FOUND, "NextProt '" + name + "' could not find previous effect impact for transcript '" + getTranscriptId() + "', ");
         else {
             // Impact depends on whether the previoius analysis had a high/moderate impact.
-            // For instance, a synnimous effect wil have no impac on NextProd, because the AA doesn't change in the sequence
+            // For instance, a synonymous effect will have no impact on NextProd, because the AA doesn't change in the sequence
             switch (prevEffImpact) {
                 case HIGH:
                     effectImpact = EffectImpact.HIGH ;
@@ -113,7 +113,7 @@ public class NextProt extends Marker {
                     break;
 
                 default:
-                    throw new RuntimeException("Unexpected previous impact when assesing NextProt annotation: '" + prevEffImpact + "'");
+                    throw new RuntimeException("Unexpected previous impact when assessing NextProt annotation: '" + prevEffImpact + "'");
             }
         }
 

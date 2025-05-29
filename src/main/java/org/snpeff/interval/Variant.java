@@ -29,7 +29,7 @@ public class Variant extends Marker {
     protected VariantType variantType; // Variant type
     protected String ref; // Reference (i.e. original bases in the genome)
     protected String alt; // Changed bases
-    protected String genotype; // Genotype (i.e. the original 'ALT' in the VCF file). A VCF entry may encode multiple ALTs, and 'ALT' migh get modified when creating the variant. Here we store ALT as originaly show in the VCF.
+    protected String genotype; // Genotype (i.e. the original 'ALT' in the VCF file). A VCF entry may encode multiple ALTs, and 'ALT' might get modified when creating the variant. Here we store ALT as originally show in the VCF.
     protected boolean imprecise = false; // Imprecise variant: coordinates are not exact (E.g. see section "Encoding Structural Variants in VCF" from VCF spec. 4.1)
 
     public Variant() {

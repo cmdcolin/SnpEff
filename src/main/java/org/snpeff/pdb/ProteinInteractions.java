@@ -43,7 +43,7 @@ public class ProteinInteractions {
     BufferedWriter outpufDbFile;
     String outputDbFileName;
     String pdbDir = DEFAULT_PDB_DIR;
-    Collection<String> pdbFileNames; // PDB files to porcess
+    Collection<String> pdbFileNames; // PDB files to process
     String pdbOrganismCommon = DEFAULT_PDB_ORGANISM_COMMON; // PDB organism "common name"
     String pdbOrganismScientific = DEFAULT_PDB_ORGANISM_SCIENTIFIC; // PDB organism "scientific name"
     PDBFileReader pdbReader;
@@ -60,7 +60,7 @@ public class ProteinInteractions {
         if (distanceThreshold <= 0) return "Max distance in '-maxdist' command line option must be a positive number";
         if (maxMismatchRate <= 0)
             return "Max mismatch rate in '-maxErr' command line option must be a positive number";
-        if (pdbResolution <= 0) return "Resoluton in '-res' command line option must be a positive number";
+        if (pdbResolution <= 0) return "Resolution in '-res' command line option must be a positive number";
         if (aaMinSeparation <= 0)
             return "Minimum separation in '-aaSep' command line option must be a positive, integer number";
         return null;
@@ -80,7 +80,7 @@ public class ProteinInteractions {
         }
     }
 
-    void closeOuptutDb() {
+    void closeOutputDb() {
         try {
             if (outpufDbFile != null) outpufDbFile.close();
             outpufDbFile = null;
@@ -311,7 +311,7 @@ public class ProteinInteractions {
     /**
      * Open output file
      */
-    void openOuptutDbFile() {
+    void openOutputDbFile() {
         try {
             if (verbose) Log.info("Saving results to database file '" + outputDbFileName + "'");
             outpufDbFile = new BufferedWriter(new OutputStreamWriter(new GZIPOutputStream(new FileOutputStream(outputDbFileName))));
@@ -369,9 +369,9 @@ public class ProteinInteractions {
         loadIdMapper(); // Load ID map table
         initTranscriptById(); // Load transcript mapping
         pdbReader = new PDBFileReader(); // Initialize reader
-        openOuptutDbFile(); // Open output (database) file
+        openOutputDbFile(); // Open output (database) file
         pdb(); // Run analysis
-        closeOuptutDb(); // Close output file
+        closeOutputDb(); // Close output file
         return true;
     }
 

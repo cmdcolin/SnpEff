@@ -21,7 +21,7 @@ public class GenotypeStats implements SamplingStats<VcfEntry> {
 	List<String> sampleNames;
 	IntStats alleleCount;
 	IntStats alleleFrequency;
-	int countHom[];
+	int countHome[];
 	int countHet[];
 	int countRef[];
 	int countMissing[];
@@ -62,11 +62,11 @@ public class GenotypeStats implements SamplingStats<VcfEntry> {
 		return countBySampleBarChartUrl(countHet, "Heterozygous genotypes", "Sample number", "Heterozygous count");
 	}
 
-	public String getHomBySampleUrl() {
-		return countBySampleBarChartUrl(countHom, "Homozygous (ALT) genotypes", "Sample number", "Homozygous count");
+	public String getHomeBySampleUrl() {
+		return countBySampleBarChartUrl(countHome, "Homozygous (ALT) genotypes", "Sample number", "Homozygous count");
 	}
 
-	public String getHomHetTable() {
+	public String getHomeHetTable() {
 		if (sampleNames == null) return "";
 
 		StringBuilder sb = new StringBuilder();
@@ -86,9 +86,9 @@ public class GenotypeStats implements SamplingStats<VcfEntry> {
 			sb.append(", " + countHet[i]);
 		sb.append("\n");
 
-		sb.append("Hom ");
-		for (int i = 0; i < countHom.length; i++)
-			sb.append(", " + countHom[i]);
+		sb.append("Home ");
+		for (int i = 0; i < countHome.length; i++)
+			sb.append(", " + countHome[i]);
 		sb.append("\n");
 
 		sb.append("Missing ");
@@ -128,7 +128,7 @@ public class GenotypeStats implements SamplingStats<VcfEntry> {
 
 			countRef = new int[len];
 			countHet = new int[len];
-			countHom = new int[len];
+			countHome = new int[len];
 			countMissing = new int[len];
 		}
 
@@ -149,7 +149,7 @@ public class GenotypeStats implements SamplingStats<VcfEntry> {
 						ac += code;
 						totalAc += 2;
 						if (code == 1) countHet[gtNum]++;
-						else if (code == 2) countHom[gtNum]++;
+						else if (code == 2) countHome[gtNum]++;
 					} else if (code == 0) {
 						totalAc += 2;
 						countRef[gtNum]++; // Reference genotype

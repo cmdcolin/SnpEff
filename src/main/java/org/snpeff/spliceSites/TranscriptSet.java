@@ -44,8 +44,8 @@ public class TranscriptSet implements Iterable<Transcript> {
 
 		int total = 0, kept = 0;
 		for (Gene gene : genome.getGenes()) {
-			if (gene.numChilds() > MAX_TRANSCRIPTS_PER_GENE) {
-				System.err.println("Ignoring gene '" + gene.getGeneName() + "', too many transcripts (" + gene.numChilds() + ")");
+			if (gene.numChildren() > MAX_TRANSCRIPTS_PER_GENE) {
+				System.err.println("Ignoring gene '" + gene.getGeneName() + "', too many transcripts (" + gene.numChildren() + ")");
 				continue;
 			}
 

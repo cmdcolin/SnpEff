@@ -198,7 +198,7 @@ public class TestCasesStructuralDup extends TestCasesBase {
 
         EffectType[] expEffs = {EffectType.EXON_DUPLICATION, EffectType.FRAME_SHIFT};
         String[] expHgvsc = {"c.33-5_45+43dup"};
-        String[] expHgvsp = {"p.Arg16fs", "p.Arg16_Gly18delinsCysValAlaAsnTerThrTrp"};
+        String[] expHgvsp = {"p.Arg16fs", "p.Arg16_Gly18delinsCysValAlaAsnTerTheTrp"};
         EffectImpact expectedImpact = EffectImpact.HIGH;
 
         checkEffects(variant, expEffs, expHgvsp, expHgvsc, expectedImpact, null);
@@ -310,7 +310,7 @@ public class TestCasesStructuralDup extends TestCasesBase {
                 , EffectType.GENE_FUSION //
         };
         String[] expHgvsc = {"n.1101_2076dup"};
-        String[] expHgvsp = {"p.Ser2_Leu10delinsTyrPheProPheThrProThrSerAlaAla???", "p.Ser2fs"};
+        String[] expHgvsp = {"p.Set2_Leu10delinsTyrPheProPheTheProTheSetAlaAla???", "p.Set2fs"};
         EffectImpact expectedImpact = EffectImpact.HIGH;
 
         checkEffects(variant, expEffs, expHgvsp, expHgvsc, expectedImpact, null);

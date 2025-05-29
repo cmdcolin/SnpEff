@@ -123,14 +123,14 @@ public class VcfHapMapFileIterator extends MarkerFileIterator<VcfEntry> {
 
 	/**
 	 * Read sequence from fasta file. Only one sequence per file, so we just read the first sequence.
-	 * WARING: Chromosome is created if it doesn't exist
+	 * WARNING: Chromosome is created if it doesn't exist
 	 */
 	void readSequence() {
 		FastaFileIterator ffi = new FastaFileIterator(fatsaFileName);
 		seq = ffi.next().toUpperCase();
 		String chrName = ffi.getName();
 
-		// Is the chromosome avaialbe?
+		// Is the chromosome available?
 		if (genome.getChromosome(chrName) == null) {
 			// Create chromosome and add it to genome
 			chr = new Chromosome(genome, 0, seq.length(), chrName);

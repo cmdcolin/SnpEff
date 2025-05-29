@@ -218,7 +218,7 @@ public class LossOfFunction {
 		// Fusion are loss of functions
 		if (variantEffect.hasEffectType(EffectType.GENE_FUSION) //
 				|| variantEffect.hasEffectType(EffectType.GENE_FUSION_HALF) //
-				|| variantEffect.hasEffectType(EffectType.GENE_FUSION_REVERESE) //
+				|| variantEffect.hasEffectType(EffectType.GENE_FUSION_REVERSE) //
 		) return true;
 
 		//---
@@ -273,7 +273,7 @@ public class LossOfFunction {
 		if (tr == null) throw new RuntimeException("Transcript not found for change:\n\t" + variantEffect);
 
 		// Only one exon? Nothing to do (there is no exon-exon junction)
-		if (tr.numChilds() <= 1) return false;
+		if (tr.numChildren() <= 1) return false;
 
 		// Find last valid NMD position
 		int lastNmdPos = lastNmdPos(tr);
@@ -297,7 +297,7 @@ public class LossOfFunction {
 	}
 
 	/**
-	 * Find the last position where a nonsense mediated decay is supposed to occurr
+	 * Find the last position where a nonsense mediated decay is supposed to occur
 	 * This is 50 bases (MND_BASES_BEFORE_LAST_JUNCTION bases) before the last exon-exon junction.
 	 */
 	public int lastNmdPos(Transcript tr) {
@@ -366,7 +366,7 @@ public class LossOfFunction {
 		for (Transcript tr : gene)
 			if (transcripts.contains(tr)) countAffected++;
 
-		return countAffected / ((double) gene.numChilds());
+		return countAffected / ((double) gene.numChildren());
 	}
 
 	@Override

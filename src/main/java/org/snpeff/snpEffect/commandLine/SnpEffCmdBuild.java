@@ -2,7 +2,7 @@ package org.snpeff.snpEffect.commandLine;
 
 import org.snpeff.RegulationConsensusMultipleBed;
 import org.snpeff.RegulationFileConsensus;
-import org.snpeff.RegulationFileSplitBytType;
+import org.snpeff.RegulationFileSplitByteType;
 import org.snpeff.SnpEff;
 import org.snpeff.codons.FindRareAaIntervals;
 import org.snpeff.fileIterator.MotifFileIterator;
@@ -62,7 +62,7 @@ public class SnpEffCmdBuild extends SnpEff {
     /**
      * Check if database is OK, by comparing to CDS sequences
      *
-     * @return: true the comparisson error rate is lower than maxErrorRate
+     * @return: true the comparison error rate is lower than maxErrorRate
      */
     boolean checkDbCds(SnpEffPredictorFactory snpEffectPredictorFactory) {
         var okCds = false;
@@ -344,7 +344,7 @@ public class SnpEffCmdBuild extends SnpEff {
 
         // Split large GFF files into smaller ones
         RegulationFileIterator regulationFileIterator = new RegulationGffFileIterator(regulationFileName);
-        RegulationFileSplitBytType regSplit = new RegulationFileSplitBytType();
+        RegulationFileSplitByteType regSplit = new RegulationFileSplitByteType();
         regSplit.setVerbose(verbose);
         regSplit.splitFile(regulationFileIterator, config.getDirDataGenomeVersion());
 

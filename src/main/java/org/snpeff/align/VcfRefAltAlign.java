@@ -130,7 +130,7 @@ public class VcfRefAltAlign extends NeedlemanWunsch {
 	}
 
 	/**
-	 * If it is not a trivial alignment, then it's a mixed variant (a.k.a subtitution)
+	 * If it is not a trivial alignment, then it's a mixed variant (a.k.a substitution)
 	 */
 	void substitution() {
 		variantType = VariantType.MIXED;

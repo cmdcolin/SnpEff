@@ -406,7 +406,7 @@ public class Marker extends Interval implements TxtSerializable {
                     Exon ex = (Exon) m;
                     sb.append(m.getClass().getSimpleName());
                     sb.append(separatorWithin + ex.getRank());
-                    sb.append(separatorWithin + tr.numChilds());
+                    sb.append(separatorWithin + tr.numChildren());
                     sb.append(separatorWithin + ex.getSpliceType());
                     break;
 
@@ -415,7 +415,7 @@ public class Marker extends Interval implements TxtSerializable {
                     tr = (Transcript) m.getParent();
                     sb.append(m.getClass().getSimpleName());
                     sb.append(separatorWithin + intron.getRank());
-                    sb.append(separatorWithin + (tr.numChilds() - 1));
+                    sb.append(separatorWithin + (tr.numChildren() - 1));
                     sb.append(separatorWithin + intron.getSpliceType());
                     break;
 

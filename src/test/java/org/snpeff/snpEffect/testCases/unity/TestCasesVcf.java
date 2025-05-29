@@ -443,7 +443,7 @@ public class TestCasesVcf extends TestCasesBase {
         // Open VCF file
         VcfFileIterator vcf = new VcfFileIterator(vcfFileName);
         for (VcfEntry ve : vcf) {
-            if (vcf.isHeadeSection()) {
+            if (vcf.isHeaderSection()) {
                 // Add INFO field to header
                 vcf.getVcfHeader().addInfo(vhInfo);
                 if (verbose) Log.info(vcf.getVcfHeader());
@@ -480,7 +480,7 @@ public class TestCasesVcf extends TestCasesBase {
         // Open VCF file
         VcfFileIterator vcf = new VcfFileIterator(vcfFileName);
         for (VcfEntry ve : vcf) {
-            if (vcf.isHeadeSection()) {
+            if (vcf.isHeaderSection()) {
                 // Add INFO field to header
                 vcf.getVcfHeader().addInfo(vhInfo);
                 if (verbose) Log.info(vcf.getVcfHeader());
@@ -522,7 +522,7 @@ public class TestCasesVcf extends TestCasesBase {
 
             // Check that 'key=value' is in INFO
             String keyValPrev = infoKey + "=" + infoValuePrev;
-            assertTrue(ve.getInfoStr().contains(keyValPrev), "Old key=valu is not present");
+            assertTrue(ve.getInfoStr().contains(keyValPrev), "Old key=value is not present");
 
             // Replace value
             ve.addInfo(infoKey, infoValue);
@@ -714,7 +714,7 @@ public class TestCasesVcf extends TestCasesBase {
         assertEquals(ref.substring(1), inv.getReference());
         var altVariant = new StringBuilder(ref.substring(1)).reverse().toString();
         assertEquals(altVariant, inv.getAlt());
-        assertEquals(start + 1 - 1, inv.getStart()); // In VCF the first base on an <INV> is not included, so we add 1. It's zero-based, so we substract 1
+        assertEquals(start + 1 - 1, inv.getStart()); // In VCF the first base on an <INV> is not included, so we add 1. It's zero-based, so we subtract 1
         assertEquals(end - 1, inv.getEnd());
     }
 
@@ -745,7 +745,7 @@ public class TestCasesVcf extends TestCasesBase {
         assertEquals(VariantType.INV, inv.getVariantType());
         assertEquals(refExpected, inv.getReference());
         assertEquals(altExpected, inv.getAlt());
-        assertEquals(start + 1 - 1, inv.getStart()); // In VCF the first base on an <INV> is not included, so we add 1. It's zero-based, so we substract 1
+        assertEquals(start + 1 - 1, inv.getStart()); // In VCF the first base on an <INV> is not included, so we add 1. It's zero-based, so we subtract 1
         assertEquals(end - 1, inv.getEnd());        
     }
 

@@ -1,4 +1,4 @@
-package org.snpeff.probablility.bootstrap;
+package org.snpeff.probability.bootstrap;
 
 import java.util.ArrayList;
 import java.util.Collection;

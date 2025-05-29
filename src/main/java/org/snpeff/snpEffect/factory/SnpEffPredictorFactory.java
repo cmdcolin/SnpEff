@@ -42,7 +42,7 @@ public abstract class SnpEffPredictorFactory {
 
 	// Debug mode?
 	boolean circularCorrectLargeGap = false;
-	boolean createRandSequences = false; // If sequences are not read frmo a file, create random sequences
+	boolean createRandSequences = false; // If sequences are not read from a file, create random sequences
 	boolean debug = false;
 	boolean frameCorrection;
 	boolean readSequences = true; // Do not read sequences from GFF file (this is only used for debugging)
@@ -97,7 +97,7 @@ public abstract class SnpEffPredictorFactory {
 	 * @param exon
 	 * @return exon added.
 	 * Note: If the exon exists with the same ID, return old exon.
-	 *       If exon exists with same ID and same coordiates, add a new exon with different ID.
+	 *       If exon exists with same ID and same coordinates, add a new exon with different ID.
 	 */
 	protected Exon add(Exon exon) {
 		Transcript tr = (Transcript) exon.getParent();
@@ -261,7 +261,7 @@ public abstract class SnpEffPredictorFactory {
 			Integer len = lenByChr.get(chrName);
 
 			Chromosome chr = gene.getChromosome();
-			if (chr.getEnd() > 0 && gene.getEnd() > chr.getEnd()) Log.warning(ErrorWarningType.WARNING_CHROMOSOME_LENGTH, "Chromosome '" + chr.getChromosomeName() + "' has end coordinate " + chr.getEnd() + ", but gene ID '" + gene.getId() + "' has end coordiante " + gene.getEnd());
+			if (chr.getEnd() > 0 && gene.getEnd() > chr.getEnd()) Log.warning(ErrorWarningType.WARNING_CHROMOSOME_LENGTH, "Chromosome '" + chr.getChromosomeName() + "' has end coordinate " + chr.getEnd() + ", but gene ID '" + gene.getId() + "' has end coordinate " + gene.getEnd());
 
 			int max = Math.max(gene.getEnd(), (len != null ? len : 0));
 			lenByChr.put(chrName, max);
@@ -605,7 +605,7 @@ public abstract class SnpEffPredictorFactory {
 				boolean corrected = tr.frameCorrection();
 
 				if (corrected) {
-					if (debug) Log.debug("\tTranscript " + tr.getId() + " corrected using frame (exons: " + tr.numChilds() + ").");
+					if (debug) Log.debug("\tTranscript " + tr.getId() + " corrected using frame (exons: " + tr.numChildren() + ").");
 					else if (verbose) Gpr.showMark(i++, 1);
 
 				}

@@ -216,7 +216,7 @@ public class TestCasesIntegrationTranscript {
                     // Check
                     if (!aaReal.equals(aa)) {
                         String msg = "Difference in expected codon/AA:" //
-                                + "\n\tCodon numer: " + aaNum //
+                                + "\n\tCodon number: " + aaNum //
                                 + "\n\tCodon      : " + codon[0] + ", " + codon[1] + ", " + codon[2] //
                                 + "\n\tBases      : " + tr.baseAt(codon[0]) + ", " + tr.baseAt(codon[1]) + ", " + tr.baseAt(codon[2]) //
                                 + "\n\tCodonStr   : " + codonStr + "\t" + cstr + "\t" + tr.baseNumberCds2Codon(3 * aaNum) //

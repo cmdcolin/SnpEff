@@ -48,4 +48,4 @@ $ java -jar SnpSift.jar gt -u test.gt.vcf
 ```
 
 !!! warning
-    This is lossy compression. Note that only GT informations is compressed, all other information in genotype field is lost.
+    This is lossy compression. Note that only GT information is compressed, all other information in genotype field is lost.

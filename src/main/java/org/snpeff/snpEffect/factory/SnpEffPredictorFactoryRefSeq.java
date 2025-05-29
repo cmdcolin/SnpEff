@@ -253,7 +253,7 @@ public class SnpEffPredictorFactoryRefSeq extends SnpEffPredictorFactory {
 						ex.setFrame(exFrame);
 						ex = add(ex);
 
-						// CDS (ony if intersects)
+						// CDS (only if intersects)
 						if ((exStart <= cdsEnd) && (exEnd >= cdsStart)) {
 							Cds cds = new Cds(tr, Math.max(cdsStart, exStart), Math.min(cdsEnd, exEnd), strandMinus, exId);
 							add(cds);

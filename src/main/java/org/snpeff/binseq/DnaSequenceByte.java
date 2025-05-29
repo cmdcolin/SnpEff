@@ -71,7 +71,7 @@ public class DnaSequenceByte {
     }
 
     /**
-     * Sequence lenth
+     * Sequence length
      */
     public int length() {
         return length;

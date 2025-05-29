@@ -308,7 +308,7 @@ public class TestCasesIntegrationBase {
         // Run
         SnpEffCmdEff cmdEff = (SnpEffCmdEff) cmd.cmd();
         cmdEff.setVerbose(verbose);
-        cmdEff.setSupressOutput(!verbose);
+        cmdEff.setSuppressOutput(!verbose);
         List<VcfEntry> vcfEntries = cmdEff.run(true);
         assertTrue(cmdEff.getTotalErrs() <= 0, "Errors while executing SnpEff");
 
@@ -349,7 +349,7 @@ public class TestCasesIntegrationBase {
 
         SnpEff cmd = new SnpEff(args);
         cmd.setVerbose(verbose);
-        cmd.setSupressOutput(!verbose);
+        cmd.setSuppressOutput(!verbose);
 
         // Run
         SnpEffCmdEff cmdEff = (SnpEffCmdEff) cmd.cmd();
@@ -467,7 +467,7 @@ public class TestCasesIntegrationBase {
         SnpEff cmd = new SnpEff(args);
         SnpEffCmdEff snpeff = (SnpEffCmdEff) cmd.cmd();
         snpeff.setVerbose(verbose);
-        snpeff.setSupressOutput(!verbose);
+        snpeff.setSuppressOutput(!verbose);
         List<VcfEntry> vcfEntries = snpeff.run(true);
 
         for (VcfEntry ve : vcfEntries) {
@@ -487,7 +487,7 @@ public class TestCasesIntegrationBase {
         SnpEff cmd = new SnpEff(args);
         SnpEffCmdEff snpeff = (SnpEffCmdEff) cmd.cmd();
         snpeff.setVerbose(verbose);
-        snpeff.setSupressOutput(!verbose);
+        snpeff.setSuppressOutput(!verbose);
         List<VcfEntry> vcfEntries = snpeff.run(true);
 
         boolean hasWarning = false;
@@ -517,7 +517,7 @@ public class TestCasesIntegrationBase {
         snpeff.parseArgs(args);
         snpeff.setDebug(debug);
         snpeff.setVerbose(verbose);
-        snpeff.setSupressOutput(!verbose);
+        snpeff.setSuppressOutput(!verbose);
         snpeff.setUpDownStreamLength(0);
         snpeff.setShiftHgvs(shiftHgvs);
         snpeff.setFormatVersion(EffFormatVersion.FORMAT_EFF_4);
@@ -622,12 +622,12 @@ public class TestCasesIntegrationBase {
 
         SnpEff cmd = new SnpEff(args);
         SnpEffCmdEff cmdEff = (SnpEffCmdEff) cmd.cmd();
-        cmdEff.setSupressOutput(!verbose);
+        cmdEff.setSuppressOutput(!verbose);
 
-        List<VcfEntry> vcfEnties = cmdEff.run(true);
+        List<VcfEntry> vcfEntries = cmdEff.run(true);
         assertTrue(cmdEff.getTotalErrs() <= 0, "Errors while executing SnpEff");
 
-        for (VcfEntry ve : vcfEnties) {
+        for (VcfEntry ve : vcfEntries) {
 
             StringBuilder msg = new StringBuilder();
 
@@ -668,12 +668,12 @@ public class TestCasesIntegrationBase {
         SnpEff cmd = new SnpEff(args);
         SnpEffCmdEff cmdEff = (SnpEffCmdEff) cmd.cmd();
         cmdEff.setVerbose(verbose);
-        cmdEff.setSupressOutput(!verbose);
+        cmdEff.setSuppressOutput(!verbose);
 
-        List<VcfEntry> vcfEnties = cmdEff.run(true);
+        List<VcfEntry> vcfEntries = cmdEff.run(true);
         assertTrue(cmdEff.getTotalErrs() <= 0, "Errors while executing SnpEff");
 
-        for (VcfEntry ve : vcfEnties) {
+        for (VcfEntry ve : vcfEntries) {
             // Create a set of found variants
             HashSet<String> vepSos = new HashSet<>();
             String vepSo = ve.getInfo("SO");
@@ -910,7 +910,7 @@ public class TestCasesIntegrationBase {
         cmd.setTesting(true);
         SnpEffCmdEff cmdEff = (SnpEffCmdEff) cmd.cmd();
         cmdEff.setVerbose(verbose);
-        cmdEff.setSupressOutput(!verbose);
+        cmdEff.setSuppressOutput(!verbose);
         cmdEff.setTesting(true);
         if (effFormatVersion != null) cmdEff.setFormatVersion(effFormatVersion);
 
@@ -941,7 +941,7 @@ public class TestCasesIntegrationBase {
         SnpEff cmd = new SnpEff(args);
         SnpEffCmdEff cmdEff = (SnpEffCmdEff) cmd.cmd();
         cmdEff.setVerbose(verbose);
-        cmdEff.setSupressOutput(!verbose);
+        cmdEff.setSuppressOutput(!verbose);
 
         // Run command
         List<VcfEntry> list = cmdEff.run(true);

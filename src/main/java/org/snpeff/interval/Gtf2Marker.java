@@ -30,7 +30,7 @@ public class Gtf2Marker extends GffMarker {
 		super(parent, start, end, strandMinus, id);
 	}
 
-	/** Does the key have mutiple values */
+	/** Does the key have multiple values */
 	public boolean isMultipleValues(String key) {
 		return key.equals(TAG_KEY);  // Only the 'tag' key is allowed multiple value
 	}

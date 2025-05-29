@@ -2,14 +2,14 @@
 # Generic class to download a genome
 class DownloadGenome {
 	string className		# This class' short name
-	string genome			# Genome as appeard in SnpEff's config file (it usually includes relase / version number)
+	string genome			# Genome as appeared in SnpEff's config file (it usually includes release / version number)
 	string genomeNoVer		# Genome name without any version / release 
 	string version			# Genom version
 	string downloadDir		# Where to download the files
 	string downloadDirOri	# Where to download the original files, if there is a transformation needed
 	string dirDataGenome	# SnpEff's data directory for this genome
 	string cdsUrl, fastaUrl, genesUrl, protUrl	# Source URLs
-	string cdsLocal, fastaLocal, genesLocal, protLocal	# Local downlaod files
+	string cdsLocal, fastaLocal, genesLocal, protLocal	# Local download files
 	string cdsData, fastaData, genesData, protData	# SnpEff 'data' files
 	string fastaDataEq		# This genome fasta is equivalent, if present, create a link (typical is the major name of the genome without version, e.g. 'hg38')
 	string genesExt			# Genes file extension ('gtf', 'gff', genBank', etc.)
@@ -30,9 +30,9 @@ class DownloadGenome {
 	}
 
 	# If the reference FASTA file 'fastaDataEq' exists, create a link
-	void checkRefrenceFasta() {
+	void checkReferenceFasta() {
 		if( !fastaDataEq.exists() || fastaData.exists() ) return
-		log("Download '$genome': FASTA refernce file '$fastaDataEq' exists, linking")
+		log("Download '$genome': FASTA reference file '$fastaDataEq' exists, linking")
 		sys ln -s '$fastaDataEq' '$fastaData'
 	}
 
@@ -41,7 +41,7 @@ class DownloadGenome {
 		log("Download '$genome', using download dir '$downloadDir'")
 		init()
 
-		checkRefrenceFasta()
+		checkReferenceFasta()
 
 		# Download files (check if data is already downloaded)
 		fastaLocal = downloadFastaCheck()
@@ -201,7 +201,7 @@ class DownloadGenome {
 		task( dst <- src ) sys cp -vf '$src' '$dst'
 	}
 
-    # Retrun true if the (local) file has already been downloaded (exists and non-empty)
+    # Return true if the (local) file has already been downloaded (exists and non-empty)
     bool isDownloaded(string path) {
         return path.exists() && (path.size() > 0)
     }

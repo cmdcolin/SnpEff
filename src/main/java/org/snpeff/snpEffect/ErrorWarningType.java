@@ -24,7 +24,7 @@ public enum ErrorWarningType {
 	, WARNING_CDS_TOO_SHORT // CDS is too short and cannot be corrected
 	, WARNING_CHROMOSOME_NOT_FOUND // Chromosome not found
 	, WARNING_CHROMOSOME_CIRCULAR // Chromosome might be circular
-	, WARNING_CHROMOSOME_LENGTH // Chromosome length might be incorrect (e.g. genes have boundaries outside chromosome coordiantes)
+	, WARNING_CHROMOSOME_LENGTH // Chromosome length might be incorrect (e.g. genes have boundaries outside chromosome coordinates)
 	, WARNING_GENE_COORDINATES // Gene coordinates are adjusted
 	, WARNING_GENE_ID_DUPLICATE // Gene ID already exists
 	, WARNING_GENE_NOT_FOUND // Gene not found
@@ -35,7 +35,7 @@ public enum ErrorWarningType {
 	, WARNING_TRANSCRIPT_ID_DUPLICATE // Transcript ID already exists
 	, WARNING_CANNOT_ADD_UTR // UTR cannot be added
 	, WARNING_FRAMES_ZERO // Frames have zero values
-	, WARNING_RARE_AA_POSSITION_NOT_FOUND // The genomic position for a rare amino acid was not found
+	, WARNING_RARE_AA_POSITION_NOT_FOUND // The genomic position for a rare amino acid was not found
 	//
 	// VCF
 	//

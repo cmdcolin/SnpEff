@@ -153,7 +153,7 @@ th a:active, th a:hover {
 	<a href="#effects"> Number of variants by annotation </a><br>
 	<a href="#quality">Quality histogram</a><br>
 	<a href="#indels">InDel length histogram</a><br>
-	<a href="#baseChages">Base variant table</a><br>
+	<a href="#baseChanges">Base variant table</a><br>
 	<a href="#tstv">Transition vs transversions (ts/tv)</a><br>
 	<a href="#alleleFreq"> Allele frequency </a><br>
 	<a href="#alleleCount"> Allele Count </a><br>
@@ -350,7 +350,7 @@ Missense / Silent ratio: ${changeStats.silentRatio?string("0.####")}
 <hr> 
 <a name="effects"> 
 <center>
-<b> Number of annotaitons and region counts </b> <p> 
+<b> Number of annotations and region counts </b> <p> 
 
 <table border=0>
 	<tr>
@@ -399,7 +399,7 @@ Missense / Silent ratio: ${changeStats.silentRatio?string("0.####")}
 	========================================================================== -->
 
 <hr> 
-<a name="baseChages"> 
+<a name="baseChanges"> 
 <center>
 <b> Base changes (SNPs) </b> <p>
 
@@ -482,14 +482,14 @@ Missense / Silent ratio: ${changeStats.silentRatio?string("0.####")}
 	========================================================================== -->
 
 <hr> 
-<a name="homHet">
+<a name="homeHet">
 <center> <b> Hom/Het per sample </b> <p> </center>
 <#if af>
 	<img src="${vcfStats.genotypeStats.hetBySampleUrl}"><br>
-	<img src="${vcfStats.genotypeStats.homBySampleUrl}"><br>
+	<img src="${vcfStats.genotypeStats.homeBySampleUrl}"><br>
 	<img src="${vcfStats.genotypeStats.missingBySampleUrl}"><br>
 	
-	<pre>${vcfStats.genotypeStats.homHetTable}</pre>
+	<pre>${vcfStats.genotypeStats.homeHetTable}</pre>
 </#if>
 <p>
 
@@ -507,7 +507,7 @@ Missense / Silent ratio: ${changeStats.silentRatio?string("0.####")}
 		- Rows are reference codons and columns are changed codons. E.g. Row 'AAA' column 'TAA' indicates how many 'AAA' codons have been replaced by 'TAA' codons.<br>
 		- Red background colors indicate that more changes happened (heat-map).<br>
 		- Diagonals are indicated using grey background color <br> 
-		- WARNING: This table may include different translation codon tables (e.g. mamalian DNA and mitochondrial DNA).<br>
+		- WARNING: This table may include different translation codon tables (e.g. mammalian DNA and mitochondrial DNA).<br>
 		<p>
 	</div><p>
 
@@ -553,7 +553,7 @@ Missense / Silent ratio: ${changeStats.silentRatio?string("0.####")}
 		- Rows are reference amino acids and columns are changed amino acids. E.g. Row 'A' column 'E' indicates how many 'A' amino acids have been replaced by 'E' amino acids.<br>
 		- Red background colors indicate that more changes happened (heat-map).<br>
 		- Diagonals are indicated using grey background color <br> 
-		- WARNING: This table may include different translation codon tables (e.g. mamalian DNA and mitochondrial DNA).<br>
+		- WARNING: This table may include different translation codon tables (e.g. mammalian DNA and mitochondrial DNA).<br>
 		<p>
 	</div><p>
 

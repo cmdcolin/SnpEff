@@ -61,15 +61,15 @@ public class SuffixIndexerNmer<T extends BinarySequence> extends SequenceIndexer
 	 * @return An overlap result
 	 */
 	@SuppressWarnings("unchecked")
-	public OverlapRessult<T> findBestOverlap(T sequence) {
+	public OverlapResult<T> findBestOverlap(T sequence) {
 		// Find an overlapping sequence 
-		OverlapRessult<T> result = new OverlapRessult<T>();
+		OverlapResult<T> result = new OverlapResult<T>();
 		findOverlap(sequence, result);
 
 		if (result.bestScore < sequence.length()) { // We calculate the reverseWC score (unless we already have an optimal score)
 			// Find an overlapping sequence for reverseWC
 			T sequenceRwc = (T) sequence.reverseWc();
-			OverlapRessult<T> resultRwc = new OverlapRessult<T>();
+			OverlapResult<T> resultRwc = new OverlapResult<T>();
 			resultRwc.reverseWC = true;
 			findOverlap(sequenceRwc, resultRwc);
 
@@ -88,7 +88,7 @@ public class SuffixIndexerNmer<T extends BinarySequence> extends SequenceIndexer
 	 * @param sequence
 	 * @return
 	 */
-	boolean findOverlap(T sequence, OverlapRessult<T> result) {
+	boolean findOverlap(T sequence, OverlapResult<T> result) {
 		int max = sequence.length() - nmerSize;
 
 		// Initialize nmer
@@ -188,7 +188,7 @@ public class SuffixIndexerNmer<T extends BinarySequence> extends SequenceIndexer
 	@SuppressWarnings("unchecked")
 	public boolean overlap(T sequence) {
 		// Find best overlapping sequence 
-		OverlapRessult<T> result = findBestOverlap(sequence);
+		OverlapResult<T> result = findBestOverlap(sequence);
 		if (result.bestSequence == null) return false; // Nothing found? => return
 
 		// If sequence is fully included in "result.bestSequence", then the overlap is already done (nothing to do)
@@ -217,7 +217,7 @@ public class SuffixIndexerNmer<T extends BinarySequence> extends SequenceIndexer
 		if (start >= 0) {
 			int startIdx = sequenceOri.length() - nmerSize;
 
-			// Initialzie Nmer
+			// Initialize Nmer
 			for (int i = 0, j = startIdx; i < nmerSize; i++, j++)
 				nmer.rol(sequenceNew.getBase(j));
 
@@ -229,7 +229,7 @@ public class SuffixIndexerNmer<T extends BinarySequence> extends SequenceIndexer
 				nmer.rol(sequenceNew.getBase(idx + nmerSize)); // Update nmer
 			}
 		} else {
-			// Initialzie Nmer
+			// Initialize Nmer
 			for (int i = 0; i < nmerSize; i++)
 				nmer.rol(sequenceNew.getBase(i));
 

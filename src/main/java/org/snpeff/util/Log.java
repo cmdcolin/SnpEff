@@ -20,7 +20,7 @@ public class Log {
     public static final int MAX_ERRORS = 10; // Report an error no more than X times
     protected static Map<ErrorWarningType, Integer> warnCount = new HashMap<>(); // Count warnings
     private static Timer timer = new Timer(); // Keep track of time (since first class instantiation)
-    private static FatalErrorBehabiour fatalErrorBehabiour = FatalErrorBehabiour.EXIT; // How do we exit in case of a fatal error (for testing, we use 'EXCEPTION')
+    private static FatalErrorBehaviour fatalErrorBehaviour = FatalErrorBehaviour.EXIT; // How do we exit in case of a fatal error (for testing, we use 'EXCEPTION')
     private static Set<ErrorWarningType> silenceWarning = new HashSet<>();
 
     /**
@@ -70,12 +70,12 @@ public class Log {
     }
 
     public static void fatalError(Throwable e, String message) {
-        if (fatalErrorBehabiour != FatalErrorBehabiour.EXCEPTION_QUIET) {
+        if (fatalErrorBehaviour != FatalErrorBehaviour.EXCEPTION_QUIET) {
             System.err.println("FATAL ERROR: " + message);
             if (e != null) e.printStackTrace();
         }
 
-        switch (fatalErrorBehabiour) {
+        switch (fatalErrorBehaviour) {
             case EXIT:
                 System.exit(-1);
                 break;
@@ -85,7 +85,7 @@ public class Log {
                 throw new RuntimeException(message, e);
 
             default:
-                System.err.println("WARNINGN: Unknown fatalErrorBehabiour '" + fatalErrorBehabiour + "'");
+                System.err.println("WARNINGN: Unknown fatalErrorBehaviour '" + fatalErrorBehaviour + "'");
                 System.exit(-1);
                 break;
         }
@@ -115,12 +115,12 @@ public class Log {
     public static void reset() {
         warnCount = new HashMap<>(); // Count warningns
         timer = new Timer(); // Keep track of time (since first class instantiation)
-        fatalErrorBehabiour = FatalErrorBehabiour.EXIT; // How do we exit in case of a fatal error (for testing, we use 'EXCEPTION')
+        fatalErrorBehaviour = FatalErrorBehaviour.EXIT; // How do we exit in case of a fatal error (for testing, we use 'EXCEPTION')
         silenceWarning = new HashSet<>();
     }
 
-    public static void setFatalErrorBehabiour(FatalErrorBehabiour fatalErrorBehabiour) {
-        Log.fatalErrorBehabiour = fatalErrorBehabiour;
+    public static void setFatalErrorBehaviour(FatalErrorBehaviour fatalErrorBehaviour) {
+        Log.fatalErrorBehaviour = fatalErrorBehaviour;
     }
 
     public static void silenceWarning(ErrorWarningType warningType) {
@@ -158,7 +158,7 @@ public class Log {
         }
     }
 
-    public enum FatalErrorBehabiour {
+    public enum FatalErrorBehaviour {
         EXIT // Use System.exit()
         , EXCEPTION // Throw an exception
         , EXCEPTION_QUIET // Silence the output and throw an exception (used in test cases)

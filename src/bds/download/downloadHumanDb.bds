@@ -146,8 +146,8 @@ void downloadNextProt() {
         wgetTask(urlNextProt)
 
 		wait
-		downloadOk.write("OK")	# Mark as downlaoded OK
-	} else println "downloadNextProt: Done file '$dir/$downloadOk' exists, skippping"
+		downloadOk.write("OK")	# Mark as downloaded OK
+	} else println "downloadNextProt: Done file '$dir/$downloadOk' exists, skipping"
 }
 
 #-------------------------------------------------------------------------------
@@ -164,7 +164,7 @@ void downloadPdb() {
 	if( ! downloadOk.exists() ) {
 		println "Download PDB"
 		sys rsync -rlpt -v -z --delete --port=33444 $urlPdb .
-		downloadOk.write("OK")	# Mark as downlaoded OK
-	} else println "downloadPdb: Done file '$dir/$downloadOk' exists, skippping"
+		downloadOk.write("OK")	# Mark as downloaded OK
+	} else println "downloadPdb: Done file '$dir/$downloadOk' exists, skipping"
 }
 

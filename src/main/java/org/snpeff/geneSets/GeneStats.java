@@ -45,8 +45,8 @@ public class GeneStats {
 
 			numberOfTranscripts++;
 
-			numberOfExonsTotal += tr.numChilds();
-			numberOfExonsMax = Math.max(numberOfExonsMax, tr.numChilds());
+			numberOfExonsTotal += tr.numChildren();
+			numberOfExonsMax = Math.max(numberOfExonsMax, tr.numChildren());
 
 			int cdsLen = tr.cds().length();
 			cdsLengthTotal += cdsLen;

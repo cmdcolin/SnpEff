@@ -30,12 +30,12 @@ public class TestCasesIntegrationMissenseSilentRatio extends TestCasesIntegratio
 
         SnpEff cmd = new SnpEff(args);
         cmd.setVerbose(verbose);
-        cmd.setSupressOutput(!verbose);
+        cmd.setSuppressOutput(!verbose);
         SnpEffCmdEff snpeff = (SnpEffCmdEff) cmd.cmd();
 
         snpeff.run();
 
-        double silentRatio = snpeff.getChangeEffectResutStats().getSilentRatio();
+        double silentRatio = snpeff.getChangeEffectResultStats().getSilentRatio();
         if (verbose) Log.info("Missense / Silent ratio: " + silentRatio);
 
         assertEquals(1.19, silentRatio, 0.1);

@@ -202,11 +202,11 @@ public class VcfHeader implements Serializable {
 
 						if (name.equalsIgnoreCase("Derived")) derived = value;
 						else if (name.equalsIgnoreCase("Original")) original = value;
-						else throw new RuntimeException("Cannot parse PEDIGREE heade line. Field name: '" + name + "'\n\tLine: '" + line + "'");
+						else throw new RuntimeException("Cannot parse PEDIGREE header line. Field name: '" + name + "'\n\tLine: '" + line + "'");
 					}
 
-					if (derived == null) throw new RuntimeException("Cannot parse PEDIGREE heade line. Missing 'Derived' name-value pair");
-					if (original == null) throw new RuntimeException("Cannot parse PEDIGREE heade line. Missing 'Original' name-value pair");
+					if (derived == null) throw new RuntimeException("Cannot parse PEDIGREE header line. Missing 'Derived' name-value pair");
+					if (original == null) throw new RuntimeException("Cannot parse PEDIGREE header line. Missing 'Original' name-value pair");
 
 					PedigreeEntry pe = new PedigreeEntry(original, derived);
 					pe.sampleNumbers(sampleNames);
@@ -225,12 +225,12 @@ public class VcfHeader implements Serializable {
 						if (name.equalsIgnoreCase("Father")) father = value;
 						else if (name.equalsIgnoreCase("Mother")) mother = value;
 						else if (name.equalsIgnoreCase("Child")) child = value;
-						else throw new RuntimeException("Cannot parse PEDIGREE heade line. Field name: '" + name + "'\n\tLine: '" + line + "'");
+						else throw new RuntimeException("Cannot parse PEDIGREE header line. Field name: '" + name + "'\n\tLine: '" + line + "'");
 					}
 
-					if (father == null) throw new RuntimeException("Cannot parse PEDIGREE heade line. Missing 'Father' name-value pair");
-					if (mother == null) throw new RuntimeException("Cannot parse PEDIGREE heade line. Missing 'Mother' name-value pair");
-					if (child == null) throw new RuntimeException("Cannot parse PEDIGREE heade line. Missing 'Child' name-value pair");
+					if (father == null) throw new RuntimeException("Cannot parse PEDIGREE header line. Missing 'Father' name-value pair");
+					if (mother == null) throw new RuntimeException("Cannot parse PEDIGREE header line. Missing 'Mother' name-value pair");
+					if (child == null) throw new RuntimeException("Cannot parse PEDIGREE header line. Missing 'Child' name-value pair");
 
 					PedigreeEntry pe = new PedigreeEntry(father, mother, child);
 					pe.sampleNumbers(sampleNames);

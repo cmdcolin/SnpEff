@@ -64,7 +64,7 @@ public class TestCasesIntegrationMotif extends TestCasesIntegrationBase {
         String[] args = {"-noLog", genome, vcf};
         SnpEff snpEff = new SnpEff(args);
         snpEff.setVerbose(verbose);
-        snpEff.setSupressOutput(!verbose);
+        snpEff.setSuppressOutput(!verbose);
         snpEff.setDebug(debug);
         snpEff.run();
     }
@@ -82,7 +82,7 @@ public class TestCasesIntegrationMotif extends TestCasesIntegrationBase {
         String[] args = {"-noLog", genome, vcf};
         SnpEff snpEff = new SnpEff(args);
         snpEff.setVerbose(verbose);
-        snpEff.setSupressOutput(!verbose);
+        snpEff.setSuppressOutput(!verbose);
         snpEff.setDebug(debug);
         snpEff.run();
     }

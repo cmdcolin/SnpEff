@@ -29,7 +29,7 @@ import org.snpeff.util.Log;
  * A VCF line can have multiple variants, and multiple genotypes
  * 
  * The VcfEntry represents the VCF line, NOT the variant itself. for example, if the `START` field
- * in the VCF line may differ from the `start` possition of the variant because the first base of
+ * in the VCF line may differ from the `start` position of the variant because the first base of
  * the `REF` field is used as an "anchor".
  * 
  * 
@@ -45,8 +45,8 @@ public class VcfEntry extends Marker implements Iterable<VcfGenotype> {
 	public static final char WITHIN_FIELD_SEP = ',';
 	public static final String SUB_FIELD_SEP = ";";
 	public static final String[] EMPTY_STRING_ARRAY = new String[0];
-	public static final double ALLELE_FEQUENCY_COMMON = 0.05;
-	public static final double ALLELE_FEQUENCY_LOW = 0.01;
+	public static final double ALLELE_FREQUENCY_COMMON = 0.05;
+	public static final double ALLELE_FREQUENCY_LOW = 0.01;
 	public static final int MAX_PADN = 1000;
 
 	public static final Pattern INFO_KEY_PATTERN = Pattern.compile("[\\p{Alpha}_][\\p{Alnum}._]*");
@@ -142,15 +142,15 @@ public class VcfEntry extends Marker implements Iterable<VcfGenotype> {
 		var sb = new StringBuilder();
 		var schars = s.toCharArray();
 		var first = true;
-		var previusIsUnderscore = false;
+		var previousIsUnderscore = false;
 		for (char c : schars) {
 			if (c == '_') {
-				if (!first) previusIsUnderscore = true;
+				if (!first) previousIsUnderscore = true;
 				continue;
 			}
 
-			if (previusIsUnderscore) {
-				previusIsUnderscore = false;
+			if (previousIsUnderscore) {
+				previousIsUnderscore = false;
 				sb.append('_');
 			}
 
@@ -366,8 +366,8 @@ public class VcfEntry extends Marker implements Iterable<VcfGenotype> {
 	 */
 	public AlleleFrequencyType alleleFrequencyType() {
 		double maf = maf();
-		if (maf <= ALLELE_FEQUENCY_LOW) return AlleleFrequencyType.Rare;
-		if (maf <= ALLELE_FEQUENCY_COMMON) return AlleleFrequencyType.LowFrequency;
+		if (maf <= ALLELE_FREQUENCY_LOW) return AlleleFrequencyType.Rare;
+		if (maf <= ALLELE_FREQUENCY_COMMON) return AlleleFrequencyType.LowFrequency;
 		return AlleleFrequencyType.Common;
 	}
 
@@ -900,7 +900,7 @@ public class VcfEntry extends Marker implements Iterable<VcfGenotype> {
 
 	/**
 	 * Is this bi-allelic (based ONLY on the number of ALTs)
-	 * WARINIG: You should use 'calcHetero()' method for a more precise calculation.
+	 * WARNING: You should use 'calcHetero()' method for a more precise calculation.
 	 */
 	public boolean isBiAllelic() {
 		if (alts == null) return false;
@@ -920,7 +920,7 @@ public class VcfEntry extends Marker implements Iterable<VcfGenotype> {
 
 	/**
 	 * Is this multi-allelic (based ONLY on the number of ALTs)
-	 * WARINIG: You should use 'calcHetero()' method for a more precise calculation.
+	 * WARNING: You should use 'calcHetero()' method for a more precise calculation.
 	 */
 	public boolean isMultiallelic() {
 		if (alts == null) return false;
@@ -1157,7 +1157,7 @@ public class VcfEntry extends Marker implements Iterable<VcfGenotype> {
 			case ".": return VCF_ALT_MISSING_ARRAY;
 		}
 
-		// Is IUB expantion enabled?
+		// Is IUB expansion enabled?
 		if(!vcfFileIterator.isExpandIub() ) return new String[] { altsStr };
 
 		// SNP IUB conversion table
@@ -1174,7 +1174,7 @@ public class VcfEntry extends Marker implements Iterable<VcfGenotype> {
 			case "Y": return VCF_ALT_Y_ARRAY;
 			case "K": return VCF_ALT_K_ARRAY;
 			default:
-				throw new RuntimeException("WARNING: Unkown IUB code for SNP '" + altsStr + "'");
+				throw new RuntimeException("WARNING: Unknown IUB code for SNP '" + altsStr + "'");
 		}
 	}
 
@@ -1200,12 +1200,12 @@ public class VcfEntry extends Marker implements Iterable<VcfGenotype> {
 				//		the end position corresponding to the SVLEN of a symbolic SV allele, 
 				//		and the end positions calculated from FORMAT LEN for the <*> symbolic allele.
 				//	```
-				// This means that the END possition includes the last base of the REF allele, i.e. `[start, end]` is a 
+				// This means that the END position includes the last base of the REF allele, i.e. `[start, end]` is a 
 				// closed interval (not half-open as in BED format).
 
 				// Get 'END' field and do some sanity check
 				end = (int) getInfoInt(VCF_INFO_END) - 1;	// END is closed 1-based (includes the last base from REF)
-				if (end < start) throw new RuntimeException("INFO field 'END' is before varaint's 'POS'\n\tEND : " + end + "\n\tPOS : " + start);
+				if (end < start) throw new RuntimeException("INFO field 'END' is before variant's 'POS'\n\tEND : " + end + "\n\tPOS : " + start);
 				return end;
 			} else if ( hasInfo(VCF_INFO_SVLEN) ) {
 				// From VCF specification:
@@ -1308,7 +1308,7 @@ public class VcfEntry extends Marker implements Iterable<VcfGenotype> {
 	void parseSparseGt(String str, byte gt[], int valueInt) {
 		if ((str == null) || (str.isEmpty()) || (str.equals("true"))) return;
 
-		// Split comma separated indeces
+		// Split comma separated indices
 		String idxs[] = str.split(",");
 		byte value = (byte) valueInt;
 
@@ -1742,7 +1742,7 @@ public class VcfEntry extends Marker implements Iterable<VcfGenotype> {
 		Variant var = new Variant(chromo, start, end, id);
 		var.setVariantType(VariantType.CNV);
 
-		// Create a list of varinats
+		// Create a list of variants
 		List<Variant> list = new LinkedList<>();
 		list.add(var);
 		return list;
@@ -1760,7 +1760,7 @@ public class VcfEntry extends Marker implements Iterable<VcfGenotype> {
 		Variant var = new Variant(chromo, start, ref, altDup, id);
 		var.setVariantType(VariantType.DUP);
 		
-		// Create a list of varinats
+		// Create a list of variants
 		List<Variant> list = new LinkedList<>();
 		list.add(var);
 		return list;
@@ -1771,7 +1771,7 @@ public class VcfEntry extends Marker implements Iterable<VcfGenotype> {
 		Variant var = new Variant(chromo, start, "", alt, id);
 		var.setVariantType(VariantType.INS);
 
-		// Create a list of varinats
+		// Create a list of variants
 		List<Variant> list = new LinkedList<>();
 		list.add(var);
 		return list;
@@ -1793,7 +1793,7 @@ public class VcfEntry extends Marker implements Iterable<VcfGenotype> {
 		// Create the variant and set the type
 		Variant var = new Variant(chromo, start, reference, altInv, id);
 		
-		// Create a list of varinats
+		// Create a list of variants
 		List<Variant> list = new LinkedList<>();
 		list.add(var);
 		return list;
@@ -1808,10 +1808,10 @@ public class VcfEntry extends Marker implements Iterable<VcfGenotype> {
 		// Parse ALT string
 		boolean left = alt.indexOf(']') >= 0;
 		String sep = (left ? "\\]" : "\\[");
-		String tpos[] = alt.split(sep);
-		String pos = tpos[1];
+		String typos[] = alt.split(sep);
+		String pos = typos[1];
 		boolean before = (alt.indexOf(']') == 0) || (alt.indexOf('[') == 0);
-		String altBases = (before ? tpos[2] : tpos[0]);
+		String altBases = (before ? typos[2] : typos[0]);
 
 		// Parse 'chr:start'
 		String posSplit[] = pos.split(":");

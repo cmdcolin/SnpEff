@@ -13,7 +13,7 @@ public class DistanceResult {
     public char aa1, aa2; // Amino acis
     public int aaPos1, aaPos2; // Amino acis position
     public String chr1, chr2; // Chromosome
-    public int pos1, pos2; // Genomic possition
+    public int pos1, pos2; // Genomic position
     public double distance;
     public String proteinId;
     public String pdbChainId1;
@@ -176,7 +176,7 @@ public class DistanceResult {
                 + "-" + pdbChainId2 // PDB chain name
                 + "_" + (aaPos2 + 1) // AA number (one-based)
                 + ":" + trId1 //
-                + (!trId2.equals(trId1) ? "-" + trId2 : "") // Ommit if it's the same transcript
+                + (!trId2.equals(trId1) ? "-" + trId2 : "") // Omit if it's the same transcript
                 ;
     }
 

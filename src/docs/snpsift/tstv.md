@@ -4,7 +4,7 @@ Calculate transition vs transversion ratios for each sample.
 
 Usage example:
 ```
-$ java -jar SnpSift.jar tstv hom s.vcf
+$ java -jar SnpSift.jar tstv home s.vcf
 
 Sample        :	1	2	3	4	5	6	7	8	9	10	11	12	Total
 Transitions   :	150488	150464	158752	156674	152936	160356	152276	155314	156484	149276	151182	153468	1847670

@@ -160,7 +160,7 @@ public class FastqFileIterator implements Iterable<Fastq>, Iterator<Fastq> {
 					} else fastqBuilder.appendQuality(line.trim());
 					break;
 				default:
-					throw new RuntimeException("Unkown state '" + state + "'");
+					throw new RuntimeException("Unknown state '" + state + "'");
 				}
 
 				line = null;

@@ -90,8 +90,8 @@ public class VcfOutputFormatter extends OutputFormatter {
 		boolean addCustomFields = false;
 		for (VariantEffect variantEffect : variantEffects) {
 
-			// If it is not filtered out by variantEffectResutFilter => Show it
-			if ((variantEffectResutFilter == null) || (!variantEffectResutFilter.filter(variantEffect))) {
+			// If it is not filtered out by variantEffectResultFilter => Show it
+			if ((variantEffectResultFilter == null) || (!variantEffectResultFilter.filter(variantEffect))) {
 				//---
 				// Create INFO field value as a string
 				//---
@@ -190,10 +190,10 @@ public class VcfOutputFormatter extends OutputFormatter {
 	}
 
 	/**
-	 * Are all varaint effects having some sort of warning or error?
+	 * Are all variant effects having some sort of warning or error?
 	 */
 	boolean allWarnings(List<VariantEffect> variantEffects) {
-		if (variantEffects.size() <= 0) return false; // Emtpy => No warnings
+		if (variantEffects.size() <= 0) return false; // Empty => No warnings
 
 		for (VariantEffect varEff : variantEffects)
 			if (!(varEff.hasError() || varEff.hasWarning())) return false;
@@ -249,7 +249,7 @@ public class VcfOutputFormatter extends OutputFormatter {
 			newLines.add("##INFO=<ID=NMD,Number=.,Type=String,Description=\"Predicted nonsense mediated decay effects for this variant. Format: 'Gene_Name | Gene_ID | Number_of_transcripts_in_gene | Percent_of_transcripts_affected'\">");
 		}
 
-		if (useOicr) newLines.add("##INFO=<ID=OICR,Number=.,Type=String,Description=\"Format: ( Transcript | Distance from begining cDNA )\">");
+		if (useOicr) newLines.add("##INFO=<ID=OICR,Number=.,Type=String,Description=\"Format: ( Transcript | Distance from beginning cDNA )\">");
 
 		return newLines;
 	}

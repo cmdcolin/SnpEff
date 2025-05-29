@@ -151,7 +151,7 @@ public class TestCasesMarkerUtils {
 
             // Are generated intervasl OK?
             if (!mColStr.equals(mStr)) {
-                Log.debug("Error checing markers! Markers and collapsed marker do not match!\n\t" + mStr + "\n\t" + mColStr);
+                Log.debug("Error checking markers! Markers and collapsed marker do not match!\n\t" + mStr + "\n\t" + mColStr);
 
                 System.err.println("Markers : ");
                 for (Marker m : markersOri)
@@ -164,7 +164,7 @@ public class TestCasesMarkerUtils {
                 for (Marker mkey : keySorted)
                     System.err.println(mkey + "\t->\t" + collapse.get(mkey));
 
-                throw new RuntimeException("Error checing markers! Markers and collapsed marker do not match!\n\t" + mStr + "\n\t" + mColStr);
+                throw new RuntimeException("Error checking markers! Markers and collapsed marker do not match!\n\t" + mStr + "\n\t" + mColStr);
             }
         }
     }

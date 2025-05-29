@@ -730,7 +730,7 @@ public class Reactome implements Iterable<Entity> {
 	 * Simplify: Removes entities that are not reachable from any 'gene' entity
 	 */
 	void simplifyEntities() {
-		if (verbose) Log.info("Simplify: Removing unnecesary nodes.");
+		if (verbose) Log.info("Simplify: Removing unnecessary nodes.");
 
 		//---
 		// Select entities to keep or delete

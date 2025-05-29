@@ -76,7 +76,7 @@ public class TestCasesBase {
         prefixes.add("Unit");
         prefixes.add("Integration");
 
-        Log.setFatalErrorBehabiour(Log.FatalErrorBehabiour.EXCEPTION);
+        Log.setFatalErrorBehaviour(Log.FatalErrorBehaviour.EXCEPTION);
     }
 
     @AfterEach

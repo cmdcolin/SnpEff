@@ -123,7 +123,7 @@ public class IntervalForest implements Serializable, Iterable<Itree> {
 	 *
 	 * For each marker 'm' in 'markers'
 	 * 		- query the tree to get all markers intersecting 'm'
-	 * 		- create a new interval which is the intersection of 'm' with all the resutls from the previous query.
+	 * 		- create a new interval which is the intersection of 'm' with all the results from the previous query.
 	 */
 	public Markers intersect(Markers markers) {
 		Markers result = new Markers();
@@ -158,7 +158,7 @@ public class IntervalForest implements Serializable, Iterable<Itree> {
 
 	/**
 	 * Create new tree.
-	 * In oder to change the implementation, only this method should be changed.
+	 * In order to change the implementation, only this method should be changed.
 	 */
 	protected Itree newItree() {
 		return new IntervalTree();

@@ -39,7 +39,7 @@ public class TestCasesIntegrationGenomicSequences {
         snpeff.parseArgs(args);
         snpeff.setDebug(debug);
         snpeff.setVerbose(verbose);
-        snpeff.setSupressOutput(!verbose);
+        snpeff.setSuppressOutput(!verbose);
 
         // Load genome
         snpeff.load();
@@ -80,7 +80,7 @@ public class TestCasesIntegrationGenomicSequences {
         snpeff.parseArgs(args);
         snpeff.setDebug(debug);
         snpeff.setVerbose(verbose);
-        snpeff.setSupressOutput(!verbose);
+        snpeff.setSuppressOutput(!verbose);
 
         // Load genome
         snpeff.load();

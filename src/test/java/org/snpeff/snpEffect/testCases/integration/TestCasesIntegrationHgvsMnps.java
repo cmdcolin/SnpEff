@@ -47,7 +47,7 @@ public class TestCasesIntegrationHgvsMnps extends TestCasesIntegrationBase {
         snpeff.parseArgs(args);
         snpeff.setDebug(debug);
         snpeff.setVerbose(verbose);
-        snpeff.setSupressOutput(!verbose);
+        snpeff.setSuppressOutput(!verbose);
         snpeff.setFormatVersion(EffFormatVersion.FORMAT_ANN_1);
 
         // Run & get result (single line)

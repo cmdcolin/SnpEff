@@ -37,7 +37,7 @@ public class TestCasesBuild extends TestCasesBase {
 
         // Run: We expect an error
         try {
-            Log.setFatalErrorBehabiour(Log.FatalErrorBehabiour.EXCEPTION_QUIET);
+            Log.setFatalErrorBehaviour(Log.FatalErrorBehaviour.EXCEPTION_QUIET);
             sefGff.create();
         } catch (Throwable t) {
             String errmsg = t.getMessage();
@@ -76,7 +76,7 @@ public class TestCasesBuild extends TestCasesBase {
 
         // Run: We expect an error
         try {
-            Log.setFatalErrorBehabiour(Log.FatalErrorBehabiour.EXCEPTION_QUIET);
+            Log.setFatalErrorBehaviour(Log.FatalErrorBehaviour.EXCEPTION_QUIET);
             sefGff.create();
         } catch (Throwable t) {
             String errmsg = t.getMessage();

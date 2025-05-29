@@ -130,7 +130,7 @@ public class FastaFileIterator extends FileIterator<String> {
 					break;
 
 				default:
-					throw new RuntimeException("Unkown state '" + state + "'");
+					throw new RuntimeException("Unknown state '" + state + "'");
 				}
 
 				line = null;

@@ -678,7 +678,7 @@ public class OpenBitSet implements Cloneable, Serializable {
 		return -1;
 	}
 
-	// some BitSet compatability methods
+	// some BitSet compatibility methods
 
 	//** see {@link union} */
 	public void or(OpenBitSet other) {

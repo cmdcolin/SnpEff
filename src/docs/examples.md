@@ -147,7 +147,7 @@ cat protocols/ex1.ann.cc.vcf | java -jar SnpSift.jar filter \
     > protocols/ex1.filtered.hom.vcf
 ```
 
-The filtered output file, filtered.hom_cases.vcf, contains over 400 variants satisfying our criteria.
+The filtered output file, filtered.home_cases.vcf, contains over 400 variants satisfying our criteria.
 This is still too large to analyze by hand, so can we can add another filter to see if any of these variants is expected to have a high impact.
 To identify variants where any of these impacts is classified as either `HIGH` or `MODERATE` we add the condition `(ANN[*].IMPACT = 'HIGH') | (ANN[*].IMPACT = 'MODERATE')`.
 The new filtering commands become:
@@ -529,7 +529,7 @@ Here is how to do it:
 
 **Pipes**
 
-Obviously you can perform the three previous commands, pipeling the out from one command to the next, thus avoiding the creation of intermediate files (for very large projects, this can be a significant amount of time).
+Obviously you can perform the three previous commands, pipeline the out from one command to the next, thus avoiding the creation of intermediate files (for very large projects, this can be a significant amount of time).
 
 !!! info
     In SnpEff &amp; SnpSift the STDIN is denoted by file name `"-"`

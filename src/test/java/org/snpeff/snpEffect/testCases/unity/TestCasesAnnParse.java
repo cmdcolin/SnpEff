@@ -22,7 +22,7 @@ public class TestCasesAnnParse extends TestCasesBase {
     }
 
     /**
-     * Make sure all effect_tpyes have appropriate impacts, regions, etc.
+     * Make sure all effect_types have appropriate impacts, regions, etc.
      */
     @Test
     public void test_EffectType() {

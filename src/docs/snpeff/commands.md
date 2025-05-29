@@ -183,7 +183,7 @@ $ java -jar snpEff.jar download -v WBcel215.69
 00:00:25.434	Downloaded 17986786 bytes
 00:00:26.864	Downloaded 19036546 bytes
 00:00:28.269	Downloaded 20086306 bytes
-00:00:29.155	Donwload finished. Total 20748168 bytes.
+00:00:29.155	Download finished. Total 20748168 bytes.
 00:00:29.156	Local file name: '/home/pcingola//snpEff/data/WBcel215.69/snpEffectPredictor.bin'
 00:00:29.156	Extracting file 'data/WBcel215.69/snpEffectPredictor.bin' to '/home/pcingola//snpEff/data/WBcel215.69/snpEffectPredictor.bin'
 00:00:29.157	Creating local directory: '/home/pcingola/snpEff/data/WBcel215.69'
@@ -236,7 +236,7 @@ $ java -Xmx8g -jar snpEff.jar dump -v -txt GRCh37.70 > GRCh37.70.txt
 In this case, the output file looks like a typical BED file (chr \t start \t end \t name):
 ```
 $ head GRCh37.70.txt
-chr start       end        strand  type         id                          geneName  geneId            numberOfTranscripts  canonicalTranscriptLength  transcriptId     cdsLength  numerOfExons  exonRank  exonSpliceType
+chr start       end        strand  type         id                          geneName  geneId            numberOfTranscripts  canonicalTranscriptLength  transcriptId     cdsLength  numberOfExons  exonRank  exonSpliceType
 1   1           249250622  +1      Chromosome   1                                                                                                       
 1   111833484   111863189  +1      Gene         ENSG00000134216             CHIA      ENSG00000134216   10                   1431                                                                  
 1   111853090   111863003  +1      Transcript   ENST00000489524             CHIA      ENSG00000134216   10                   1431                       ENST00000489524  862        9                     
@@ -265,7 +265,7 @@ numberOfTranscripts       | Number of transcripts in the gene
 canonicalTranscriptLength | CDS length of canonical transcript
 transcriptId              | Transcript ID, if marker is within a transcript
 cdsLength                 | CDS length of the transcript
-numerOfExons              | Number of exons in this transcript
+numberOfExons              | Number of exons in this transcript
 exonRank                  | Exon rank, if marker is an exon
 exonSpliceType            | Exon splice type, if marker is an exon
 

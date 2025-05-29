@@ -216,7 +216,7 @@ public class TestCasesApplyDel extends TestCasesBaseApply {
     }
 
     /**
-     * Variant over exon: variant is on the same coordiantes as exon
+     * Variant over exon: variant is on the same coordinates as exon
      */
     @Test
     public void test_apply_variant_13() {

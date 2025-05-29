@@ -336,7 +336,7 @@ public class TestCasesStructuralInv extends TestCasesBase {
         Variant variant = new Variant(chromosome, 1100, 2075, "");
         variant.setVariantType(VariantType.INV);
 
-        EffectType[] expEffs = {EffectType.GENE_FUSION_REVERESE};
+        EffectType[] expEffs = {EffectType.GENE_FUSION_REVERSE};
         String[] expHgvsc = {"n.1101_2076inv"};
         EffectImpact expectedImpact = EffectImpact.HIGH;
         String[] expAnns = {"|bidirectional_gene_fusion|HIGH|geneName1&geneName2|geneId1&geneId2|gene_variant|geneId1|||n.1101_2076inv||||||"};
@@ -354,7 +354,7 @@ public class TestCasesStructuralInv extends TestCasesBase {
         Variant variant = new Variant(chromosome, 1050, 2120, "");
         variant.setVariantType(VariantType.INV);
 
-        EffectType[] expEffs = {EffectType.GENE_FUSION_REVERESE};
+        EffectType[] expEffs = {EffectType.GENE_FUSION_REVERSE};
         String[] expHgvsc = {"n.1051_2121inv"};
         EffectImpact expectedImpact = EffectImpact.HIGH;
         String[] expAnns = {"|bidirectional_gene_fusion|HIGH|geneName1&geneName2|geneId1&geneId2|gene_variant|geneId1|||n.1051_2121inv||||||"};
@@ -400,8 +400,8 @@ public class TestCasesStructuralInv extends TestCasesBase {
         gene.add(tr);
         Gene[] genesToAdd = {gene};
 
-        // Expected resutls
-        EffectType[] expEffs = {EffectType.GENE_FUSION_REVERESE};
+        // Expected results
+        EffectType[] expEffs = {EffectType.GENE_FUSION_REVERSE};
         String[] expHgvsc = {"n.1051_2121inv"};
         EffectImpact expectedImpact = EffectImpact.HIGH;
         String[] expAnns = {"|bidirectional_gene_fusion|HIGH|geneName1&geneName2|geneId1&geneId2|gene_variant|geneId1|||n.1051_2121inv||||||" //

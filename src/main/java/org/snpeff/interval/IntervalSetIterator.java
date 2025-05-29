@@ -178,7 +178,7 @@ public class IntervalSetIterator implements Iterator<Set<Marker>>, Iterable<Set<
 
 	@Override
 	public void remove() {
-		throw new RuntimeException("Unimplmented method!");
+		throw new RuntimeException("Unimplemented method!");
 	}
 
 	@Override

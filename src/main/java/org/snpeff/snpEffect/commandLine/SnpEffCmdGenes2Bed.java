@@ -100,7 +100,7 @@ public class SnpEffCmdGenes2Bed extends SnpEff {
 					break;
 
 				default:
-					usage("Unknown commnand line option '" + arg + "'");
+					usage("Unknown command line option '" + arg + "'");
 				}
 			} else if ((genomeVer == null) || genomeVer.isEmpty()) {
 				// Genome version
@@ -194,7 +194,7 @@ public class SnpEffCmdGenes2Bed extends SnpEff {
 	}
 
 	/**
-	 * Show a gene coordiantes
+	 * Show a gene coordinates
 	 */
 	void showGene(Gene g) {
 		// Show gene

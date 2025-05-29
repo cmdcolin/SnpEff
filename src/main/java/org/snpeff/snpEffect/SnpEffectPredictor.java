@@ -168,7 +168,7 @@ public class SnpEffectPredictor implements Serializable {
     public int countTranscripts() {
         int total = 0;
         for (Gene g : genome.getGenes())
-            total += g.numChilds();
+            total += g.numChildren();
         return total;
     }
 
@@ -453,7 +453,7 @@ public class SnpEffectPredictor implements Serializable {
 
                     // For all transcripts...
                     for (Transcript tr : gene) {
-                        if ((id == null) || gene.getId().equals(id) || tr.getId().equals(id)) { // Mathes ID? (...or no ID to match)
+                        if ((id == null) || gene.getId().equals(id) || tr.getId().equals(id)) { // Matches ID? (...or no ID to match)
 
                             // Does it intersect this transcript?
                             if (tr.intersects(marker)) {

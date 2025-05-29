@@ -57,7 +57,7 @@ void buildConfigFromLines(string configFile, string[] configLines) {
 	configFile.write( configLines.join("\n") )
 }
 
-# Create 'software vesion' file
+# Create 'software version' file
 string createVersionFile(string htmlDir) {
 	verFile := "$htmlDir/versions.txt"
 	println "Creating versions file: '$verFile'"

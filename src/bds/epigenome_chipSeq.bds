@@ -27,7 +27,7 @@ string matchInput(string[] inputs, string num) {
 		}
 	}
 
-	# Cannot find propper input? use a random one
+	# Cannot find proper input? use a random one
 	return inputs[ randInt(inputs.size()) ]
 }
 

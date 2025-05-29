@@ -55,7 +55,7 @@ public class Monitor {
 		// Create output
 		StringBuilder out = new StringBuilder();
 
-		out.append("enityId\tentityName");
+		out.append("entityId\tentityName");
 		for (int j = 0; j < results.size(); j++) {
 			String lab = Gpr.sanityzeName(labels.get(j));
 			out.append("\t" + lab);

@@ -71,7 +71,7 @@ These are some considerations to keep in mind while working with RefSeq transcri
 
 - **RefSeq transcripts differ ~5% respect to the reference genome.** This is a consequence of the previous item. Between 3% to 7% of the transcripts in RefSeq do not exactly match the reference genome, thus the proteins inferred from the genomic CDSs sequences are different than the "real" RefSeq CDS sequences. Most of the time, the difference (if any) is only one amino acid in the whole protein, but sometimes the difference is much larger.
 
-- **Variant annotations using RefSeq may not be precise at the exact loci where the RefSeq transcript doesn't match the genome reference.** This is yet another consequence of the previous items, but since the transcript do not match the reference genome, and variant annotations are based on the reference genome, the variant annotaion predictions might be off at those genomic loci.
+- **Variant annotations using RefSeq may not be precise at the exact loci where the RefSeq transcript doesn't match the genome reference.** This is yet another consequence of the previous items, but since the transcript do not match the reference genome, and variant annotations are based on the reference genome, the variant annotation predictions might be off at those genomic loci.
 
 - **NCBI's gene IDs are just gene names, simetime with '_1', '_2', ..., etc.** Gene IDs from NCBI genomes (e.g. GRCh38.p13) are just gene names. If a gene is mapped to multiple genomic loci, then the same gene name is used and string is added to make it unique ('_1', for the first duplicate, '_2' for the second and so on). For example, here are the gene IDs for gene 'KIR3DL3' (note the last line is 'KIR3DL3_46', so there are 47 loci for this gene):
 

@@ -1,8 +1,8 @@
 package org.snpeff.snpEffect.testCases.unity;
 
 import org.junit.jupiter.api.Test;
-import org.snpeff.probablility.FisherExactTest;
-import org.snpeff.probablility.Hypergeometric;
+import org.snpeff.probability.FisherExactTest;
+import org.snpeff.probability.Hypergeometric;
 import org.snpeff.util.Log;
 
 import java.util.Random;

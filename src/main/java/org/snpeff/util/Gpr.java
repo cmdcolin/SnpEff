@@ -30,7 +30,7 @@ import java.util.zip.GZIPInputStream;
 import java.util.zip.GZIPOutputStream;
 
 /**
- * General pupose rutines
+ * General purpose rutines
  * @author root
  */
 public class Gpr {
@@ -113,7 +113,7 @@ public class Gpr {
 	public static final String HOME = System.getProperty("user.home");
 
 	// Valid extensions for GZIPPED files
-	public static final String[] GZIP_EXTENTIONS = { ".gz", ".bgz" };
+	public static final String[] GZIP_EXTENSIONS = { ".gz", ".bgz" };
 
 	/**
 	 * Return file's name (without the path)
@@ -276,7 +276,7 @@ public class Gpr {
 	}
 
 //	/**
-//	 * Generate an evenly separated pallette of colors
+//	 * Generate an evenly separated palette of colors
 //	 * @param num	Number of colors
 //	 */
 //	public static Paint[] getPaints(int num) {
@@ -347,14 +347,14 @@ public class Gpr {
 	public static boolean isValidIp(String ip) {
 		if (ip == null) return false;
 
-		String[] ipSplitted = ip.split("\\.");
+		String[] ipSplit = ip.split("\\.");
 
-		if (ipSplitted.length != 4) return false;
+		if (ipSplit.length != 4) return false;
 
-		for (int i = 0; i < ipSplitted.length; i++) {
-			if (ipSplitted[i].length() > 3) return false;
+		for (int i = 0; i < ipSplit.length; i++) {
+			if (ipSplit[i].length() > 3) return false;
 			try {
-				int ipPart = Integer.parseInt(ipSplitted[i]);
+				int ipPart = Integer.parseInt(ipSplit[i]);
 				if (ipPart < 0 || ipPart > 255) return false;
 			} catch (NumberFormatException e) {
 				return false;
@@ -504,8 +504,8 @@ public class Gpr {
 				File inputFile = new File(fileName);
 				if (inputFile.exists()) return new BufferedReader(new InputStreamReader(new FileInputStream(inputFile)));
 				else {
-					// Doesn't exists? => append GZIP extentions to file name and try gzipped file
-					for (String ext : GZIP_EXTENTIONS) {
+					// Doesn't exists? => append GZIP extensions to file name and try gzipped file
+					for (String ext : GZIP_EXTENSIONS) {
 						String fileNameGz = fileName + ext;
 						inputFile = new File(fileNameGz);
 						if (inputFile.exists()) return new BufferedReader(new InputStreamReader(new GZIPInputStream(new FileInputStream(new File(fileNameGz)))));

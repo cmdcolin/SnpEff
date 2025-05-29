@@ -524,10 +524,10 @@ public class FileIndexChrPos {
 		String lineMid = getLine(mid).line;
 		if (debug) Log.debug("Mid: " + mid + "\t" + s(lineMid));
 
-		if (debug) Log.debug("First half recustion:");
+		if (debug) Log.debug("First half recursion:");
 		indexChromos(start, lineStart, mid, lineMid);
 
-		if (debug) Log.debug("Second half recustion:");
+		if (debug) Log.debug("Second half recursion:");
 		indexChromos(mid, lineMid, end, lineEnd);
 	}
 

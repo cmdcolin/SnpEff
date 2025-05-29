@@ -60,7 +60,7 @@ nav:
      - Output summary files: snpeff/outputsummary.md
      - Troubleshooting: snpeff/troubleshooting.md
      - Building databases: snpeff/build_db.md
-     - Build databses. GTF / GFF details: snpeff/build_db_gff_gtf.md
+     - Build databases. GTF / GFF details: snpeff/build_db_gff_gtf.md
      - Building databases. Regulatory and Non-coding: snpeff/build_reg.md
      - Building databases. PDB and AlphaFold: snpeff/build_pdb.md
      - Integration. GATK and Galaxy: snpeff/integration.md

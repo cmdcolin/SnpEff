@@ -30,14 +30,14 @@ public class TestCasesIntegrationDelEtc extends TestCasesIntegrationBase {
 
         SnpEff cmd = new SnpEff(args);
         SnpEffCmdEff snpeff = (SnpEffCmdEff) cmd.cmd();
-        snpeff.setSupressOutput(!verbose);
+        snpeff.setSuppressOutput(!verbose);
         snpeff.setVerbose(verbose);
 
         int countEffs = 0;
         boolean repeat = false;
 
-        List<VcfEntry> vcfEnties = snpeff.run(true);
-        for (VcfEntry ve : vcfEnties) {
+        List<VcfEntry> vcfEntries = snpeff.run(true);
+        for (VcfEntry ve : vcfEntries) {
 
             if (verbose) Log.info(ve);
 
@@ -71,13 +71,13 @@ public class TestCasesIntegrationDelEtc extends TestCasesIntegrationBase {
 
         SnpEff cmd = new SnpEff(args);
         SnpEffCmdEff snpeff = (SnpEffCmdEff) cmd.cmd();
-        snpeff.setSupressOutput(!verbose);
+        snpeff.setSuppressOutput(!verbose);
         snpeff.setVerbose(verbose);
 
         int countEffs = 0;
 
-        List<VcfEntry> vcfEnties = snpeff.run(true);
-        for (VcfEntry ve : vcfEnties) {
+        List<VcfEntry> vcfEntries = snpeff.run(true);
+        for (VcfEntry ve : vcfEntries) {
 
             if (verbose) Log.info(ve);
 

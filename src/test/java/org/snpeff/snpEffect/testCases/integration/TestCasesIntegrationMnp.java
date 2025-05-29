@@ -27,7 +27,7 @@ public class TestCasesIntegrationMnp extends TestCasesIntegrationBase {
         SnpEff cmd = new SnpEff(args);
         SnpEffCmdEff snpeff = (SnpEffCmdEff) cmd.cmd();
         snpeff.setVerbose(verbose);
-        snpeff.setSupressOutput(!verbose);
+        snpeff.setSuppressOutput(!verbose);
         snpeff.setDebug(debug);
         List<VcfEntry> results = snpeff.run(true);
 

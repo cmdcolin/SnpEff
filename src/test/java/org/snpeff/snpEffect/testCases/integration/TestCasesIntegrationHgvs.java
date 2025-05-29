@@ -29,7 +29,7 @@ public class TestCasesIntegrationHgvs extends TestCasesIntegrationBase {
         comp.setCompareHgvs();
         comp.compareVep(vcf);
         if (verbose) Log.info(comp);
-        assertTrue(comp.checkComapred(), "No comparissons were made!");
+        assertTrue(comp.checkCompared(), "No comparisons were made!");
     }
 
     @Test
@@ -43,7 +43,7 @@ public class TestCasesIntegrationHgvs extends TestCasesIntegrationBase {
         comp.setOnlyProtein(true);
         comp.compareVep(vcf);
         if (verbose) Log.info(comp);
-        assertTrue(comp.checkComapred(), "No comparissons were made!");
+        assertTrue(comp.checkCompared(), "No comparisons were made!");
     }
 
     @Test
@@ -57,7 +57,7 @@ public class TestCasesIntegrationHgvs extends TestCasesIntegrationBase {
         comp.setOnlyProtein(true);
         comp.compareVep(vcf);
         if (verbose) Log.info(comp);
-        assertTrue(comp.checkComapred(), "No comparissons were made!");
+        assertTrue(comp.checkCompared(), "No comparisons were made!");
     }
 
     @Test
@@ -71,7 +71,7 @@ public class TestCasesIntegrationHgvs extends TestCasesIntegrationBase {
         comp.setOnlyProtein(true);
         comp.compareVep(vcf);
         if (verbose) Log.info(comp);
-        assertTrue(comp.checkComapred(), "No comparissons were made!");
+        assertTrue(comp.checkCompared(), "No comparisons were made!");
     }
 
     @Test
@@ -85,7 +85,7 @@ public class TestCasesIntegrationHgvs extends TestCasesIntegrationBase {
         comp.setOnlyProtein(true);
         comp.compareVep(vcf);
         if (verbose) Log.info(comp);
-        assertTrue(comp.checkComapred(), "No comparissons were made!");
+        assertTrue(comp.checkCompared(), "No comparisons were made!");
     }
 
     @Test
@@ -98,7 +98,7 @@ public class TestCasesIntegrationHgvs extends TestCasesIntegrationBase {
         comp.setOnlyProtein(true);
         comp.compareVep(vcf);
         if (verbose) Log.info(comp);
-        assertTrue(comp.checkComapred(), "No comparissons were made!");
+        assertTrue(comp.checkCompared(), "No comparisons were made!");
     }
 
     @Test
@@ -114,7 +114,7 @@ public class TestCasesIntegrationHgvs extends TestCasesIntegrationBase {
         comp.setShiftHgvs(true);
         comp.compareVep(vcf);
         if (verbose) Log.info(comp);
-        assertTrue(comp.checkComapred(), "No comparissons were made!");
+        assertTrue(comp.checkCompared(), "No comparisons were made!");
     }
 
     @Test
@@ -128,7 +128,7 @@ public class TestCasesIntegrationHgvs extends TestCasesIntegrationBase {
         comp.setShiftHgvs(false);
         comp.compareVep(vcf);
         if (verbose) Log.info(comp);
-        assertTrue(comp.checkComapred(), "No comparissons were made!");
+        assertTrue(comp.checkCompared(), "No comparisons were made!");
     }
 
     /**
@@ -148,7 +148,7 @@ public class TestCasesIntegrationHgvs extends TestCasesIntegrationBase {
         snpeff.parseArgs(args);
         snpeff.setDebug(debug);
         snpeff.setVerbose(verbose);
-        snpeff.setSupressOutput(!verbose);
+        snpeff.setSuppressOutput(!verbose);
         snpeff.setFormatVersion(EffFormatVersion.FORMAT_EFF_4);
 
         // The problem appears when splice site is large (in this example)
@@ -187,7 +187,7 @@ public class TestCasesIntegrationHgvs extends TestCasesIntegrationBase {
         snpeff.parseArgs(args);
         snpeff.setDebug(debug);
         snpeff.setVerbose(verbose);
-        snpeff.setSupressOutput(!verbose);
+        snpeff.setSuppressOutput(!verbose);
         snpeff.setFormatVersion(EffFormatVersion.FORMAT_EFF_4);
 
         // The problem appears when splice site is large (in this example)
@@ -225,14 +225,14 @@ public class TestCasesIntegrationHgvs extends TestCasesIntegrationBase {
         snpeff.parseArgs(args);
         snpeff.setDebug(debug);
         snpeff.setVerbose(verbose);
-        snpeff.setSupressOutput(!verbose);
+        snpeff.setSuppressOutput(!verbose);
         snpeff.setFormatVersion(EffFormatVersion.FORMAT_ANN_1);
 
         // Run & get result (single line)
         List<VcfEntry> results = snpeff.run(true);
         VcfEntry ve = results.get(0);
 
-        // Make sure the HCVGs annotaion is correct
+        // Make sure the HCVGs annotation is correct
         boolean ok = false;
         for (VcfEffect veff : ve.getVcfEffects()) {
             if (verbose) Log.info("\t" + veff + "\t" + veff.getEffectsStr() + "\t" + veff.getHgvsDna());

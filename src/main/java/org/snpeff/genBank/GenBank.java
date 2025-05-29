@@ -37,7 +37,7 @@ public class GenBank extends Features {
 		int end = Math.min(FEATURE_NAME_FIELD_LEN, line.length());
 		String featName = line.substring(0, end).trim();
 
-		// Emtpy? Not a new feature
+		// Empty? Not a new feature
 		if (featName.isEmpty()) return false;
 
 		// Is it a number? => Not a new feature

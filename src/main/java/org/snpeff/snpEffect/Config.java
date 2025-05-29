@@ -18,20 +18,20 @@ public class Config implements Serializable, Iterable<String> {
     public static final String DEFAULT_CONFIG_FILE = "snpEff.config";
     public static final String DEFAULT_DATA_DIR = "./data";
     // Keys in properties file
-    public static final String KEY_BUNDLE_SUFIX = ".bundle";
+    public static final String KEY_BUNDLE_SUFFIX = ".bundle";
     public static final String KEY_CODON_PREFIX = "codon.";
-    public static final String KEY_CODONTABLE_SUFIX = ".codonTable";
+    public static final String KEY_CODONTABLE_SUFFIX = ".codonTable";
     public static final String KEY_COORDINATES = "coordinates";
     public static final String KEY_DATA_DIR = "data.dir";
     public static final String KEY_DATABASE_LOCAL = "database";
     public static final String KEY_DATABASE_REPOSITORY = "database.repository";
     public static final String KEY_DATABASE_REPOSITORY_KEY = "database.repositoryKey";
     public static final String KEY_DBNSFP_FIELDS = "dbnsfp.fields";
-    public static final String KEY_GENOME_SUFIX = ".genome";
+    public static final String KEY_GENOME_SUFFIX = ".genome";
     public static final String KEY_LOF_IGNORE_PROTEIN_CODING_AFTER = "lof.ignoreProteinCodingAfter";
     public static final String KEY_LOF_IGNORE_PROTEIN_CODING_BEFORE = "lof.ignoreProteinCodingBefore";
     public static final String KEY_LOF_DELETE_PROTEIN_CODING_BASES = "lof.deleteProteinCodingBases";
-    public static final String KEY_REFERENCE_SUFIX = ".reference";
+    public static final String KEY_REFERENCE_SUFFIX = ".reference";
     public static final String KEY_VERSIONS_URL = "versions.url";
 
     // Database versions compatibility
@@ -165,9 +165,9 @@ public class Config implements Serializable, Iterable<String> {
         // Assign codon tables for different genome+chromosome
         for (Object key : properties.keySet()) {
             String keyStr = key.toString();
-            if (keyStr.endsWith(KEY_CODONTABLE_SUFIX) && keyStr.startsWith(genomeId + ".")) {
+            if (keyStr.endsWith(KEY_CODONTABLE_SUFFIX) && keyStr.startsWith(genomeId + ".")) {
                 // Everything between gneomeName and ".codonTable" is assumed to be chromosome name
-                int chrNameEnd = keyStr.length() - KEY_CODONTABLE_SUFIX.length();
+                int chrNameEnd = keyStr.length() - KEY_CODONTABLE_SUFFIX.length();
                 int chrNameStart = genomeId.length() + 1;
                 int chrNameLen = chrNameEnd - chrNameStart;
                 String chromo = null;
@@ -781,15 +781,15 @@ public class Config implements Serializable, Iterable<String> {
         Collections.sort(keys);
 
         for (String key : keys) {
-            if (key.endsWith(KEY_GENOME_SUFIX)) {
-                String genVer = key.substring(0, key.length() - KEY_GENOME_SUFIX.length());
+            if (key.endsWith(KEY_GENOME_SUFFIX)) {
+                String genVer = key.substring(0, key.length() - KEY_GENOME_SUFFIX.length());
 
                 // Add full name
-                String name = properties.getProperty(genVer + KEY_GENOME_SUFIX);
+                String name = properties.getProperty(genVer + KEY_GENOME_SUFFIX);
                 nameById.put(genVer, name);
 
                 // Add reference
-                String ref = properties.getProperty(genVer + KEY_REFERENCE_SUFIX);
+                String ref = properties.getProperty(genVer + KEY_REFERENCE_SUFFIX);
                 referenceById.put(genVer, ref);
             }
         }
@@ -799,8 +799,8 @@ public class Config implements Serializable, Iterable<String> {
         //---
         bundleByGenomeId = new HashMap<>();
         for (String key : keys) {
-            if (key.endsWith(KEY_BUNDLE_SUFIX)) {
-                String bundleName = key.substring(0, key.length() - KEY_BUNDLE_SUFIX.length());
+            if (key.endsWith(KEY_BUNDLE_SUFFIX)) {
+                String bundleName = key.substring(0, key.length() - KEY_BUNDLE_SUFFIX.length());
                 String entries = properties.getProperty(key);
                 for (String gen : entries.split("\\s+")) {
                     gen = gen.trim();

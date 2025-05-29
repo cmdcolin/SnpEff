@@ -158,7 +158,7 @@ public class SnpEffCmdCds extends SnpEff {
                         if (debug || onlyOneError) {
                             Log.infoln("ERROR: CDSs do not match for transcript " + tr.getId() //
                                     + "\tStrand:" + tr.isStrandMinus()//
-                                    + "\tExons: " + tr.numChilds() //
+                                    + "\tExons: " + tr.numChildren() //
                                     + "\n" //
                                     + String.format("\tSnpEff CDS  (%6d) : '%s'\n", cds.length(), cds.toLowerCase()) //
                                     + String.format("\tReference   (%6d) : '%s'\n", cdsReference.length(), cdsReference.toLowerCase()) //

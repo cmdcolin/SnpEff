@@ -50,7 +50,7 @@ public class TestCasesDels extends TestCasesBase {
 				// Should we use this codon?
 				if (variant.intersects(pos)) useCodon = true;
 				else {
-					// Should we use this base? We don't use the ones that intersect with 'seqChage' (because they are deleted)
+					// Should we use this base? We don't use the ones that intersect with 'seqChange' (because they are deleted)
 					char base = chromoBases[pos];
 					currCodon[cdsCodonPos] = exon.isStrandPlus() ? base : GprSeq.wc(base); // Update current codon
 				}

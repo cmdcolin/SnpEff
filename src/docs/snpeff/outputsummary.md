@@ -61,7 +61,7 @@ The main summary table contains basic information about the SnpEff run and some 
 | Number of multi-allelic VCF entries | Variants that have mode then two alleles. Most variants have only two alleles: `REF` and one `ALT`. Multi-allelic variants have multiple `ALT` entries. |
 | Number of annotations               | Total number of variant annotations. Note that this is typically [higher than the number of variant](./faq.md#counting-variants-vs-annotations) |
 | Genome total length                 | Total genome length (in bases) |
-| Genome effective length             | Total length of the chromosomes (in bases). This only counts chromosomes that had varinats |
+| Genome effective length             | Total length of the chromosomes (in bases). This only counts chromosomes that had variants |
 | Variant rate                        | Number of variants per genomic length: `Number of variants` / `Genome effeective length`|
 
 
@@ -78,7 +78,7 @@ This table contains a list of the number of variants, grouped by variant type:
 | `MNP`      | MNP / MNV is a multiple nucleotide variant, e.g. 'AC -> GT' |
 | `INS`      | Insertion, e.g. 'A -> AT' |
 | `DEL`      | Deletion, e.g. 'AT -> A' |
-| `MIXED`    | A mixed vairant is a combination of SNP / MNP / INS / DEL, for example ' |
+| `MIXED`    | A mixed variant is a combination of SNP / MNP / INS / DEL, for example ' |
 | `INV`      | An inversion of reference sequence |
 | `DUP`      | A duplication is a region of elevated copy number relative to the reference |
 | `BND`      | An arbitrary rearrangement |
@@ -93,13 +93,13 @@ E.g.: In the stats file, you can see coverage histogram plots like this one:
 
 ### Annotations & Region
 
-SnpEff annotates variants using ["functional annotaions"](./inputoutput.md#variant-annotaiton-details), e.g. `NON_SYNONYMOUS_CODING`, `STOP_GAINED`, etc..
+SnpEff annotates variants using ["functional annotations"](./inputoutput.md#variant-annotaiton-details), e.g. `NON_SYNONYMOUS_CODING`, `STOP_GAINED`, etc..
 These variants affect regions of the genome (e.g. `EXON`, `INTRON`).
 The two tables count how many effects for each type and for each region exists.
 
 E.g.: In an `EXON` region, you can have all the following effect types: `NON_SYNONYMOUS_CODING`, `SYNONYMOUS_CODING`, `FRAME_SHIFT`, `STOP_GAINED`, etc.
 
-The complicated part is that some annotaitons affect a region that has the same name (yes, I know, this is confusing).
+The complicated part is that some annotations affect a region that has the same name (yes, I know, this is confusing).
 
 E.g.: In a `UTR_5_PRIME` region you can have `UTR_5_PRIME` and `START_GAINED` effect type.
 

@@ -4,7 +4,7 @@ import org.apfloat.Apfloat;
 import org.snpeff.geneSets.GeneSet;
 import org.snpeff.geneSets.GeneSets;
 import org.snpeff.gsa.ScoreList;
-import org.snpeff.probablility.FisherExactTest;
+import org.snpeff.probability.FisherExactTest;
 import org.snpeff.util.Log;
 
 /**

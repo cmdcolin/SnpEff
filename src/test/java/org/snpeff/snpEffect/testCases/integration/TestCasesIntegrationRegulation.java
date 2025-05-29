@@ -47,7 +47,7 @@ public class TestCasesIntegrationRegulation extends TestCasesIntegrationBase {
 		SnpEff snpeffBuild = new SnpEff(argsBuild);
 		snpeffBuild.setDebug(debug);
 		snpeffBuild.setVerbose(verbose);
-		snpeffBuild.setSupressOutput(!verbose);
+		snpeffBuild.setSuppressOutput(!verbose);
 		boolean ok = snpeffBuild.run();
 		assertTrue(ok, "Error building regulatory regions");
 
@@ -59,7 +59,7 @@ public class TestCasesIntegrationRegulation extends TestCasesIntegrationBase {
 		snpeffRun.parseArgs(argsRun);
 		snpeffRun.setDebug(debug);
 		snpeffRun.setVerbose(verbose);
-		snpeffRun.setSupressOutput(!verbose);
+		snpeffRun.setSuppressOutput(!verbose);
 		snpeffRun.addRegulationTrack(cellType);
 
 		List<VcfEntry> vcfEntries = snpeffRun.run(true);

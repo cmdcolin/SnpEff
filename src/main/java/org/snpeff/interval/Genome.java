@@ -362,7 +362,7 @@ public class Genome extends Marker implements Iterable<Chromosome> {
 
 	/**
 	 * Remove a chromosome
-	 * WARINIG: Doesn't check any dependencies!
+	 * WARNING: Doesn't check any dependencies!
 	 */
 	public void remove(Chromosome chromo) {
 		chromosomes.remove(chromo.getId());
@@ -480,7 +480,7 @@ public class Genome extends Marker implements Iterable<Chromosome> {
 					if (tr.isErrorProteinLength()) {
 						hasError = true;
 						errorProteinLength++; // Protein length error
-						if (errors != null) errors.append("ERROR: Protein coding transcript '" + tr.getId() + "' has length " + tr.cds().length() + " (not mutiple of 3).\n");
+						if (errors != null) errors.append("ERROR: Protein coding transcript '" + tr.getId() + "' has length " + tr.cds().length() + " (not multiple of 3).\n");
 					} else if (tr.isWarningStopCodon()) {
 						// This is considered a warning, not an error (sometimes
 						// the annotations exclude STOP codon on pourpose, although GTF

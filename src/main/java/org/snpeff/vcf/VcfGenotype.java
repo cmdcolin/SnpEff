@@ -42,7 +42,7 @@ public class VcfGenotype {
 				|| (value.indexOf('\t') >= 0) //
 				|| (value.indexOf('=') >= 0) //
 				|| (value.indexOf(':') >= 0) //
-		) throw new RuntimeException("Error: Attempt to add a value containin illegal characters: no white-space, semicolons, colons, or equals-signs permitted\n\tname : '" + name + "'\n\tvalue : '" + value + "'");
+		) throw new RuntimeException("Error: Attempt to add a value containing illegal characters: no white-space, semicolons, colons, or equals-signs permitted\n\tname : '" + name + "'\n\tvalue : '" + value + "'");
 
 		// Sanity check format
 		if (vcfEntry.getFormat().indexOf(name) < 0) throw new RuntimeException("Error Attempt to add a field (name=" + name + ") that is not present in FORMAT field. Use VcfEntry.addFormat() method first!");

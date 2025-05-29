@@ -15,11 +15,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  *
  * @author pcingola
  */
-public class TestCasesIntegrationCutsomIntervals extends TestCasesIntegrationBase {
+public class TestCasesIntegrationCustomIntervals extends TestCasesIntegrationBase {
 
     public static final int NUM_DEL_TEST = 10; // number of random test per transcript
 
-    public TestCasesIntegrationCutsomIntervals() {
+    public TestCasesIntegrationCustomIntervals() {
         super();
     }
 
@@ -40,12 +40,12 @@ public class TestCasesIntegrationCutsomIntervals extends TestCasesIntegrationBas
         SnpEff cmd = new SnpEff(args);
         SnpEffCmdEff cmdEff = (SnpEffCmdEff) cmd.cmd();
         cmdEff.setVerbose(verbose);
-        cmdEff.setSupressOutput(!verbose);
+        cmdEff.setSuppressOutput(!verbose);
 
         // Run
         List<VcfEntry> vcfEntries = cmdEff.run(true);
 
-        // Check propper annotations
+        // Check proper annotations
         VcfEntry ve = vcfEntries.get(0);
         if (verbose) Log.debug("VCF entry: " + ve);
         assertEquals("R02837:N/A", ve.getInfo("custom_intervals_01_type"));

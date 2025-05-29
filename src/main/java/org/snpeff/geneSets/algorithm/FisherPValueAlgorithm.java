@@ -3,7 +3,7 @@ package org.snpeff.geneSets.algorithm;
 import org.apfloat.Apfloat;
 import org.snpeff.geneSets.GeneSet;
 import org.snpeff.geneSets.GeneSets;
-import org.snpeff.probablility.FisherExactTest;
+import org.snpeff.probability.FisherExactTest;
 import org.snpeff.util.Log;
 
 public class FisherPValueAlgorithm extends EnrichmentAlgorithm {

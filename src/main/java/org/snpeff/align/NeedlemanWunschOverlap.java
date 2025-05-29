@@ -14,7 +14,7 @@ public class NeedlemanWunschOverlap {
 	int alignmentScore = -1;
 
 	int scoreMatch = 1; // Match score
-	int scoreMissmatch = -5; // Missmatch score
+	int scoreMismatch = -5; // Mismatch score
 	int scoreGap = -2; // Deletion score
 
 	public NeedlemanWunschOverlap(String a, String b) {
@@ -144,7 +144,7 @@ public class NeedlemanWunschOverlap {
 		return bestScore();
 	}
 
-	public int getAligmentScore() {
+	public int getAlignmentScore() {
 		return alignmentScore;
 	}
 
@@ -161,7 +161,7 @@ public class NeedlemanWunschOverlap {
 	}
 
 	public void setMissMatch(int missMatch) {
-		scoreMissmatch = missMatch;
+		scoreMismatch = missMatch;
 	}
 
 	void setScore(int i, int j, int val) {
@@ -175,7 +175,7 @@ public class NeedlemanWunschOverlap {
 	 * @return
 	 */
 	int simmilarity(int i, int j) {
-		if (a[i - 1] != b[j - 1]) return scoreMissmatch;
+		if (a[i - 1] != b[j - 1]) return scoreMismatch;
 		return scoreMatch;
 	}
 

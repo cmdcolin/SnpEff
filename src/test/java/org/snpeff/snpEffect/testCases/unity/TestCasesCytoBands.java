@@ -53,7 +53,7 @@ public class TestCasesCytoBands {
         Markers cbs = cytoBands.query(m);
 
         if (verbose) {
-            System.out.println("Resutls: ");
+            System.out.println("Results: ");
             for (Marker cb : cbs)
                 System.out.println(cb);
         }

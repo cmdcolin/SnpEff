@@ -5,7 +5,7 @@ import org.snpeff.binseq.BinarySequence;
 /**
 * An object used to store overlap parameters
 */
-public class OverlapRessult<T extends BinarySequence> {
+public class OverlapResult<T extends BinarySequence> {
 
 	public int start = -1;
 	public int bestScore = 0;

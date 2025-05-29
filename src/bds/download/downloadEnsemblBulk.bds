@@ -266,7 +266,7 @@ void downloadEnsemblBfmpp() {
 	}
 
 	#---
-	# Move files to propper structure in 'local data' dir
+	# Move files to proper structure in 'local data' dir
 	#---
 	# Copy files to local dir
 	log("ENSEMBL BFMPP $ensemblBfmppRelease: Copying files to parent dir")

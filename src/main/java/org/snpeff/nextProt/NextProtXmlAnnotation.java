@@ -57,7 +57,7 @@ public class NextProtXmlAnnotation extends NextProtXmlNode {
         // Some annotations have control-vocabulary terms (e.g. "modified-residue")
         if (cvTerm != null) return cvTerm.description;
 
-        // Some annotations do not have controlled vocabularies, but have a "desription" (e.g. "active-site")
+        // Some annotations do not have controlled vocabularies, but have a "description" (e.g. "active-site")
         if (description != null) {
             // Sometimes a description can be split at ';'
             if (description.indexOf(';') > 0) return description.split(";")[0];
@@ -201,7 +201,7 @@ public class NextProtXmlAnnotation extends NextProtXmlNode {
             if (isIntreaction(category)) {
                 // In these cases, the "interval" [start, end] but in reality it is
                 // an interaction from position start to position end
-                // We convert to an interation location before adding it
+                // We convert to an interaction location before adding it
                 location = new LocationTargetIsoformInteraction((LocationTargetIsoform) location);
             }
             locations.add(location);

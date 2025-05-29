@@ -94,7 +94,7 @@ public class ProteinFastaWriter {
 					+ "\n" //
 				);
 			}
-			proteinSequenceDone.add(proteinSequenceRef); // Always add the reference protein sequence so we avoid writing changes that have no effect on the refrence protein sequence
+			proteinSequenceDone.add(proteinSequenceRef); // Always add the reference protein sequence so we avoid writing changes that have no effect on the reference protein sequence
 
 			// Add protein sequence for transcript variant, if the sequence has not already been added in a previous entry
 			var proteinSequenceAlt = proteinSequence(trAlt);

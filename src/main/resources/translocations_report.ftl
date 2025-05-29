@@ -50,7 +50,7 @@
 		<th> Effect </th>
 		<th> Genes </th>
 		<th> Transcripts </th>
-		<th> Coordiantes </th>
+		<th> Coordinates </th>
 	</tr>
 <#list translocations as transloc>
 	<tr> 

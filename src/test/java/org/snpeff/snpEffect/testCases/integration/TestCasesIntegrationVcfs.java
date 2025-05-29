@@ -64,7 +64,7 @@ public class TestCasesIntegrationVcfs extends TestCasesIntegrationBase {
         // Create command and run
         SnpEffCmdEff effcmd = (SnpEffCmdEff) snpeff.cmd();
         effcmd.setVerbose(verbose);
-        effcmd.setSupressOutput(!verbose);
+        effcmd.setSuppressOutput(!verbose);
         List<VcfEntry> vcfEntries = effcmd.run(true);
 
         // All VCF entries should be filtered out
@@ -88,7 +88,7 @@ public class TestCasesIntegrationVcfs extends TestCasesIntegrationBase {
         // Prepare a command line
         String[] args = {"-noLog", genomeName, vcfFileName};
         SnpEff snpEff = new SnpEff(args);
-        snpEff.setSupressOutput(!verbose);
+        snpEff.setSuppressOutput(!verbose);
         snpEff.setVerbose(verbose);
         snpEff.setDebug(debug);
 
@@ -108,7 +108,7 @@ public class TestCasesIntegrationVcfs extends TestCasesIntegrationBase {
         // Prepare a command line
         String[] args = {"-noLog", genomeName, vcfFileName};
         SnpEff snpEff = new SnpEff(args);
-        snpEff.setSupressOutput(!verbose);
+        snpEff.setSuppressOutput(!verbose);
         snpEff.setVerbose(verbose);
         snpEff.setDebug(debug);
 

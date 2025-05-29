@@ -94,7 +94,7 @@ public class CodonChangeMnp extends CodonChange {
 				break;
 
 			default:
-				throw new RuntimeException("Sanity check failed. Number of 'N' pading is :" + diff + ". This should not happen!");
+				throw new RuntimeException("Sanity check failed. Number of 'N' padding is :" + diff + ". This should not happen!");
 			}
 		}
 

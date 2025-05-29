@@ -53,7 +53,7 @@ public class ExonSpliceCharacterizer {
 		int count = 0;
 		for (Gene g : genome.getGenes())
 			for (Transcript tr : g)
-				count += tr.numChilds();
+				count += tr.numChildren();
 		return count;
 	}
 
@@ -122,7 +122,7 @@ public class ExonSpliceCharacterizer {
 	 * @return
 	 */
 	boolean isMutEx(Exon exon, Gene gene) {
-		if (gene.numChilds() <= 1) return false;
+		if (gene.numChildren() <= 1) return false;
 
 		//---
 		// Make a list of all unique exons
@@ -190,7 +190,7 @@ public class ExonSpliceCharacterizer {
 					count.inc(key(e));
 
 			// Label exons
-			int countTr = g.numChilds();
+			int countTr = g.numChildren();
 			for (Transcript tr : g) {
 				for (Exon e : tr) {
 					if (verbose) Gpr.showMark(numExon++, SHOW_EVERY, "\t");
@@ -203,9 +203,9 @@ public class ExonSpliceCharacterizer {
 					else {
 						if (isAlt3ss(e, g)) type(e, Exon.ExonSpliceType.ALTTENATIVE_3SS);
 						else if (isAlt5ss(e, g)) type(e, Exon.ExonSpliceType.ALTTENATIVE_5SS);
-						else if (tr.numChilds() > 1) {
+						else if (tr.numChildren() > 1) {
 							if (e.getRank() == 1) type(e, Exon.ExonSpliceType.ALTTENATIVE_PROMOMOTER);
-							else if (e.getRank() == tr.numChilds()) type(e, Exon.ExonSpliceType.ALTTENATIVE_POLY_A);
+							else if (e.getRank() == tr.numChildren()) type(e, Exon.ExonSpliceType.ALTTENATIVE_POLY_A);
 							else type(e, Exon.ExonSpliceType.SKIPPED);
 						}
 					}
@@ -223,7 +223,7 @@ public class ExonSpliceCharacterizer {
 		numExon = 1;
 		for (Gene g : genome.getGenes()) {
 			for (Transcript tr : g) {
-				if (tr.numChilds() < MAX_EXONS) {
+				if (tr.numChildren() < MAX_EXONS) {
 					for (Exon e : tr) {
 						if (verbose) Gpr.showMark(numExon++, SHOW_EVERY, "\t");
 						ExonSpliceType type = typeByExon.get(e);
@@ -233,7 +233,7 @@ public class ExonSpliceCharacterizer {
 					}
 				} else {
 					System.err.println("");
-					Log.debug("WARNING: Gene '" + g.getId() + "', transcript '" + tr.getId() + "' has too many exons (" + tr.numChilds() + " exons). Skipped");
+					Log.debug("WARNING: Gene '" + g.getId() + "', transcript '" + tr.getId() + "' has too many exons (" + tr.numChildren() + " exons). Skipped");
 				}
 			}
 		}

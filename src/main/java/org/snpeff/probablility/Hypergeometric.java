@@ -1,4 +1,4 @@
-package org.snpeff.probablility;
+package org.snpeff.probability;
 
 import java.util.Arrays;
 import java.util.Date;
@@ -74,7 +74,7 @@ public class Hypergeometric {
 	}
 
 	/**
-	 * Check if hypergeometric paramters are correct
+	 * Check if hypergeometric parameters are correct
 	 * @param k
 	 * @param N
 	 * @param D

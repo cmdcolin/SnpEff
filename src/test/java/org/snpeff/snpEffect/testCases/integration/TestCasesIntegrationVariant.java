@@ -181,14 +181,14 @@ public class TestCasesIntegrationVariant extends TestCasesIntegrationBase {
         snpFileIterator.setIgnoreChromosomeErrors(false);
         snpFileIterator.setCreateChromos(false);
 
-        boolean trown = false;
+        boolean thrown = false;
         try {
             // Read all SNPs from file. Note: This should throw an exception "Chromosome not found"
             for (Variant variant : snpFileIterator) {
                 Log.debug(variant);
             }
         } catch (RuntimeException e) {
-            trown = true;
+            thrown = true;
             String expectedMessage = "ERROR: Chromosome 'chrZ' not found! File '" + path("chr_not_found.out") + "', line 1";
             if (e.getMessage().equals(expectedMessage)) ; // OK
             else
@@ -196,8 +196,8 @@ public class TestCasesIntegrationVariant extends TestCasesIntegrationBase {
         }
 
         // If no exception => error
-        if (!trown)
-            throw new RuntimeException("This should have thown an exception 'Chromosome not found!' but it didn't");
+        if (!thrown)
+            throw new RuntimeException("This should have thrown an exception 'Chromosome not found!' but it didn't");
     }
 
     /**

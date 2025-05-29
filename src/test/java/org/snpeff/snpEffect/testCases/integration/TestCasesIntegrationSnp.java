@@ -34,7 +34,7 @@ public class TestCasesIntegrationSnp extends TestCasesIntegrationBase {
         String[] args = {"-noLog", "-classic", "-ud", "0", genome, vcf};
         SnpEff snpEff = new SnpEff(args);
         snpEff.setVerbose(verbose);
-        snpEff.setSupressOutput(!verbose);
+        snpEff.setSuppressOutput(!verbose);
         snpEff.setDebug(debug);
 
         SnpEffCmdEff seff = (SnpEffCmdEff) snpEff.cmd();
@@ -66,7 +66,7 @@ public class TestCasesIntegrationSnp extends TestCasesIntegrationBase {
         String[] args = {"-noLog", "-classic", genome, vcf};
         SnpEff snpEff = new SnpEff(args);
         snpEff.setVerbose(verbose);
-        snpEff.setSupressOutput(!verbose);
+        snpEff.setSuppressOutput(!verbose);
         snpEff.setDebug(debug);
 
         SnpEffCmdEff seff = (SnpEffCmdEff) snpEff.cmd();
@@ -98,7 +98,7 @@ public class TestCasesIntegrationSnp extends TestCasesIntegrationBase {
         String[] args = {"-noLog", "-classic", "-ud", "0", genome, vcf};
         SnpEff snpEff = new SnpEff(args);
         snpEff.setVerbose(verbose);
-        snpEff.setSupressOutput(!verbose);
+        snpEff.setSuppressOutput(!verbose);
         snpEff.setDebug(debug);
 
         SnpEffCmdEff seff = (SnpEffCmdEff) snpEff.cmd();

@@ -31,7 +31,7 @@ public abstract class EnrichmentAlgorithmGreedyVariableSize extends EnrichmentAl
 	 */
 	@Override
 	protected Result greedyPvalue(Result prevResult) {
-		// Min or Max gene sizes have been set? => Use 'regular algorthm"
+		// Min or Max gene sizes have been set? => Use 'regular algorithm"
 		if ((maxGeneSetSize < Integer.MAX_VALUE) || (minGeneSetSize > 0)) return super.greedyPvalue(prevResult);
 
 		// Use "search by size ranges" algorithm (look for small gene sets first, then for larger ones)
@@ -53,7 +53,7 @@ public abstract class EnrichmentAlgorithmGreedyVariableSize extends EnrichmentAl
 
 				// Found a smaller p-value? => We are done
 				double bestPval = best.getPvalueAdjusted();
-				if (bestPval <= prevResult.getPvalueAdjusted() && (bestPval <= maxPvalueAjusted)) return best;
+				if (bestPval <= prevResult.getPvalueAdjusted() && (bestPval <= maxPvalueAdjusted)) return best;
 			}
 
 			// Update new size range

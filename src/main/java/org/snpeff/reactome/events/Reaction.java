@@ -85,8 +85,8 @@ public class Reaction extends Event {
 			//---
 
 			// Calculate inputs
-			for (Entity ein : getInputs())
-				ein.calc(doneEntities);
+			for (Entity in : getInputs())
+				in.calc(doneEntities);
 
 			// Calculate catalysts 
 			for (Entity ecat : catalyst)
@@ -102,8 +102,8 @@ public class Reaction extends Event {
 
 			// Aggregated input
 			double in = 0;
-			for (Entity ein : getInputs())
-				if (ein.hasOutput()) in += ein.getOutput() * inputs.get(ein);
+			for (Entity in : getInputs())
+				if (in.hasOutput()) in += in.getOutput() * inputs.get(in);
 
 			// Aggregated catalysts
 			double inCat = 0.0; // Neutral by default

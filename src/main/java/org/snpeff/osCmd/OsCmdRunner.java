@@ -148,7 +148,7 @@ public class OsCmdRunner extends Thread {
 			started = true;
 
 			synchronized (this) {
-				osCmd.setObjetcToNotify(this); // Notify me when done (i.e. the command finished)
+				osCmd.setObjectToNotify(this); // Notify me when done (i.e. the command finished)
 				while (isExecuting())
 					wait(defaultLoopWaitTime);
 			}

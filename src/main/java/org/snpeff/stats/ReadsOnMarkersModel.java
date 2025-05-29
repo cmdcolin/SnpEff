@@ -7,14 +7,14 @@ import org.snpeff.interval.Chromosome;
 import org.snpeff.interval.Gene;
 import org.snpeff.interval.Marker;
 import org.snpeff.interval.Markers;
-import org.snpeff.probablility.RandMarker;
+import org.snpeff.probability.RandMarker;
 import org.snpeff.snpEffect.SnpEffectPredictor;
 import org.snpeff.util.Gpr;
 import org.snpeff.util.Log;
 
 /**
  * Calculate the maximum interval length by type, for all markers in a genome
- * Create a probability model based on binomial ditribution.
+ * Create a probability model based on binomial distribution.
  *
  * @author pcingola
  */

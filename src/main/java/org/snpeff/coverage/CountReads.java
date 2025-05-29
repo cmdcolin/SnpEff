@@ -97,7 +97,7 @@ public class CountReads {
 
 		if (verbose) {
 			System.err.println("");
-			Log.info("Finished reding file " + fileName + "\n\tTotal reads: " + countTotalReads);
+			Log.info("Finished reading file " + fileName + "\n\tTotal reads: " + countTotalReads);
 		}
 		if (verbose) Log.info("Done.");
 	}
@@ -133,7 +133,7 @@ public class CountReads {
 		if (fl.endsWith(".bam") || fl.endsWith(".sam")) countSamFile(fileName);
 		else if (fl.endsWith(".vcf") || fl.endsWith(".vcf.gz")) countVcfFile(fileName);
 		else if (fl.endsWith(".bed") || fl.endsWith(".bed.gz")) countBedFile(fileName);
-		else throw new RuntimeException("Unrecognized file extention. Supported types: BAM, SAM, BED, VCF.");
+		else throw new RuntimeException("Unrecognized file extension. Supported types: BAM, SAM, BED, VCF.");
 	}
 
 	/**
@@ -271,7 +271,7 @@ public class CountReads {
 		if (tr == null) return;
 
 		// Number of exons
-		int exons = tr.numChilds();
+		int exons = tr.numChildren();
 
 		// Do we need to add new counters?
 		if (coverageByExons.size() <= exons) {

@@ -18,20 +18,20 @@ import org.snpeff.vcf.VcfEntry;
  *
  * @author pablocingolani
  */
-public class HomHetStats implements SamplingStats<VcfEntry> {
+public class HomeHetStats implements SamplingStats<VcfEntry> {
 
 	List<String> sampleNames;
-	long countHomRef[];
+	long countHomeRef[];
 	long countAlt1[];
 	long countAlt2[];
 	long countMissing[];
 
-	public HomHetStats() {
+	public HomeHetStats() {
 	}
 
 	@Override
 	public boolean hasData() {
-		return countHomRef != null;
+		return countHomeRef != null;
 	}
 
 	/**
@@ -48,9 +48,9 @@ public class HomHetStats implements SamplingStats<VcfEntry> {
 		byte gt[] = vcfEntry.getGenotypesScores();
 		if (gt == null || gt.length < 1) return;
 
-		if (countHomRef == null) {
+		if (countHomeRef == null) {
 			int size = gt.length;
-			countHomRef = new long[size];
+			countHomeRef = new long[size];
 			countAlt1 = new long[size];
 			countAlt2 = new long[size];
 			countMissing = new long[size];
@@ -64,7 +64,7 @@ public class HomHetStats implements SamplingStats<VcfEntry> {
 				break;
 
 			case 0:
-				countHomRef[i]++;
+				countHomeRef[i]++;
 				break;
 
 			case 1:
@@ -101,7 +101,7 @@ public class HomHetStats implements SamplingStats<VcfEntry> {
 			sb.append("\n");
 
 			// Show transitions
-			sb.append(toStringArray("Homozygous reference", countHomRef));
+			sb.append(toStringArray("Homozygous reference", countHomeRef));
 			sb.append(toStringArray("One ALT", countAlt1));
 			sb.append(toStringArray("Two ALTs", countAlt2));
 			sb.append(toStringArray("Missing", countMissing));

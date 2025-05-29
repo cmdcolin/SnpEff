@@ -10,7 +10,7 @@ import java.util.List;
 import org.snpeff.interval.Chromosome;
 import org.snpeff.interval.Genome;
 import org.snpeff.interval.Marker;
-import org.snpeff.probablility.Binomial;
+import org.snpeff.probability.Binomial;
 import org.snpeff.snpEffect.SnpEffectPredictor;
 import org.snpeff.stats.CountByType;
 import org.snpeff.stats.CoverageByType;
@@ -137,7 +137,7 @@ public class CountReadsOnMarkers {
 		StringBuilder sbBody = new StringBuilder();
 
 		//---
-		// Barchart: By Marker types (all files toghether)
+		// Barchart: By Marker types (all files together)
 		//---
 		ArrayList<CountByType> countTypesByFile = new ArrayList<CountByType>();
 		for (CountReads cr : countReadsByFile)
@@ -177,10 +177,10 @@ public class CountReadsOnMarkers {
 
 			// Add all columns
 			GoogleBarChart barchart = new GoogleBarChart("Count by file " + ksname);
-			barchart.setxLables(keys);
+			barchart.setxLabels(keys);
 
 			GoogleBarChart barchartPercent = new GoogleBarChart("Count by file " + ksname + " [Percent]");
-			barchartPercent.setxLables(keys);
+			barchartPercent.setxLabels(keys);
 
 			// Add all files
 			for (int i = 0; i < names.size(); i++) {
@@ -227,7 +227,7 @@ public class CountReadsOnMarkers {
 				if (keys.size() <= 0) continue;
 
 				GoogleBarChart barchart = new GoogleBarChart("Count by file " + name + " " + ksname);
-				barchart.setxLables(keys);
+				barchart.setxLabels(keys);
 
 				// Add all columns
 				CountByType ct = countTypesByFile.get(i);

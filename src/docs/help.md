@@ -28,7 +28,7 @@ Results      | What you expect to obtain | "we wanted to get information on vari
 
 * **Use the latest version.** May be the issue has already been corrected.
 
-* **Read the documentation first.** Please make sure you've read the documentation before asking fo help.
+* **Read the documentation first.** Please make sure you've read the documentation before asking for help.
         I know this is obvious, but a lot of people ask for questions in that are answered, or shown as examples in the documentation.
 
 * **If the documentation did not help.** I'm aware that the documentation is not always "easy reading".

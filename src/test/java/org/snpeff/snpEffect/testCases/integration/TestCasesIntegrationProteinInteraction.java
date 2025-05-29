@@ -126,15 +126,15 @@ public class TestCasesIntegrationProteinInteraction extends TestCasesIntegration
                 if (verbose) Log.info("\tEFF\t" + veff.getEffectType() + "\t" + veff);
                 if (veff.getEffectType() == EffectType.PROTEIN_STRUCTURAL_INTERACTION_LOCUS) {
                     countPi++;
-                    assertTrue(veff.getHgvsDna().startsWith("c.679"), "Expected HGVS.c possition does not match");
+                    assertTrue(veff.getHgvsDna().startsWith("c.679"), "Expected HGVS.c position does not match");
                     assertTrue(veff.getFeatureId().startsWith("1H4R:A_227") //
                                     || veff.getFeatureId().startsWith("1H4R:B_227"), //
-                            "Expected HGVS.p possition does not match" //
+                            "Expected HGVS.p position does not match" //
                     );
                     foundPi = true;
                 } else if (veff.getEffectType() == EffectType.FRAME_SHIFT) {
-                    assertTrue(veff.getHgvsDna().startsWith("c.683"), "Expected HGVS.c possition does not match");
-                    assertTrue(veff.getHgvsProt().startsWith("p.Lys228"), "Expected HGVS.p possition does not match");
+                    assertTrue(veff.getHgvsDna().startsWith("c.683"), "Expected HGVS.c position does not match");
+                    assertTrue(veff.getHgvsProt().startsWith("p.Lys228"), "Expected HGVS.p position does not match");
                     foundFs = true;
                 }
             }

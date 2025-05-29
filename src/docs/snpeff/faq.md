@@ -188,13 +188,13 @@ $ cat z.vcf
 $ java -Xmx6g -jar snpEff.jar ann -fastaProt z.prot.fa GRCh38.mane.1.2.ensembl z.vcf > z.ann.vcf
 ```
 
-The resulting fasta file `z.prot.fa` looks like this (lines edited for readibility):
+The resulting fasta file `z.prot.fa` looks like this (lines edited for readability):
 
-Notice the difference in the protemic sequeces ('VAF**A**WVS' -> 'VAF**T**WVS')
+Notice the difference in the protemic sequences ('VAF**A**WVS' -> 'VAF**T**WVS')
 ```
 >ENST00000300658.9, gene: PGAP3, protein_id: ENSP00000300658.4, reference
 MAGL....VAFAWVS...
->ENST00000300658.9, gene: PGAP3, protein_id: ENSP00000300658.4, variant:q 17:39684602-39684602, ref:'C', alt:'T', HGVS.p: p.Ala143Thr
+>ENST00000300658.9, gene: PGAP3, protein_id: ENSP00000300658.4, variant:q 17:39684602-39684602, ref:'C', alt:'T', HGVS.p: p.Ala143The
 MAGL....VAFTWVS...
 ```
 
@@ -304,7 +304,7 @@ So counting the number of non-comment lines in the VCF file will not give you th
 
 Also, a single variant can have more than one annotation, due to:
 
-- Multiple transcripts (isoforms) of a gene (e.g. the human genome has on average 8.8 transcrips per gene)
+- Multiple transcripts (isoforms) of a gene (e.g. the human genome has on average 8.8 transcripts per gene)
 - Multiple (overlapping) genes in the genomic location of the variant.
 - A variant spanning multiple genes (e.g. a translocation, large deletion, etc.)
 
@@ -315,10 +315,10 @@ SnpEff does consider all these factors when counting the variants and annotation
 
 Sometimes either the `REF` or `ALT` fields have [IUPAC/IUB](https://en.wikipedia.org/wiki/Nucleic_acid_notation) bases.
 A common example is when you see an `N` character, which means that the base could be any of `{A, C, G, T}`.
-There are several IUPAC characters, please see details in [IUPAC degenarate base symbols table](https://en.wikipedia.org/wiki/Nucleic_acid_notation).
+There are several IUPAC characters, please see details in [IUPAC degenerate base symbols table](https://en.wikipedia.org/wiki/Nucleic_acid_notation).
 
 In case of having IUPAC symbols in either the `REF` and/or `ALT` fields, SnpEff will expand them into different variants.
-This means that entries with ambiguous symbols will be tranformed into all possible combinations of variants using the IUPAC notation.
+This means that entries with ambiguous symbols will be transformed into all possible combinations of variants using the IUPAC notation.
 
 !!! info
 	You can disable the 'IUPAC/IUB expand' behaviour by using the `-noexpandiub` command line option.
@@ -405,8 +405,8 @@ $ zgrep NM_001135865.1 ~/snpEff/data/hg38/genes.refseq.gz
 !!! warning
 	To make matters even worse, not only `NM_001135865.1` maps twice to regions in `chr16`, but also one is mapped in the forward strand and the other on the reverse strand (notice the `+` and `-` signs)
 
-How do you know which of the four `NM_001135865.1` version is SnpEff refering to?
-When there are multiple mappings for a transcipt SnpEff will make sure each mapping is uniquely identified by appending a number to the original transcript ID.
+How do you know which of the four `NM_001135865.1` version is SnpEff referring to?
+When there are multiple mappings for a transcript SnpEff will make sure each mapping is uniquely identified by appending a number to the original transcript ID.
 
 So the transcript IDs are named (notice that the first one is not changed):
 
@@ -458,4 +458,4 @@ ERROR: Protein check file './data/MY_GENOME/protein.fa' not found.
 ERROR: Database check failed.
 ```
 
-To disable these checks, you need to specify *BOTH* commmand line options `-noCheckCds -noCheckProtein`.
+To disable these checks, you need to specify *BOTH* command line options `-noCheckCds -noCheckProtein`.

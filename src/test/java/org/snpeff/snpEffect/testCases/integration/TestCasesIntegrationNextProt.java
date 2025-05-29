@@ -24,7 +24,7 @@ public class TestCasesIntegrationNextProt extends TestCasesIntegrationBase {
 		String[] args = { "buildNextProt", "testHg3770Chr22", path("nextProt") };
 		SnpEff snpEff = new SnpEff(args);
 		snpEff.setVerbose(verbose);
-		snpEff.setSupressOutput(!verbose);
+		snpEff.setSuppressOutput(!verbose);
 		boolean ok = snpEff.run();
 		assertTrue(ok);
 	}
@@ -181,7 +181,7 @@ public class TestCasesIntegrationNextProt extends TestCasesIntegrationBase {
 	public void test_07() {
 		// Test annotation not highly conserved (synonymous change) => EffectImpact.LOW;
 		//
-		// Gene               : ODF3B
+		// Gene               : OF3B
 		// Variant            : chr22:50969624 G / A
 		// Variant Effect     : synonymous_variant
 		// Variant Impact     : LOW

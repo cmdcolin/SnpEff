@@ -414,7 +414,7 @@ public abstract class SnpEffPredictorFactoryFeatures extends SnpEffPredictorFact
 	/**
 	 * Find (or create) a transcript for this CDS feature
 	 * Note: The transcript has to match the coordinates and not have any associated CDSs
-	 * Returs: A transcript matching by transcript ID,
+	 * Returns: A transcript matching by transcript ID,
 	 */
 	Transcript findOrCreateTranscript(Feature fcds, Gene geneLatest, List<Transcript> trLatest) {
 		// Try to find the 'latest' gene / transcript

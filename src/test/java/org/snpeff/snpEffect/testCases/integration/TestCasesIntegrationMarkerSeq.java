@@ -48,7 +48,7 @@ public class TestCasesIntegrationMarkerSeq extends TestCasesIntegrationBase {
         snpeff.parseArgs(args);
         snpeff.setDebug(debug);
         snpeff.setVerbose(verbose);
-        snpeff.setSupressOutput(!verbose);
+        snpeff.setSuppressOutput(!verbose);
 
         // The problem appears when splice site is large (in this example)
         snpeff.setUpDownStreamLength(0);

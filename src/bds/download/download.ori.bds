@@ -323,7 +323,7 @@ void downloadEnsembl(int ensemblRelease) {
 	}
 
 	#---
-	# Move files to propper structure in 'local data' dir
+	# Move files to proper structure in 'local data' dir
 	#---
 	# Move downloaded files to current dir
 	sys find . -mindepth 2 -type f -not -path "*/data/*" | xargs -I + $cp + .
@@ -429,7 +429,7 @@ void downloadEnsemblBfmpp() {
 	}
 
 	#---
-	# Move files to propper structure in 'local data' dir
+	# Move files to proper structure in 'local data' dir
 	#---
 	# Copy files to local dir
 	println "ENSEMBL BFMPP $ensemblBfmppRelease: Copying files to parent dir"
@@ -737,7 +737,7 @@ void downloadNextProt() {
 			fetch("$urlNextProt/nextprot_chromosome_$chr.xml.gz")
 		}
 
-		downloadOk.write("OK")	# Mark as downlaoded OK
+		downloadOk.write("OK")	# Mark as downloaded OK
 	}
 }
 
@@ -772,7 +772,7 @@ void downloadUcscHg38() {
 
 	#---
 	# Create CDS FASTA
-	# Previous sed convertion: sed "s/^>gi|[0-9]*|ref|\(.*\)|.*/>\1/" 
+	# Previous sed conversion: sed "s/^>gi|[0-9]*|ref|\(.*\)|.*/>\1/" 
 	#---
 	println 'Creating CDS FASTA'
 	if( "$dir/cds.fa.gz" <- "$ori/refMrna.fa.gz" ) {
@@ -897,7 +897,7 @@ void downloadPdb() {
 	if( ! downloadOk.exists() ) {
 		println "Download PDB"
 		sys rsync -rlpt -v -z --delete --port=33444 $urlPdb .
-		downloadOk.write("OK")	# Mark as downlaoded OK
+		downloadOk.write("OK")	# Mark as downloaded OK
 	}
 }
 
@@ -1025,7 +1025,7 @@ string queryUcsc(string ref, string dir) {
 }
 
 #-------------------------------------------------------------------------------
-# Query MySql's database (KnonwGene)
+# Query MySql's database (KnownGene)
 #-------------------------------------------------------------------------------
 string queryUcscKg(string ref, string refdb, string dir) {
 	refSeq := "$dir/genes.kg"

@@ -1,7 +1,7 @@
 package org.snpeff.snpEffect.testCases.unity;
 
 import org.junit.jupiter.api.Test;
-import org.snpeff.probablility.Binomial;
+import org.snpeff.probability.Binomial;
 import org.snpeff.util.Gpr;
 import org.snpeff.util.Log;
 

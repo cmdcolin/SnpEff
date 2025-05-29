@@ -1,4 +1,4 @@
-package org.snpeff.probablility;
+package org.snpeff.probability;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -220,11 +220,11 @@ public class RankSumNoReplacementPdf {
 		}
 
 		// Sanity check
-		// Note: CDF cannot be 0.0 because those conditions were checked at the begining of this method
+		// Note: CDF cannot be 0.0 because those conditions were checked at the beginning of this method
 		if ((cdf.compareTo(Apcomplex.ZERO) <= 0) || (cdf.compareTo(Apcomplex.ONE) > 1.0)) {
 			warnCDF++;
-			if (warnCDF < 100) Log.debug("Warning! CDF should be greater then zero for (algorith: " + algorithm + "):\tN = " + n + "\tNT = " + nt + "\tR = " + r + "\tminRankSum = " + minR + "\tmean = " + mean(n, nt) + "\tsigma = " + sigma(n, nt));
-			throw new RuntimeException("Warning! CDF should be greater then zero for (algorith: " + algorithm + "):\tN = " + n + "\tNT = " + nt + "\tR = " + r + "\tminRankSum = " + minR + "\tmean = " + mean(n, nt) + "\tsigma = " + sigma(n, nt));
+			if (warnCDF < 100) Log.debug("Warning! CDF should be greater then zero for (algorithm: " + algorithm + "):\tN = " + n + "\tNT = " + nt + "\tR = " + r + "\tminRankSum = " + minR + "\tmean = " + mean(n, nt) + "\tsigma = " + sigma(n, nt));
+			throw new RuntimeException("Warning! CDF should be greater then zero for (algorithm: " + algorithm + "):\tN = " + n + "\tNT = " + nt + "\tR = " + r + "\tminRankSum = " + minR + "\tmean = " + mean(n, nt) + "\tsigma = " + sigma(n, nt));
 		}
 
 		return cdf;
@@ -445,8 +445,8 @@ public class RankSumNoReplacementPdf {
 		}
 
 		// Sanity check
-		// Note: PDF cannot be 0.0 because those conditions were checked at the begining of this method
-		if ((pdf.compareTo(Apcomplex.ZERO) <= 0) || (pdf.compareTo(Apcomplex.ONE) > 1.0)) throw new RuntimeException("Warning! PDF should be greater then zero for (algorith: " + algorithm + "):\tN = " + n + "\tNT = " + nt + "\tR = " + r + "\tminRankSum = " + minR + "\tmean = " + mean(n, nt) + "\tsigma = " + sigma(n, nt));
+		// Note: PDF cannot be 0.0 because those conditions were checked at the beginning of this method
+		if ((pdf.compareTo(Apcomplex.ZERO) <= 0) || (pdf.compareTo(Apcomplex.ONE) > 1.0)) throw new RuntimeException("Warning! PDF should be greater then zero for (algorithm: " + algorithm + "):\tN = " + n + "\tNT = " + nt + "\tR = " + r + "\tminRankSum = " + minR + "\tmean = " + mean(n, nt) + "\tsigma = " + sigma(n, nt));
 
 		return pdf;
 	}

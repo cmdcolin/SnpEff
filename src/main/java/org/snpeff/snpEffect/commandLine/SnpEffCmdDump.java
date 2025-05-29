@@ -146,7 +146,7 @@ public class SnpEffCmdDump extends SnpEff {
 			Transcript canonical = gene.canonical();
 			info.append("\t" + gene.getGeneName() //
 					+ "\t" + gene.getId() //
-					+ "\t" + gene.numChilds() //
+					+ "\t" + gene.numChildren() //
 					+ "\t" + (canonical == null ? 0 : canonical.cds().length()) //
 			);
 		} else info.append("\t\t\t\t");
@@ -158,7 +158,7 @@ public class SnpEffCmdDump extends SnpEff {
 
 		if (tr != null) info.append("\t" + tr.getId() //
 				+ "\t" + tr.cds().length() //
-				+ "\t" + tr.numChilds() //
+				+ "\t" + tr.numChildren() //
 		);
 		else info.append("\t\t\t");
 

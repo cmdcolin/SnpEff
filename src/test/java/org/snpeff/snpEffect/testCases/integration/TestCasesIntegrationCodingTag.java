@@ -34,7 +34,7 @@ public class TestCasesIntegrationCodingTag extends TestCasesIntegrationBase {
 		SnpEff cmd = new SnpEff(args);
 		SnpEffCmdEff cmdEff = (SnpEffCmdEff) cmd.cmd();
 		cmdEff.setVerbose(verbose);
-		cmdEff.setSupressOutput(!verbose);
+		cmdEff.setSuppressOutput(!verbose);
 		List<VcfEntry> vcfEntries = cmdEff.run(true);
 		assertTrue(cmdEff.getTotalErrs() <= 0, "Errors while executing SnpEff");
 

@@ -129,7 +129,7 @@ public class MarkerUtil {
 				if ((i != j) && (mj.includes(mi))) { // Not the same interval and it is fully included?
 					if (mi.includes(mj) && (i > j)) {
 						// If they are included both ways, it means that they are exactly the same.
-						// We have to avoid deleting both of them twice, so we arbitrarely don't add them if (i > j)
+						// We have to avoid deleting both of them twice, so we arbitrarily don't add them if (i > j)
 					} else markerLarge = mj;
 				}
 			}

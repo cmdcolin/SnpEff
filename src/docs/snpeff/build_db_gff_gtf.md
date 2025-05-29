@@ -15,7 +15,7 @@ As seen in the previous [Building databases](#building-databases), there are thr
 3. **Step 3:** [Checking the database](#step-3-checking-the-database): SnpEff will check the database by comparing predicted protein sequences and CDS sequences with ones provided by the user.
 
 In this section we'll go into the details of the GTF and GFF format requirements for **Step 2**.
-As a general rule, GTF format is preferred over GFF, so if your genome provides both GTF anf GFF, use GTF whenever possible.
+As a general rule, GTF format is preferred over GFF, so if your genome provides both GTF and GFF, use GTF whenever possible.
 
 ## GTF format example
 
@@ -348,5 +348,5 @@ cttaaatgtatttccgacgaattcgaggcctgaaaagtgtgacgccattc
 ...
 ```
 
-This makes it easier to distribute the genome reference toghether with the genome annotations in one file.
+This makes it easier to distribute the genome reference together with the genome annotations in one file.
 

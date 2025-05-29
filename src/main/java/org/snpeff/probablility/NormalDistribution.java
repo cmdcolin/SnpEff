@@ -1,4 +1,4 @@
-package org.snpeff.probablility;
+package org.snpeff.probability;
 
 import org.apfloat.Apfloat;
 import org.apfloat.ApfloatMath;

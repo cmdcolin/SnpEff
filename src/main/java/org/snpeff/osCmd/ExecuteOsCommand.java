@@ -34,7 +34,7 @@ public class ExecuteOsCommand extends Thread implements Progress {
 	int exitValue = 0; // Command exit value
 	String redirectStdout = null; // Where to redirect STDOUT
 	String redirectStderr = null; // Where to redirect STDERR
-	Object objetcToNotify = null; // Notify this object when we are done
+	Object objectToNotify = null; // Notify this object when we are done
 	OutputStream stdin = null; // We write to command's STDIN (so for us is an output stream)
 	StreamGobbler stdErrGobbler = null, stdOutGobbler = null; // Gobblers for command's STDOUT and STDERR
 	LineFilter stdOutFilter = null; // Line filter: Keep (and show) everything from STDOUT that matches this filter
@@ -121,9 +121,9 @@ public class ExecuteOsCommand extends Thread implements Progress {
 			// We are done. Either process finished or an exception was raised.
 			started = true;
 			executing = false;
-			if (objetcToNotify != null) {
-				synchronized (objetcToNotify) {
-					objetcToNotify.notify();
+			if (objectToNotify != null) {
+				synchronized (objectToNotify) {
+					objectToNotify.notify();
 				}
 			}
 		}
@@ -252,8 +252,8 @@ public class ExecuteOsCommand extends Thread implements Progress {
 		this.commandArgs = commandArgs;
 	}
 
-	public void setObjetcToNotify(Object objetcToNotify) {
-		this.objetcToNotify = objetcToNotify;
+	public void setObjectToNotify(Object objectToNotify) {
+		this.objectToNotify = objectToNotify;
 	}
 
 	public void setPwd(String pwd) {

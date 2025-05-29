@@ -161,14 +161,14 @@ public class VariantEffectFusion extends VariantEffectStructural {
 
 		switch (variant.getVariantType()) {
 		case INV:
-			setEffect(sameStrand ? EffectType.GENE_FUSION_REVERESE : EffectType.GENE_FUSION);
+			setEffect(sameStrand ? EffectType.GENE_FUSION_REVERSE : EffectType.GENE_FUSION);
 			marker = geneLeft;
 			break;
 
 		case DEL:
 		case DUP:
 			// Non-translocations: DEL, DUP
-			setEffect(sameStrand ? EffectType.GENE_FUSION : EffectType.GENE_FUSION_REVERESE);
+			setEffect(sameStrand ? EffectType.GENE_FUSION : EffectType.GENE_FUSION_REVERSE);
 			marker = geneLeft;
 			break;
 
@@ -184,7 +184,7 @@ public class VariantEffectFusion extends VariantEffectStructural {
 
 			// Note: The following block of 'setEffect' could be written simply as
 			//
-			// 		    setEffect( (vtrans.isLeft() != vtrans.isBefore()) ^ sameStrand ? EffectType.GENE_FUSION : EffectType.GENE_FUSION_REVERESE);
+			// 		    setEffect( (vtrans.isLeft() != vtrans.isBefore()) ^ sameStrand ? EffectType.GENE_FUSION : EffectType.GENE_FUSION_REVERSE);
 			//
 			//       But this would be rather cryptic, that's why I use an explicit case by case scenario
 
@@ -196,16 +196,16 @@ public class VariantEffectFusion extends VariantEffectStructural {
 				effType = EffectType.GENE_FUSION_HALF;
 			} else if (!vtrans.isLeft() && !vtrans.isBefore()) {
 				// E.g.:  C[2:321682[
-				effType = (sameStrand ? EffectType.GENE_FUSION : EffectType.GENE_FUSION_REVERESE);
+				effType = (sameStrand ? EffectType.GENE_FUSION : EffectType.GENE_FUSION_REVERSE);
 			} else if (vtrans.isLeft() && !vtrans.isBefore()) {
 				// E.g.: G]17:198982]
-				effType = (!sameStrand ? EffectType.GENE_FUSION : EffectType.GENE_FUSION_REVERESE);
+				effType = (!sameStrand ? EffectType.GENE_FUSION : EffectType.GENE_FUSION_REVERSE);
 			} else if (!vtrans.isLeft() && vtrans.isBefore()) {
 				// E.g.:  [17:198983[A
-				effType = (!sameStrand ? EffectType.GENE_FUSION : EffectType.GENE_FUSION_REVERESE);
+				effType = (!sameStrand ? EffectType.GENE_FUSION : EffectType.GENE_FUSION_REVERSE);
 			} else if (vtrans.isLeft() && vtrans.isBefore()) {
 				// E.g.:  ]13:123456]T
-				effType = (sameStrand ? EffectType.GENE_FUSION : EffectType.GENE_FUSION_REVERESE);
+				effType = (sameStrand ? EffectType.GENE_FUSION : EffectType.GENE_FUSION_REVERSE);
 			} else throw new RuntimeException("This should never happen!");
 
 			setEffect(effType);

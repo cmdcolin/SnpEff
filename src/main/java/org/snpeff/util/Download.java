@@ -231,11 +231,11 @@ public class Download {
     }
 
     /**
-     * Parse proxy from Java propperties
+     * Parse proxy from Java properties
      *
      * @return A Tuple with host and port, null if not found or could not be parsed
      */
-    Tuple<String, Integer> parseProxyJavaPropperty() {
+    Tuple<String, Integer> parseProxyJavaProperty() {
         // Try java properties, i.e. '-D' command line argument
         String proxyHost = System.getProperty("http.proxyHost");
         String proxyPort = System.getProperty("http.proxyPort");
@@ -248,7 +248,7 @@ public class Download {
         int port = (proxyPort != null && !proxyPort.isBlank() ? Gpr.parseIntSafe(proxyPort) : DEFAULT_PROXY_PORT);
 
         if (verbose)
-            Log.info("Parsing proxy value from Java propperties, host: '" + proxyHost + "', port: '" + port + "'");
+            Log.info("Parsing proxy value from Java properties, host: '" + proxyHost + "', port: '" + port + "'");
         return new Tuple<>(proxyHost, port);
     }
 
@@ -267,7 +267,7 @@ public class Download {
         if (proxyHostPort == null) proxyHostPort = parseProxyEnv("HTTP_PROXY");
 
         // Not found in environment? Try java properties
-        if (proxyHostPort == null) proxyHostPort = parseProxyJavaPropperty();
+        if (proxyHostPort == null) proxyHostPort = parseProxyJavaProperty();
 
         if (proxyHostPort == null) return null;
 

@@ -137,7 +137,7 @@ public class DnaAndQualitySequence extends BinarySequence {
 	}
 
 	/**
-	 * Sequence lenth
+	 * Sequence length
 	 * @return
 	 */
 	@Override
@@ -316,7 +316,7 @@ public class DnaAndQualitySequence extends BinarySequence {
 				qbase = 64;
 				break;
 			default:
-				throw new RuntimeException("Unsuported quality type: " + type);
+				throw new RuntimeException("Unsupported quality type: " + type);
 		}
 
 		for( int i = 0; i < length; i++ ) {

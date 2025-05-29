@@ -336,7 +336,7 @@ void buildDbNextProt() {
 }
 
 #-------------------------------------------------------------------------------
-# Create documenation web pages from markdown
+# Create documentation web pages from markdown
 #-------------------------------------------------------------------------------
 void buildDocs() {
 	println "Building documentation"

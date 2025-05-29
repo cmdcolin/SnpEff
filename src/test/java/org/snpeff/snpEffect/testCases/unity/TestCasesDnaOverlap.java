@@ -177,11 +177,11 @@ public class TestCasesDnaOverlap {
 		// Overlapping with DnaAndQualitySequence
 		DnaAndQualitySequence s1 = new DnaAndQualitySequence(seq1);
 		DnaAndQualitySequence s2 = new DnaAndQualitySequence(seq2);
-		DnaQualSubsequenceComparator compartor = new DnaQualSubsequenceComparator(true, threshold);
+		DnaQualSubsequenceComparator comparator = new DnaQualSubsequenceComparator(true, threshold);
 
 		int idx1 = (start >= 0 ? start : 0);
 		int idx2 = (start >= 0 ? 0 : -start);
-		int score = compartor.score(s1, idx1, s2, idx2);
+		int score = comparator.score(s1, idx1, s2, idx2);
 
 		assertEquals(result, score);
 	}
@@ -190,11 +190,11 @@ public class TestCasesDnaOverlap {
 		// Overlapping with DnaSequence
 		DnaSequence s1 = new DnaSequence(seq1);
 		DnaSequence s2 = new DnaSequence(seq2);
-		DnaSubsequenceComparator<DnaSequence> compartor = new DnaSubsequenceComparator<DnaSequence>(true, threshold);
+		DnaSubsequenceComparator<DnaSequence> comparator = new DnaSubsequenceComparator<DnaSequence>(true, threshold);
 
 		int idx1 = (start >= 0 ? start : 0);
 		int idx2 = (start >= 0 ? 0 : -start);
-		int score = compartor.score(s1, idx1, s2, idx2);
+		int score = comparator.score(s1, idx1, s2, idx2);
 
 		assertEquals(result, score);
 	}

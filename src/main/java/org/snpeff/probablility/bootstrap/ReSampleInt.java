@@ -1,4 +1,4 @@
-package org.snpeff.probablility.bootstrap;
+package org.snpeff.probability.bootstrap;
 
 import gnu.trove.map.hash.TIntIntHashMap;
 
@@ -31,7 +31,7 @@ public class ReSampleInt {
 	}
 
 	/**
-	 * Cummulative distribution for this number
+	 * Cumulative distribution for this number
 	 * @param number
 	 * @return
 	 */

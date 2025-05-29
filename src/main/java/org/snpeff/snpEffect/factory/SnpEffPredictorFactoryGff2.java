@@ -22,7 +22,7 @@ import org.snpeff.snpEffect.Config;
  *
  * We are only adding this format in order to read old amel2 (Honey bee) genome annotations
  *
- * Refereces: http://gmod.org/wiki/GFF2
+ * References: http://gmod.org/wiki/GFF2
  *
  * @author pcingola
  */

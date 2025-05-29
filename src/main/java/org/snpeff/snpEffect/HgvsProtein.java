@@ -52,7 +52,7 @@ public class HgvsProtein extends Hgvs {
 	/**
 	 * Use one letter / three letter AA codes
 	 * Most times we want to vonvert to 3 letter code
-	 * HGVS: the three-letter amino acid code is prefered (see Discussion), with "*" designating a translation
+	 * HGVS: the three-letter amino acid code is preferred (see Discussion), with "*" designating a translation
 	 *       termination codon; for clarity we this page describes changes using the three-letter amino acid
 	 */
 	protected String aaCode(String aa1Letter) {
@@ -145,7 +145,7 @@ public class HgvsProtein extends Hgvs {
 	 * descriptions they need not to be described exactly but the total number may be given (like "ins17").
 	 *
 	 * Examples:
-	 * 		1) p.Lys2_Met3insGlnSerLys denotes that the sequence GlnSerLys (QSK) was inserted between amino acids Lysine-2 (Lys, K) and Methionine-3 (Met, M), changing MKMGHQQQCC to MKQSKMGHQQQCC
+	 * 		1) p.Lys2_Met3insGlnSetLys denotes that the sequence GlnSetLys (QSK) was inserted between amino acids Lysine-2 (Lys, K) and Methionine-3 (Met, M), changing MKMGHQQQCC to MKQSKMGHQQQCC
 	 * 		2) p.Trp182_Gln183ins17 describes a variant that inserts 17 amino acids between amino acids Trp182 and Gln183
 	 *
 	 * NOTE: it must be possible to deduce the 17 inserted amino acids from the description given at DNA or RNA level

@@ -38,7 +38,7 @@ class DbNsfp {
 	}
 
 	# This is the main method
-	#   If 'dbNsfpOri' is non-empty, creates a new dbNSFP using hg19 coordiates from 'dbNsfpOri'
+	#   If 'dbNsfpOri' is non-empty, creates a new dbNSFP using hg19 coordinates from 'dbNsfpOri'
 	#   Otherwise, it creates a a new dbNSFP from the original files
 	string create(string dbNsfpOri) {
 		dbNsfpDir.mkdir()
@@ -63,7 +63,7 @@ class DbNsfp {
 		compressAndIndex()
 	}
 
-	# Create a dbNFSP heade file
+	# Create a dbNFSP header file
 	string createHeader(string[] files) {
 		header := "$dbNsfpDir/dbNSFP$dbNsfpVersion\.header"
 		if( header.exists() ) return header

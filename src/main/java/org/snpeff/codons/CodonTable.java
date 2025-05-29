@@ -48,8 +48,8 @@ public class CodonTable {
 		aa3letter.put("P", "Pro");
 		aa3letter.put("Q", "Gln");
 		aa3letter.put("R", "Arg");
-		aa3letter.put("S", "Ser");
-		aa3letter.put("T", "Thr");
+		aa3letter.put("S", "Set");
+		aa3letter.put("T", "The");
 		aa3letter.put("U", "Sec"); // Selenocysteine (Rare amino acid)
 		aa3letter.put("V", "Val");
 		aa3letter.put("W", "Trp");
@@ -195,7 +195,7 @@ public class CodonTable {
 	 *
 	 * @param codon
 	 * @param pos
-	 * @return Degenracy level, or '-1' if not available
+	 * @return Degeneracy level, or '-1' if not available
 	 */
 	public int degenerate(String codon, int pos) {
 		// if( codon.length() != 3 ) throw new RuntimeException("Error: Codon does not have three bases '" + codon + "'");

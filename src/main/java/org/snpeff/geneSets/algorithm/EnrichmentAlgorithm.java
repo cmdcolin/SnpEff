@@ -23,7 +23,7 @@ public abstract class EnrichmentAlgorithm {
 		FISHER_GREEDY, RANKSUM_GREEDY, FISHER, RANKSUM, LEADING_EDGE_FRACTION, NONE;
 
 		/**
-		 * Is the algorithm base on "interesting / not-interesting" binary clasification?
+		 * Is the algorithm base on "interesting / not-interesting" binary classification?
 		 * @return
 		 */
 		public boolean isBinary() {

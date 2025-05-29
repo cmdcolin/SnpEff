@@ -117,7 +117,7 @@ public class VariantEffectStructural extends VariantEffect {
 
 		// If there is a gene-gene fusion and other gene-intergenic fusions, only report
 		// the gene-gene fusions.
-		// Otherwise it's extremelly confusing for everyone reading the annotations
+		// Otherwise it's extremely confusing for everyone reading the annotations
 		if (fusions.size() > 0) {
 			int countGeneGeneFusion = 0;
 			for (VariantEffect fusion : fusions)

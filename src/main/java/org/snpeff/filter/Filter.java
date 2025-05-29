@@ -9,7 +9,7 @@ package org.snpeff.filter;
 public interface Filter<T> {
 
 	/**
-	 * Has any of the paremeters been set?
+	 * Has any of the parameters been set?
 	 * @return
 	 */
 	public boolean anythingSet();

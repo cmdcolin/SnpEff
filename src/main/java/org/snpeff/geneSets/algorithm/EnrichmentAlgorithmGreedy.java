@@ -22,7 +22,7 @@ public abstract class EnrichmentAlgorithmGreedy extends EnrichmentAlgorithm {
 
 	protected boolean adjustedPvalue = true;
 	protected double maxPvalue = DEFAULT_MAX_PVALUE;
-	protected double maxPvalueAjusted = DEFAULT_MAX_PVALUE;
+	protected double maxPvalueAdjusted = DEFAULT_MAX_PVALUE;
 	Date start, latest;
 
 	public EnrichmentAlgorithmGreedy(GeneSets geneSets, int numberToSelect) {
@@ -135,8 +135,8 @@ public abstract class EnrichmentAlgorithmGreedy extends EnrichmentAlgorithm {
 		this.maxPvalue = maxPvalue;
 	}
 
-	public void setMaxPvalueAjusted(double maxPvalueAjusted) {
-		this.maxPvalueAjusted = maxPvalueAjusted;
+	public void setMaxPvalueAdjusted(double maxPvalueAdjusted) {
+		this.maxPvalueAdjusted = maxPvalueAdjusted;
 	}
 
 	@Override
@@ -180,7 +180,7 @@ public abstract class EnrichmentAlgorithmGreedy extends EnrichmentAlgorithm {
 		if (geneSet == null) return true;
 
 		// Compare p-value to 'maxPvalue'
-		if (adjustedPvalue) return result.getPvalueAdjusted() > maxPvalueAjusted;
+		if (adjustedPvalue) return result.getPvalueAdjusted() > maxPvalueAdjusted;
 		return result.getPvalue().doubleValue() > maxPvalue;
 	}
 

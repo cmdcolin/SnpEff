@@ -47,7 +47,7 @@ public class GeneSetsRanked extends GeneSets {
 	 * @returns : true if it was added OK, false on error.
 	 */
 	public boolean add(String gene, int rank) {
-		if (rank <= 0) throw new RuntimeException("Rank must be a possitive number: " + rank + ", gene '" + gene + "'");
+		if (rank <= 0) throw new RuntimeException("Rank must be a positive number: " + rank + ", gene '" + gene + "'");
 
 		boolean ok = true;
 
@@ -197,7 +197,7 @@ public class GeneSetsRanked extends GeneSets {
 		for (String gene : geneNames)
 			if (!add(gene, rank++)) errorsRank++;
 
-		if (verbose && (errorsRank > 0)) System.err.println(String.format("Misisng %d genes, out of %d genes ( %.1f %% ).", errorsRank, geneNames.size(), ((errorsRank * 100.0) / geneNames.size())));
+		if (verbose && (errorsRank > 0)) System.err.println(String.format("Missing %d genes, out of %d genes ( %.1f %% ).", errorsRank, geneNames.size(), ((errorsRank * 100.0) / geneNames.size())));
 		return errorsRank;
 	}
 

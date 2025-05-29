@@ -12,7 +12,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Test cases for cancer effect (difference betwee somatic an germline tissue)
+ * Test cases for cancer effect (difference between somatic an germline tissue)
  *
  * @author pcingola
  */
@@ -59,14 +59,14 @@ public class TestCasesIntegrationCancer extends TestCasesIntegrationBase {
 
         SnpEff cmd = new SnpEff(args);
         SnpEffCmdEff snpeff = (SnpEffCmdEff) cmd.cmd();
-        snpeff.setSupressOutput(!verbose);
+        snpeff.setSuppressOutput(!verbose);
         snpeff.setVerbose(verbose);
 
-        List<VcfEntry> vcfEnties = snpeff.run(true);
+        List<VcfEntry> vcfEntries = snpeff.run(true);
         assertFalse(snpeff.getTotalErrs() > 0, "Annotation finished with errors");
 
         int countCancer = 0, countCancerWarnings = 0;
-        for (VcfEntry ve : vcfEnties) {
+        for (VcfEntry ve : vcfEntries) {
             if (verbose) Log.info(ve);
 
             // Get first effect (there should be only one)

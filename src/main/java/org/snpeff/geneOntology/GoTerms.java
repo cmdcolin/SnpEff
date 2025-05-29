@@ -142,9 +142,9 @@ public class GoTerms implements Iterable<GoTerm>, Serializable {
 	 * For every GOTerm, each child's symbols are added to the term
 	 * so that root term contains every symbol and every interestingSymbol
 	 */
-	public void addSymbolsFromChilds() {
+	public void addSymbolsFromChildren() {
 		for (GoTerm gt : this)
-			gt.addSymbolsFromChilds(gt);
+			gt.addSymbolsFromChildren(gt);
 	}
 
 	/**
@@ -444,7 +444,7 @@ public class GoTerms implements Iterable<GoTerm>, Serializable {
 				System.err.println("WARNING: Couldn't find some GOTerms while reading file '" + goGenesFile + "'\n\tNot found (" + notFound.size() + ") : " + ll);
 			}
 
-			if (verbose) Log.info("Finished reding GoGenes file '" + goGenesFile + "' : " + lineNum + " lines.");
+			if (verbose) Log.info("Finished reading GoGenes file '" + goGenesFile + "' : " + lineNum + " lines.");
 		} catch (IOException e) {
 			throw new RuntimeException(e);
 		}
@@ -527,7 +527,7 @@ public class GoTerms implements Iterable<GoTerm>, Serializable {
 						goTerm.setSescription(line.substring(6).trim());
 					} else if (line.startsWith("is_obsolete: ") && removeObsolete) { // Is this an obsolete term? => ignore it
 						removeGOTerm(goTermAcc);
-					} else if ((goTermAcc != null) && (line.startsWith("is_a: "))) { // Add childs & parents as needed
+					} else if ((goTermAcc != null) && (line.startsWith("is_a: "))) { // Add children & parents as needed
 						isa = line.substring(6, 16);
 						GoTerm parent = findOrCreate(isa); // Add this as child
 						parent.addChild(goTerm);

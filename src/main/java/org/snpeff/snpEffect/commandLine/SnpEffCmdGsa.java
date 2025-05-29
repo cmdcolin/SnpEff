@@ -45,7 +45,7 @@ import org.snpeff.vcf.VcfEntry;
 /**
  * Command line: Gene-Sets Analysis
  *
- * Perform gene set analysys
+ * Perform gene set analysis
  *
  * @author pcingola
  */
@@ -204,7 +204,7 @@ public class SnpEffCmdGsa extends SnpEff {
 		}
 
 		if (verbose) {
-			Log.info("Intereting genes from file" //
+			Log.info("Interesting genes from file" //
 					+ "\n\tIntereting genes in file  : " + genesInteresting.size() //
 					+ "\n\tFound genes               : " + hasGene //
 			);
@@ -380,7 +380,7 @@ public class SnpEffCmdGsa extends SnpEff {
 		// Read config file
 		if (config == null) config();
 
-		// Read database (if gene level scores are provided, we don't neet to map p_values to genes (we can skip this step)
+		// Read database (if gene level scores are provided, we don't need to map p_values to genes (we can skip this step)
 		if (geneScoreFile.isEmpty() && geneInterestingFile.isEmpty()) {
 			snpEffectPredictor = config.getSnpEffectPredictor();
 			genome = config.getGenome();
@@ -483,7 +483,7 @@ public class SnpEffCmdGsa extends SnpEff {
 	public void parseArgs(String[] args) {
 		if (args.length == 0) usage(null);
 
-		// Parse comamnd line
+		// Parse command line
 		for (int i = 0; i < args.length; i++) {
 			String arg = args[i];
 
@@ -569,7 +569,7 @@ public class SnpEffCmdGsa extends SnpEff {
 
 		if (commandsFile == null) {
 			// All these check are only performed when "commands" is not set
-			if ((inputFormat == InputFormat.VCF) && infoName.isEmpty() && geneScoreFile.isEmpty() && geneInterestingFile.isEmpty()) usage("Missing '-info' comamnd line option.");
+			if ((inputFormat == InputFormat.VCF) && infoName.isEmpty() && geneScoreFile.isEmpty() && geneInterestingFile.isEmpty()) usage("Missing '-info' command line option.");
 
 			if (inputFile.isEmpty()) inputFile = "-"; // Default is STDIN
 			if (!Gpr.canRead(inputFile)) Log.fatalError("Cannot read input file '" + inputFile + "'");
@@ -769,7 +769,7 @@ public class SnpEffCmdGsa extends SnpEff {
 	@Override
 	public boolean run() {
 		// Normal usage: Just run analysis
-		if (commandsFile == null) return runAnalisis();
+		if (commandsFile == null) return runAnalysis();
 
 		// Run several commands (no need to reload genomic database each time)
 		return runCommands();
@@ -778,7 +778,7 @@ public class SnpEffCmdGsa extends SnpEff {
 	/**
 	 * Run command
 	 */
-	protected boolean runAnalisis() {
+	protected boolean runAnalysis() {
 		initialize();
 
 		if (geneScoreFile.isEmpty() && geneInterestingFile.isEmpty()) {
@@ -797,7 +797,7 @@ public class SnpEffCmdGsa extends SnpEff {
 		}
 
 		enrichmentAnalysis(); // Perform enrichment analysis
-		if (randIterations > 0) runAnalisisRand(); // Perform random iterations
+		if (randIterations > 0) runAnalysisRand(); // Perform random iterations
 
 		if (verbose) Log.info("Done.");
 		return true;
@@ -806,7 +806,7 @@ public class SnpEffCmdGsa extends SnpEff {
 	/**
 	 * Run enrichment analysis using random scores
 	 */
-	protected boolean runAnalisisRand() {
+	protected boolean runAnalysisRand() {
 		HashMap<String, Double> geneScoreOri = geneScore; // Save original scores
 
 		for (int iter = 1; iter <= randIterations; iter++) {
@@ -838,14 +838,14 @@ public class SnpEffCmdGsa extends SnpEff {
 		config();
 
 		// Parse commands from file
-		for (String commnadLine : Gpr.readFile(commandsFile).split("\n")) {
+		for (String commandLine : Gpr.readFile(commandsFile).split("\n")) {
 			if (verbose) {
-				Log.info("COMMAND: " + commnadLine);
-				System.out.println("COMMAND: " + commnadLine);
+				Log.info("COMMAND: " + commandLine);
+				System.out.println("COMMAND: " + commandLine);
 			}
 
 			// Parse command line (tab-separated)
-			String args[] = commnadLine.split("\t");
+			String args[] = commandLine.split("\t");
 
 			// Create new 'SnpEffCmdGsa' and set database
 			SnpEffCmdGsa snpEffCmdGsa = new SnpEffCmdGsa();

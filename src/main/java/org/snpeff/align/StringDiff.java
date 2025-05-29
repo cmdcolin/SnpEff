@@ -5,7 +5,7 @@ public class StringDiff {
     String s1, s2; // Strings to compare
     String name1, name2; // String names. Only used to represent in 'toString'.
     int count = -1; // Number of mismatches
-    double error = -1.0; // Error rate: number_of_missmatches / total_length
+    double error = -1.0; // Error rate: number_of_mismatches / total_length
 
     public StringDiff(String s1, String s2) {
         this.s1 = s1;

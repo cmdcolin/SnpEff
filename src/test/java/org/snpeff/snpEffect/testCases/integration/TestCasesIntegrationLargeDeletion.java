@@ -33,7 +33,7 @@ public class TestCasesIntegrationLargeDeletion extends TestCasesIntegrationBase 
         SnpEff cmd = new SnpEff(args);
         SnpEffCmdEff cmdEff = (SnpEffCmdEff) cmd.cmd();
         cmdEff.setVerbose(verbose);
-        cmdEff.setSupressOutput(!verbose);
+        cmdEff.setSuppressOutput(!verbose);
 
         List<VcfEntry> vcfEntries = cmdEff.run(true);
         assertTrue(cmdEff.getTotalErrs() <= 0, "Errors while executing SnpEff");
@@ -61,7 +61,7 @@ public class TestCasesIntegrationLargeDeletion extends TestCasesIntegrationBase 
         SnpEff cmd = new SnpEff(args);
         SnpEffCmdEff cmdEff = (SnpEffCmdEff) cmd.cmd();
         cmdEff.setVerbose(verbose);
-        cmdEff.setSupressOutput(!verbose);
+        cmdEff.setSuppressOutput(!verbose);
         List<VcfEntry> vcfEntries = cmdEff.run(true);
         assertTrue(cmdEff.getTotalErrs() <= 0, "Errors while executing SnpEff");
 
@@ -80,7 +80,7 @@ public class TestCasesIntegrationLargeDeletion extends TestCasesIntegrationBase 
         SnpEff cmd = new SnpEff(args);
         SnpEffCmdEff cmdEff = (SnpEffCmdEff) cmd.cmd();
         cmdEff.setVerbose(verbose);
-        cmdEff.setSupressOutput(!verbose);
+        cmdEff.setSuppressOutput(!verbose);
         List<VcfEntry> vcfEntries = cmdEff.run(true);
         assertTrue(cmdEff.getTotalErrs() <= 0, "Errors while executing SnpEff");
 
@@ -131,7 +131,7 @@ public class TestCasesIntegrationLargeDeletion extends TestCasesIntegrationBase 
             if (verbose) Log.info(veff);
 
             // Fusion
-            if (veff.getEffectType() == EffectType.GENE_FUSION_REVERESE //
+            if (veff.getEffectType() == EffectType.GENE_FUSION_REVERSE //
                     && veff.getGeneName().equals("CDKN2A&CDKN2B-AS1") //
             ) {
                 if (verbose) Log.info("FOUND:\t" + veff);

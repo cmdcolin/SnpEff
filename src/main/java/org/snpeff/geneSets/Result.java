@@ -117,7 +117,7 @@ public class Result implements Comparable<Result> {
 	}
 
 	/**
-	 * Ser a new list and pvalue
+	 * Set a new list and pvalue
 	 * @param geneSets
 	 * @param pvalue
 	 */

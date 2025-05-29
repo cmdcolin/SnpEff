@@ -53,8 +53,8 @@ public class Transcript extends IntervalAndSubIntervals<Exon> {
     Upstream upstream; // Upstream interval
     Downstream downstream; // Downstream interval
     Exon firstCodingExon; // First coding exon; i.e. where transcription start site (TSS) is.
-    int[] aa2pos; // Amino acid to genomic possition mapping
-    int[] cds2pos; // CDS to genomic possition mapping
+    int[] aa2pos; // Amino acid to genomic position mapping
+    int[] cds2pos; // CDS to genomic position mapping
     TranscriptSupportLevel transcriptSupportLevel = null;
     String tags; // Transcript tags. Multiple tags separated by MULTIPLE_VALUES_SEPARATOR
     String proteinId; // Transcript protein ID
@@ -1624,7 +1624,7 @@ public class Transcript extends IntervalAndSubIntervals<Exon> {
     }
 
     /**
-     * Perfom some baseic chekcs, return error type, if any
+     * Perform some baseic chekcs, return error type, if any
      */
     public ErrorWarningType sanityCheck(Variant variant) {
         if (isErrorStopCodonsInCds()) return ErrorWarningType.WARNING_TRANSCRIPT_MULTIPLE_STOP_CODONS;
@@ -1745,7 +1745,7 @@ public class Transcript extends IntervalAndSubIntervals<Exon> {
         if (hasTags()) sb.append(", tags: '" + tags + "'");
         if (hasProteinId()) sb.append(", protein id: " + getProteinId());
 
-        if (numChilds() > 0) {
+        if (numChildren() > 0) {
             sb.append("\n");
             for (Utr utr : get5primeUtrsSorted())
                 sb.append("\t\t5'UTR   :\t" + utr + "\n");

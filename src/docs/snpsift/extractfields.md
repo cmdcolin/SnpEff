@@ -175,7 +175,7 @@ $ cat examples/test.chr22.ann.vcf \
 22	17072674	G	A	downstream_gene_variant
 22	17072747	T	C	missense_variant
 ```
-Now we obtain one effect per line, while all other parameters in the line are repeated across mutiple lines (e.g. there are two chr22:17071756 lines, one for each variant annotation).
+Now we obtain one effect per line, while all other parameters in the line are repeated across multiple lines (e.g. there are two chr22:17071756 lines, one for each variant annotation).
 
 !!! info
     Note that in SnpSift, we used `-` as input file name, which denotes STDIN.
@@ -201,7 +201,7 @@ $ java -jar SnpSift.jar extractFields examples/1kg.head_chr1.vcf.gz CHROM POS RE
 ### Example 6: Extracting non alphanumeric field names
 
 !!! warning
-    `SnpSift extractFields` can get confused if the VCF field has non-alphanumeric charaters in the name (e.g. `dbNSFP_GERP++_RS` has two "+" signs).
+    `SnpSift extractFields` can get confused if the VCF field has non-alphanumeric characters in the name (e.g. `dbNSFP_GERP++_RS` has two "+" signs).
     A quick fix, it so is to change the field names in the VCF file.
 
 Here is an example:

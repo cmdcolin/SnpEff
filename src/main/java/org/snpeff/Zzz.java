@@ -8,7 +8,7 @@ import org.biojava.nbio.structure.align.util.AtomCache;
 import org.biojava.nbio.structure.align.util.UserConfiguration;
 import org.biojava.nbio.structure.io.FileParsingParameters;
 import org.biojava.nbio.structure.io.PDBFileParser;
-import org.biojava.nbio.structure.secstruc.SecStrucInfo;
+import org.biojava.nbio.structure.secstruc.SecStructInfo;
 import org.snpeff.util.Log;
 
 import java.io.File;
@@ -59,7 +59,7 @@ public class Zzz {
         // Parse and load file
 
         FileParsingParameters params = new FileParsingParameters();
-        params.setParseSecStruc(true); //this is false as DEFAULT
+        params.setParseSecStruct(true); //this is false as DEFAULT
 
         //
         AtomCache cache = new AtomCache();
@@ -80,7 +80,7 @@ public class Zzz {
             for (Group g : c.getAtomGroups()) {
                 if (g.hasAminoAtoms()) { //Only AA store SS
                     //Obtain the object that stores the SS
-                    SecStrucInfo ss = (SecStrucInfo) g.getProperty(Group.SEC_STRUC);
+                    SecStructInfo ss = (SecStructInfo) g.getProperty(Group.SEC_STRUCT);
                     //Print information: chain+resn+name+SS
                     System.out.println(c.getId() + " " +
                             g.getResidueNumber() + " " +

@@ -8,7 +8,7 @@ import org.snpeff.util.Gpr;
 import org.snpeff.util.Log;
 
 /**
- * Analize purity changes in codons and amino acids
+ * Analyze purity changes in codons and amino acids
  * @author pcingola
  */
 public class PurityChange {

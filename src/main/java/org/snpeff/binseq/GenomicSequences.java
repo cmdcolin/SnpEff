@@ -342,7 +342,7 @@ public class GenomicSequences implements Iterable<MarkerSeq>, Serializable {
 		MarkerSeq ms = queryMarkerSequence(marker);
 		if (ms == null) return null;
 
-		// Calculate start and end coordiantes
+		// Calculate start and end coordinates
 		int sstart = marker.getStart() - ms.getStart();
 		int ssend = marker.size() + sstart;
 		String seq = ms.getSequence().substring(sstart, ssend);
@@ -390,7 +390,7 @@ public class GenomicSequences implements Iterable<MarkerSeq>, Serializable {
 
 			// Save to file
 			String fileName = Config.get().getFileNameSequence();
-			if (verbose) Log.info("Saving sequences for small chromosmes to file '" + fileName + "'");
+			if (verbose) Log.info("Saving sequences for small chromosomes to file '" + fileName + "'");
 			markers.save(fileName);
 		}
 	}

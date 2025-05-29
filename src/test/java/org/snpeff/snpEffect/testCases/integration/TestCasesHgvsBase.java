@@ -169,7 +169,7 @@ public class TestCasesHgvsBase {
         SnpEff cmd = new SnpEff(args);
         SnpEffCmdEff cmdEff = (SnpEffCmdEff) cmd.cmd();
         cmdEff.setVerbose(verbose);
-        cmdEff.setSupressOutput(!verbose);
+        cmdEff.setSuppressOutput(!verbose);
 
         // Run command
         List<VcfEntry> list = cmdEff.run(true);
@@ -180,7 +180,7 @@ public class TestCasesHgvsBase {
         for (VcfEntry vcfEntry : list) {
             boolean found = false;
 
-            // Load hgvs expexcted annotations into set
+            // Load hgvs expected annotations into set
             String hgvsStr = vcfEntry.getInfo("HGVS");
             String trId = vcfEntry.getInfo("TR");
             HashSet<String> hgvsExpected = new HashSet<>();
